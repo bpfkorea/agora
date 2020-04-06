@@ -96,6 +96,7 @@
             "name": "unittest",
             "targetName": "agora-unittests",
             "excludedSourceFiles": ["source/agora/cli/*/main.d"],
+            "dflags": [ "-O" ],
             "sourceFiles-posix": [
                 "source/scpp/build/DSizeChecks.o",
                 "source/scpp/build/DLayoutChecks.o"

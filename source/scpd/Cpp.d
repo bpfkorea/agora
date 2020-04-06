@@ -27,6 +27,8 @@
 
 module scpd.Cpp;
 
+import agora.common.Serializer;
+
 //import core.stdcpp.exception;
 import core.stdcpp.xutility;
 import std.meta;
@@ -251,6 +253,9 @@ extern(C++, (StdNamespace)) extern(C++, class) struct vector (T, Alloc = allocat
     T* _end;
     T* _end_of_storage;
 
+    /// Allow to iterate this like a const slice
+    alias constIterator this;
+
     extern(D)
     {
         /// TODO: Separate from `vector` definition
@@ -346,6 +351,24 @@ extern(C++, (StdNamespace)) extern(C++, class) struct vector (T, Alloc = allocat
             foreach (ref item; array)
                 vec.push_back(item);
             return vec;
+        }
+
+        ///
+        public void serialize (scope SerializeDg dg) const @safe
+        {
+            serializePart(this.length, dg);
+            foreach (ref entry; this.constIterator())
+                serializePart(entry, dg);
+        }
+
+        ///
+        static QT fromBinary (QT) (scope DeserializeDg data,
+            scope const ref DeserializerOptions opts) @safe
+        {
+            // Get the qualified type of the element
+            alias ElemT = typeof(*QT._start);
+            auto arr = deserializeFull!(ElemT[])(data, opts);
+            return (() @trusted => QT(arr.ptr, arr.ptr + arr.length, arr.ptr + arr.length))();
         }
     }
 }

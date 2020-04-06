@@ -15,6 +15,8 @@ module scpd.types.Stellar_SCP;
 
 import vibe.data.json;
 
+import agora.common.Serializer;
+
 import scpd.Cpp;
 import scpd.types.Stellar_types;
 import scpd.types.XDRBase;
@@ -145,6 +147,58 @@ struct SCPStatement {
             }
             return ret;
         }
+
+        ///
+        extern(D) void serialize (scope SerializeDg dg) const @trusted
+        {
+            alias SCPST = SCPStatementType;
+
+            serializePart(this.type_, dg);
+            final switch (this.type_)
+            {
+                // Right bound is exclusive
+                static foreach (SCPST type; SCPST.min .. cast(SCPST)(SCPST.max + 1))
+                {
+                case type:
+                    return serializePart(this.tupleof[type + 1], dg);
+                }
+            }
+        }
+
+        ///
+        extern(D) public static QT fromBinary (QT) (scope DeserializeDg dg,
+            scope const ref DeserializerOptions opts) @safe
+        {
+            alias SCPST = SCPStatementType;
+
+            auto type = deserializeFull!(typeof(QT.type_))(dg, opts);
+            final switch (type)
+            {
+                static foreach (SCPST type; SCPST.min .. cast(SCPST)(SCPST.max + 1))
+                {
+                case type:
+                    return forceNRVO!(type, QT)(dg, opts);
+                }
+            }
+        }
+
+        /// Helper for `fromBinary`
+        extern(D) private QT forceNRVO (SCPStatementType type, QT)
+            (scope DeserializeDg dg, scope const ref DeserializerOptions opts)
+            @trusted
+        {
+            static if (type == SCPStatementType.SCP_ST_PREPARE)
+                QT ret = { type_: type, prepare_: deserializeFull!(typeof(QT.prepare_))(dg, opts) };
+            else static if (type == SCPStatementType.SCP_ST_CONFIRM)
+                QT ret = { type_: type, confirm_: deserializeFull!(typeof(QT.confirm_))(dg, opts) };
+            else static if (type == SCPStatementType.SCP_ST_EXTERNALIZE)
+                QT ret = { type_: type, externalize_: deserializeFull!(typeof(QT.externalize_))(dg, opts) };
+            else static if (type == SCPStatementType.SCP_ST_NOMINATE)
+                QT ret = { type_: type, nominate_: deserializeFull!(typeof(QT.nominate_))(dg, opts) };
+            else
+                static assert(0, "Unsupported `type`: " ~ type.stringof);
+            return ret;
+        }
     }
 
     NodeID nodeID;
@@ -177,3 +231,26 @@ static assert(SCPBallot.sizeof == 32);
 static assert(Value.sizeof == 24);
 static assert(SCPQuorumSet.sizeof == 56);
 static assert(SCPEnvelope.sizeof == 168);
+
+/// Test symmetry of serialization
+unittest
+{
+    // TODO: Fill those with relevant data
+    // SCPStatement stmt;
+    // stmt.slotIndex = 42;
+
+    checkFromBinary!(SelfRef!PublicKey);
+    //testNRVO!SCPStatement();
+
+    // stmt.pledges.type_ = SCPStatementType.SCP_ST_PREPARE;
+    // testSymmetry(stmt);
+
+    // stmt.pledges.type_ = SCPStatementType.SCP_ST_CONFIRM;
+    // testSymmetry(stmt);
+
+    // stmt.pledges.type_ = SCPStatementType.SCP_ST_EXTERNALIZE;
+    // testSymmetry(stmt);
+
+    // stmt.pledges.type_ = SCPStatementType.SCP_ST_NOMINATE;
+    // testSymmetry(stmt);
+}
