@@ -80,6 +80,9 @@ public string isInvalidReason (const ref Enrollment enrollment,
         return Message;
     }
 
+    if (enrollment.cycle_length == 0 || enrollment.cycle_length == uint.max)
+        return "Enrollment: Invalid cycle length";
+
     return null;
 }
 

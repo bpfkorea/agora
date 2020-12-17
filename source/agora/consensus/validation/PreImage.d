@@ -86,7 +86,7 @@ unittest
     reverse(preimages);
 
     PreImageInfo prev_image = PreImageInfo(hashFull("abc"), preimages[0], 1);
-    auto params = new immutable(ConsensusParams)();
+    auto params = new immutable(ConsensusParams)(1008);
 
     // valid pre-image
     PreImageInfo new_image = PreImageInfo(hashFull("abc"), preimages[100], 101);

@@ -717,8 +717,8 @@ unittest
     assert(blocks.length == 3);  // two blocks + genesis block
 
     /// now generate 98 more blocks to make it 100 + genesis block (101 total)
-    genBlockTransactions(98);
-    assert(ledger.getBlockHeight() == 100);
+    genBlockTransactions(17);
+    assert(ledger.getBlockHeight() == 19);
 
     blocks = ledger.getBlocksFrom(Height(0)).takeExactly(10);
     assert(blocks[0] == ledger.params.Genesis);
@@ -734,24 +734,24 @@ unittest
     assert(blocks[0].header.height == 1);
     assert(blocks.length == 10);
 
-    blocks = ledger.getBlocksFrom(Height(50)).takeExactly(10);
-    assert(blocks[0].header.height == 50);
+    blocks = ledger.getBlocksFrom(Height(5)).takeExactly(10);
+    assert(blocks[0].header.height == 5);
     assert(blocks.length == 10);
 
-    blocks = ledger.getBlocksFrom(Height(95)).take(10);  // only 6 left from here (block 100 included)
-    assert(blocks.front.header.height == 95);
-    assert(blocks.walkLength() == 6);
+    blocks = ledger.getBlocksFrom(Height(15)).take(10);  // only 6 left from here (block 100 included)
+    assert(blocks.front.header.height == 15);
+    assert(blocks.walkLength() == 5);
 
-    blocks = ledger.getBlocksFrom(Height(99)).take(10);  // only 2 left from here (ditto)
-    assert(blocks.front.header.height == 99);
+    blocks = ledger.getBlocksFrom(Height(18)).take(10);  // only 2 left from here (ditto)
+    assert(blocks.front.header.height == 18);
     assert(blocks.walkLength() == 2);
 
-    blocks = ledger.getBlocksFrom(Height(100)).take(10);  // only 1 block available
-    assert(blocks.front.header.height == 100);
+    blocks = ledger.getBlocksFrom(Height(19)).take(10);  // only 1 block available
+    assert(blocks.front.header.height == 19);
     assert(blocks.walkLength() == 1);
 
     // over the limit => return up to the highest block
-    assert(ledger.getBlocksFrom(Height(0)).take(1000).walkLength() == 101);
+    assert(ledger.getBlocksFrom(Height(0)).take(1000).walkLength() == 20);
 
     // higher index than available => return nothing
     assert(ledger.getBlocksFrom(Height(1000)).take(10).walkLength() == 0);
@@ -1258,7 +1258,7 @@ unittest
         assert(ledger.last_block == cast()next_block);
         utxos = ledger.utxo_set.getUTXOs(WK.Keys.Genesis.address);
         assert(utxos.length == 8);
-        utxos.each!(utxo => assert(utxo.unlock_height == 1009));
+        utxos.each!(utxo => assert(utxo.unlock_height == params.ValidatorCycle + 1));
         assert(ledger.enroll_man.getEnrolledUTXOs(keys));
         assert(keys.length == 0);
     }
@@ -1295,7 +1295,7 @@ unittest
     {
         auto key_pair = KeyPair.random();
         const blocks = genBlocksToIndex(key_pair, params.ValidatorCycle, params);
-        assert(blocks.length == 1009);  // +1 for genesis
+        assert(blocks.length == params.ValidatorCycle + 1);  // +1 for genesis
 
         scope ledger = new ThrowingLedger(
             key_pair, blocks.takeExactly(params.ValidatorCycle), params);
@@ -1412,7 +1412,7 @@ unittest
     import agora.consensus.data.PreImageInfo;
     import agora.consensus.PreImage;
 
-    auto params = new immutable(ConsensusParams)(10);
+    auto params = new immutable(ConsensusParams)();
     const(Block)[] blocks = [ GenesisBlock ];
     scope ledger = new TestLedger(WK.Keys.NODE2, blocks, params);
 
@@ -1470,7 +1470,7 @@ unittest
     ledger.forceCreateBlock();
     assert(ledger.getBlockHeight() == 3);
 
-    foreach (height; 4 .. 10)
+    foreach (height; 4 .. 20)
     {
         new_txs = genGeneralBlock(new_txs);
         assert(ledger.getBlockHeight() == Height(height));
@@ -1503,19 +1503,19 @@ unittest
         assert(stored_enroll == enrollments[idx]);
     }
 
-    // create the 10th block to make the `Enrollment`s enrolled
+    // create the 20th block to make the `Enrollment`s enrolled
     new_txs = genGeneralBlock(new_txs);
-    assert(ledger.getBlockHeight() == Height(10));
-    ledger.enroll_man.clearExpiredValidators(Height(10));
-    auto b10 = ledger.getBlocksFrom(Height(10))[0];
-    assert(b10.header.enrollments.length == 4);
+    assert(ledger.getBlockHeight() == Height(20));
+    ledger.enroll_man.clearExpiredValidators(Height(20));
+    auto b20 = ledger.getBlocksFrom(Height(20))[0];
+    assert(b20.header.enrollments.length == 4);
 
-    // block 11
+    // block 21
     new_txs = genGeneralBlock(new_txs);
-    assert(ledger.getBlockHeight() == Height(11));
+    assert(ledger.getBlockHeight() == Height(21));
 
     // check missing validators not revealing pre-images.
-    // there are three missing validators at the height of 11.
+    // there are three missing validators at the height of 21.
     auto temp_txs = genTransactions(new_txs);
     temp_txs.each!(tx => assert(ledger.acceptTransaction(tx)));
 
