@@ -259,6 +259,7 @@ public class FullNode : API
         this.utxo_set = this.makeUTXOSet();
         this.pool = this.makeTransactionPool();
         this.enroll_man = this.makeEnrollmentManager();
+        this.network.setEnrollmentUTXOGetter(&this.getEnrollmentUTXO);
         this.transaction_relayer = this.makeTransactionRelayer();
         const ulong StackMaxTotalSize = 16_384;
         const ulong StackMaxItemSize = 512;
@@ -599,6 +600,28 @@ public class FullNode : API
                 commons_budget,
                 config.consensus,
                 config.node.block_interval_sec.seconds);
+    }
+
+    /***************************************************************************
+
+        Get the enrolled UTXO of this validator
+
+        Params:
+            utxo_key = key for a UTXO used in enrollment
+            utxo = will contain the UTXO for the `utxo_key`
+
+    ***************************************************************************/
+
+    public void getEnrollmentUTXO (ref Hash utxo_key, out UTXO utxo)
+        @trusted nothrow
+    {
+        if (utxo_key == Hash.init)
+            utxo_key = this.enroll_man.getEnrollmentKey();
+
+        if (utxo_key == Hash.init)
+            return;
+
+        this.utxo_set.peekUTXO(utxo_key, utxo);
     }
 
     /// Returns a newly constructed StatsServer

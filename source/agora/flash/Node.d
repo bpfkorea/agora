@@ -1574,11 +1574,23 @@ public class AgoraFlashNode : FlashNode
 
         foreach (pair; this.getManagedKeys())
         {
+            // TODO: This should use UTXO instead of PublicKey
+            // We should change `managed_keys` to be a set of UTXO hash
+            Hash utxo_key;
+            UTXO utxo;
+            this.network.findUTXO(pair.key, utxo_key, utxo);
+            if(utxo_key == Hash.init)
+            {
+                log.fatal("Couldn't find the UTXO for this node: {}.", pair.key);
+                assert(0);
+            }
+
             RegistryPayload payload =
             {
                 data:
                 {
-                    public_key : pair.key,
+                    utxo_key : utxo_key,
+                    utxo : utxo,
                     addresses : addresses,
                     seq : time(null)
                 }
@@ -1637,7 +1649,13 @@ public class AgoraFlashNode : FlashNode
 
         log.info("getFlashClient searching peer: {}", peer_pk);
 
-        auto payload = this.registry_client.getValidator(peer_pk);
+        // TODO: This should use UTXO instead of PublicKey
+        // We should change `managed_keys` to be a set of UTXO hash
+        Hash utxo_key;
+        UTXO utxo;
+        this.network.findUTXO(peer_pk, utxo_key, utxo);
+        auto payload = this.registry_client.getValidator(utxo_key);
+
         if (payload == RegistryPayload.init)
         {
             log.warn("Could not find mapping in registry for key {}", peer_pk);

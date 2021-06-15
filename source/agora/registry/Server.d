@@ -31,7 +31,7 @@ mixin AddLogger!();
 public final class NameRegistry: NameRegistryAPI
 {
     ///
-    private RegistryPayload[PublicKey] registry_map;
+    private RegistryPayload[Hash] registry_map;
 
     /// Validator count stats
     private RegistryStats registry_stats;
@@ -47,8 +47,7 @@ public final class NameRegistry: NameRegistryAPI
         Get network addresses corresponding to a public key
 
         Params:
-            public_key = the public key that was used to register
-                         the network addresses
+            key = the key that was used to register the network addresses
 
         Returns:
             Network addresses associated with the `public_key`
@@ -58,9 +57,9 @@ public final class NameRegistry: NameRegistryAPI
 
     ***************************************************************************/
 
-    public override const(RegistryPayload) getValidator (PublicKey public_key)
+    public override const(RegistryPayload) getValidator (Hash key)
     {
-        if (auto payload = public_key in registry_map)
+        if (auto payload = key in registry_map)
             return *payload;
         return RegistryPayload.init;
     }
@@ -85,18 +84,18 @@ public final class NameRegistry: NameRegistryAPI
     public override void putValidator (RegistryPayload registry_payload)
     {
         // verify signature
-        if (!registry_payload.verifySignature(registry_payload.data.public_key))
+        if (!registry_payload.verifySignature(registry_payload.data.utxo.output.address))
             throw new Exception("incorrect signature");
 
         // check if we received stale data
-        if (auto previous = registry_payload.data.public_key in registry_map)
+        if (auto previous = registry_payload.data.utxo_key in registry_map)
             if (previous.data.seq > registry_payload.data.seq)
                 throw new Exception("registry already has a more up-to-date version of the data");
 
         // register data
         log.info("Registering network addresses: {} for public key: {}", registry_payload.data.addresses,
-            registry_payload.data.public_key.toString());
-        registry_map[registry_payload.data.public_key] = registry_payload;
+            registry_payload.data.utxo.output.address.toString());
+        registry_map[registry_payload.data.utxo_key] = registry_payload;
         this.registry_stats.setMetricTo!"registry_record_count"(registry_map.length);
     }
 

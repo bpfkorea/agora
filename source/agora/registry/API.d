@@ -14,6 +14,7 @@
 module agora.registry.API;
 
 import agora.common.Types;
+import agora.consensus.data.UTXO;
 import agora.crypto.Hash;
 import agora.crypto.Key;
 import agora.crypto.Schnorr: Signature;
@@ -24,8 +25,11 @@ import vibe.web.rest;
 ///
 public struct RegistryPayloadData
 {
-    /// the public key that we want to register
-    public PublicKey public_key;
+    /// the hash of the UTXO that we want to register
+    public Hash utxo_key;
+
+    /// the UTXO that we want to register
+    public UTXO utxo;
 
     /// network addresses associated with the public key
     public const(Address)[] addresses;
@@ -66,8 +70,7 @@ public interface NameRegistryAPI
         Get network addresses corresponding to a public key
 
         Params:
-            public_key = the public key that was used to register
-                         the network addresses
+            key = the key that was used to register the network addresses
 
         Returns:
             Network addresses associated with the `public_key`
@@ -77,7 +80,7 @@ public interface NameRegistryAPI
 
     ***************************************************************************/
 
-    public const(RegistryPayload) getValidator (PublicKey public_key);
+    public const(RegistryPayload) getValidator (Hash hash);
 
     /***************************************************************************
 

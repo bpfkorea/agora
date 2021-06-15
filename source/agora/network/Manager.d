@@ -62,6 +62,9 @@ import std.range : walkLength;
 import core.stdc.time;
 import core.time;
 
+/// Delegate to find an UTXO for an address
+public alias EnrollmentUTXOGetter = void delegate (ref Hash, out UTXO) @trusted nothrow;
+
 /// Ditto
 public class NetworkManager
 {
@@ -73,9 +76,6 @@ public class NetworkManager
 
         /// Hash of the output used as collateral, only set if the node is a Validator
         Hash utxo;
-
-        /// PublicKey of the node. TODO: Remove and just use utxo.
-        PublicKey key;
 
         /// Client
         NetworkClient client;
@@ -239,7 +239,6 @@ public class NetworkManager
 
             NodeConnInfo node = {
                 is_validator : is_validator,
-                key : key,
                 utxo: utxo,
                 client : client
             };
@@ -421,6 +420,9 @@ public class NetworkManager
 
     /// Maximum connection tasks to run in parallel
     private enum MaxConnectionTasks = 10;
+
+    /// Delegate to get the enrolled UTXO of this validator
+    EnrollmentUTXOGetter getEnrollmentUTXO;
 
     /// Ctor
     public this (in Config config, Metadata metadata, ITaskManager taskman, Clock clock)
@@ -609,7 +611,15 @@ public class NetworkManager
             const req_delay = this.clock.localTime() - req_start;
             const dist_delay = req_delay / 2;  // divide evently
             const offset = (node_time - dist_delay) - req_start;
-            offsets ~= TimeInfo(node.key, node_time, req_delay, offset);
+
+            UTXO utxo_value;
+            this.getEnrollmentUTXO(node.utxo, utxo_value);
+            if(utxo_value == UTXO.init)
+            {
+                log.fatal("Couldn't find the UTXO for this node: {}.", node.utxo);
+                assert(0);
+            }
+            offsets ~= TimeInfo(utxo_value.output.address, node_time, req_delay, offset);
         }
 
         // we heard from at least one quorum slice
@@ -670,7 +680,7 @@ public class NetworkManager
                 ({
                     retry!
                     ({
-                        auto payload = this.registry_client.getValidator(key);
+                        auto payload = this.registry_client.getValidator(peer.key);
                         if (payload == RegistryPayload.init)
                         {
                             log.warn("Could not find mapping in registry for key {}", key);
@@ -754,6 +764,51 @@ public class NetworkManager
 
     /***************************************************************************
 
+        Set a EnrollmentUTXOGetter delegate
+
+        Params:
+            getEnrollmentUTXO = delegete to find an UTXO for this validator
+
+    ***************************************************************************/
+
+    public void setEnrollmentUTXOGetter(EnrollmentUTXOGetter getEnrollmentUTXO)
+    {
+        this.getEnrollmentUTXO = getEnrollmentUTXO;
+    }
+
+    /***************************************************************************
+
+        Get a UTXO and the hash of the UTXO for the PublicKey
+
+        Params:
+            key = the address to search the UTXO hash and UTXO with
+            utxo_key = will contain the UTXO hash
+            utxo = will contain the UTXO
+
+    ***************************************************************************/
+
+    public void findUTXO(in PublicKey key, out Hash utxo_key, out UTXO utxo)
+    {
+        foreach (peer; peers)
+        {
+            UTXO utxo_value;
+            this.getEnrollmentUTXO(peer.utxo, utxo);
+            if (utxo == UTXO.init)
+            {
+                log.fatal("Couldn't find the UTXO for this node: {}.", peer.utxo);
+                assert(0);
+            }
+            if (utxo_value.output.address == key)
+            {
+                utxo_key = peer.utxo;
+                utxo = utxo_value;
+                break;
+            }
+        }
+    }
+
+    /***************************************************************************
+
         Check if we should connect with the given address.
         If the address is banned, already connected, or already queued
         for a connection then return false.
@@ -825,11 +880,21 @@ public class NetworkManager
         if (!addresses.length)
             addresses = InetUtils.getPublicIPs();
 
+        Hash utxo_key;
+        UTXO utxo;
+        this.getEnrollmentUTXO(utxo_key, utxo);
+        if(utxo_key == Hash.init)
+        {
+            log.trace("Couldn't find the UTXO for this node: {}.",
+                this.validator_config.key_pair.address);
+        }
+
         RegistryPayload payload =
         {
             data:
             {
-                public_key : this.validator_config.key_pair.address,
+                utxo_key : utxo_key,
+                utxo : utxo,
                 addresses : addresses,
                 seq : time(null)
             }
