@@ -1,0 +1,7 @@
+@media (max-width: 768px) {
+    h1, h2 { font-size: 24px; }
+
+    #map {
+        height: 260px;
+    }
+}

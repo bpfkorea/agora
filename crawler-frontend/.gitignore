@@ -1,0 +1,5 @@
+# dist files created by webpack
+dist/
+
+# nodejs modules installed by npm
+node_modules

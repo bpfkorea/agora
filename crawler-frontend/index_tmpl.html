@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bosagora network</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:300">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Favicon -->
+    <link rel="icon" href="bosagora_favicon.png">
+
+</head>
+
+<body>
+
+    <!-- Top menu -->
+    <nav class="navbar navbar-dark fixed-top navbar-expand-md navbar-no-bg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Bosagora network</a>
+            <button id="btnNav" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#geo-content">Location</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#os-content">Os</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#client-content">Clients</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#network-content">Network</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link scroll-link" href="#height-content">Height</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Geo content -->
+    <div class="geo-content geoBgStyle">
+        <div class="container-fluid">
+            <div class="row justify-content-center text wow fadeInLeftBig">
+                <h1 class="display1 mb-5">Node Locations</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 text wow fadeInLeftBig ">
+                    <div id="geotable"></div>
+                </div>
+
+                <div class="col-lg-8 text">
+                    <div id="map"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- OS, Client, Network, Height stats -->
+    <div class="section-container statsBgStyle">
+
+        <!-- Os -->
+        <div class="container">
+            <div class="row os-content">
+                <div class="wow fadeInLeftBig col-md-12 text">
+                    <h1 class="display1">OS</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 text wow fadeInLeftBig">
+                    <div id="osTable"></div>
+                </div>
+                <div class="col-md-7 text wow fadeInUp">
+                    <div id="osPieChart"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Client -->
+        <div class="container">
+            <div class="row client-content">
+                <div class="wow fadeInLeftBig col-md-12 text">
+                    <h1 class="display1">Client Version</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 text wow fadeInLeftBig">
+                    <div id="clientTable"></div>
+                </div>
+                <div class="col-md-7 text wow fadeInUp">
+                    <div id="clientPieChart"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network -->
+        <div class="container">
+            <div class="row network-content">
+                <div class="wow fadeInLeftBig col-md-12 text">
+                    <h1 class="display1">Network Address</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-5 text wow fadeInLeftBig">
+                    <div id="networkTable"></div>
+                </div>
+                <div class="col-md-7 text wow fadeInUp">
+                    <div id="networkPieChart"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blockchain Height -->
+        <div class="container">
+            <div class="row height-content">
+                <div class="wow fadeInLeftBig col-md-12 text">
+                    <h1 class="display1">Blockchain Height</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-1 text">
+                    <div></div>
+                </div>
+                <div class="col-md-10 text wow fadeInLeftBig">
+                    <div id="heightBarChart"></div>
+                </div>
+                <div class="col-md-1 text">
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 footer-left">
+                    <p><a href="https://bosagora.io/">© 2021 BOSAGORA Foundation</a></p>
+                </div>
+
+                <div class="col-sm-6 offset-md-1 footer-right">
+                    <a href="https://twitter.com/BOSAGORA1"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/BOSAGORA/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://medium.com/bosagora"><i class="fab fa-medium"></i></a>
+                    <a href="https://www.youtube.com/channel/UCjcTwkskyTmAwHpqv9Oynig"><i
+                            class="fab fa-youtube"></i></a>
+                    <a href="https://github.com/bosagora"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer="defer" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        window.agora_node_endpoint = "<%= htmlWebpackPlugin.options.agora_node_endpoint %>"
+    </script>
+    <script defer="defer"
+        src="https://maps.googleapis.com/maps/api/js?key=<%= htmlWebpackPlugin.options.google_maps_api_key %>&callback=window.startDrawing&libraries=visualization&v=weekly"></script>
+</body>
+
+</html>

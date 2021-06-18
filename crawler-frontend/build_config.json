@@ -1,0 +1,4 @@
+{
+    "google_maps_api_key": "<Please place your Google Maps API key here>",
+    "agora_node_endpoint": "../../../test/data/network_info.json"
+}

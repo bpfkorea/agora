@@ -1,0 +1,167 @@
+/***** Navbar *****/
+
+.navbar {
+	background: #444;
+	-o-transition: all .6s; -moz-transition: all .6s; -webkit-transition: all .6s; -ms-transition: all .6s; transition: all .6s;
+	backface-visibility: hidden;
+}
+.navbar.navbar-no-bg { background: transparent; }
+
+.navbar-dark .navbar-nav { font-size: 15px; color: #fff; font-weight: 600; }
+.navbar-dark .navbar-nav .nav-link { color: #fff; color: rgba(255, 255, 255, 0.8); border: 0; }
+.navbar-dark .navbar-nav .nav-link:hover { color: #fff; }
+.navbar-dark .navbar-nav .nav-link:focus { color: #fff; outline: 0; }
+
+.navbar-expand-md .navbar-nav .nav-link { padding-left: 1rem; padding-right: 1rem; }
+
+.navbar-brand {
+	width: 136px;
+	background: url(../img/bosagora_logo.png) left center no-repeat;
+	border: 0;
+	text-indent: -99999px;
+}
+
+/***** Geo content *****/
+
+#map {
+    height: 560px;
+}
+
+.geo-content {
+    padding: 4rem 0 2rem 0;
+    margin-bottom: 0rem;
+}
+
+.geoBgStyle {
+    background: url("../img/sky_bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.geo-content table {
+    margin: 0;
+    padding: 40;
+    background-color: transparent;
+}
+
+.geo-content .text {
+	color: #fff;
+}
+
+.geo-content .text h1 {
+	margin-top: 25px;
+	color: #fff;
+}
+
+/***** Geo Google Table settings *****/
+
+#geotable th.header-cell-style {
+    background-image: none;
+    font-size: 1.2rem;
+    min-width: 8rem;
+    border: 0px;
+}
+
+#geotable td.table-cell-style {
+    background-image: none;
+    font-size: 1.2rem;
+    border: 0px;
+}
+
+.header-row-style {
+    background-color: transparent;
+}
+
+.row-style {
+    background-color: transparent;
+}
+
+.odd-row-style {
+    background-color: transparent;
+}
+
+
+/***** Stats *****/
+
+.statsBgStyle {
+    background: url("../img/light_bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+}
+
+.stats-table-cell-style {
+    min-width: 5rem;
+}
+
+#heightBarChart {
+    height: 40rem;
+}
+
+/***** Footer *****/
+
+footer {
+	padding: 40px 0 0 0;
+	background: #444;
+	color: #aaa;
+	text-align: left;
+}
+
+.footer-left a { color: #ddd; border-bottom: 1px dashed #ddd; }
+.footer-left a:hover, .footer-left a:focus { color: #ddd; border: 0; }
+
+.footer-right {
+	text-align: right;
+}
+
+.footer-right a {
+	margin: 0 6px;
+    font-size: 32px;
+    color: #aaa;
+}
+.footer-right a:hover, .footer-right a:focus { color: #eee; }
+
+/***** Common *****/
+
+.section-container {
+    margin: 0 auto;
+    padding-bottom: 80px;
+}
+
+.section-container-image-bg .section-description p {
+	opacity: 0.8;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    color: #888;
+    line-height: 30px;
+    text-align: center;
+}
+
+a, a:hover, a:focus { color: #9b59b6; text-decoration: none; transition: all .3s; }
+
+h1, h2 {
+	margin-top: 10px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 38px;
+    font-weight: 300;
+    color: #555;
+    line-height: 50px;
+}
+
+h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-size: 22px;
+    font-weight: 300;
+    color: #555;
+    line-height: 30px;
+}
+
+::-moz-selection { background: #9b59b6; color: #fff; text-shadow: none; }
+::selection { background: #9b59b6; color: #fff; text-shadow: none; }

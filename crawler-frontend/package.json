@@ -1,0 +1,32 @@
+{
+  "name": "agora-crawler-frontend",
+  "version": "1.0.0",
+  "description": "Frontend for agora network crawler",
+  "private": true,
+  "scripts": {
+    "build-dev": "npx webpack --mode=development",
+    "build-prod": "npx webpack --mode=production"
+  },
+  "author": "BOSAGORA Foundation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bosagora/agora.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bosagora/agora/issues"
+  },
+  "homepage": "https://github.com/bosagora/agora/blob/v0.x.x/crawler_frontend/README.md",
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.0",
+    "css-loader": "^5.2.6",
+    "html-webpack-plugin": "^5.3.1",
+    "http-server": "^0.12.3",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.38.1",
+    "webpack-cli": "^4.7.2"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3"
+  }
+}
