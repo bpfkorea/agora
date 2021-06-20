@@ -839,22 +839,6 @@ public class FullNode : API
     * the business code.                                                       *
     ***************************************************************************/
 
-    /***************************************************************************
-
-        Register the given address as a listener for gossip / consensus messages.
-
-        This register the given address into the `NetworkManager`.
-
-        Params:
-            address = the address of node to register
-
-    ***************************************************************************/
-
-    public void registerListener (Address address) @trusted
-    {
-        this.network.registerListener(address);
-    }
-
     /// GET: /node_info
     public override NodeInfo getNodeInfo () pure nothrow @safe
     {

@@ -478,14 +478,6 @@ public class NetworkManager
         this.discovery_task.add(node.client);
         this.metadata.peers.put(node.client.address);
         this.connection_tasks.remove(node.client.address);
-
-        this.registerAsListener(node.client);
-    }
-
-    /// Overridable for LocalRest which uses public keys
-    protected void registerAsListener (NetworkClient client)
-    {
-        client.registerListener();
     }
 
     /***************************************************************************
@@ -740,25 +732,6 @@ public class NetworkManager
                 this.connection_tasks[address].start();
             }
         }
-    }
-
-    /***************************************************************************
-
-        Register the given address as a listener for gossip / consensus messages.
-
-        This adds the given address to the connecting queue, but does not
-        immediately connect to it. Addresses are currently handled in the
-        start() loop, which will exit as soon as 'min_listeners' are reached.
-
-        Params:
-            address = the address of node to register
-
-    ***************************************************************************/
-
-    public void registerListener (Address address)
-    {
-        if (this.shouldEstablishConnection(address))
-            this.addAddress(address);
     }
 
     /***************************************************************************

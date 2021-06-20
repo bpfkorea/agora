@@ -262,53 +262,6 @@ public class NetworkClient
 
     /***************************************************************************
 
-        Register the node's address to listen for gossiping messages.
-
-        This method is to call the API endpoint, or 'register_listener` which
-        is not declared as one of the `FullNode` API in `FullNode.d` because
-        we must use the `HTTPServerRequest` object to retrieve the address of
-        a client. The `register_address` REST path is registered in the `runNode`
-        function of `Runner.d`.
-
-        Throws:
-            `Exception` if the request failed.
-
-    ***************************************************************************/
-
-    public void registerListener ()
-    {
-        foreach (idx; 0 .. this.max_retries)
-        {
-            try
-            {
-                int statusCode;
-                requestHTTP(format("%s/register_listener", this.address),
-                    (scope req) {
-                        req.method = HTTPMethod.POST;
-                    },
-                    (scope res) {
-                        statusCode = res.statusCode;
-                        if (res.statusCode != 200)
-                            this.log.info("Response of {}/register_listener : {}",
-                                this.address, res);
-
-                    }
-                );
-                if (statusCode == 200)
-                    return;
-           }
-           catch (Exception ex)
-           {
-               this.log.format(LogLevel.Trace, "Request '{}' to {} failed: {}",
-                   "registerListener", this.address, ex.message);
-               if (idx + 1 < this.max_retries) // wait after each failure except last
-                   this.taskman.wait(this.retry_delay);
-           }
-       }
-    }
-
-    /***************************************************************************
-
         Get the network info of the node, stored in the
         `node_info` parameter if the request succeeded.
 

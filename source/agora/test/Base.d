@@ -1151,38 +1151,6 @@ public class TestAPIManager
 
 /*******************************************************************************
 
-    Adds additional networking capabilities for use in unittests
-
-*******************************************************************************/
-
-public class TestNetworkClient : NetworkClient
-{
-    /// See NetworkClient ctor
-    public this (Parameters!(NetworkClient.__ctor) args)
-    {
-        super(args);
-    }
-
-    /***************************************************************************
-
-        Register the node's address to listen for gossiping messages.
-
-        address = the adddress of the node
-
-        Throws:
-            `Exception` if the request failed.
-
-    ***************************************************************************/
-
-    public void registerListenerAddress (Address address)
-    {
-        return this.attemptRequest!(TestAPI.registerListenerAddress, Throw.Yes)(
-            cast(TestAPI)this.api, address);
-    }
-}
-
-/*******************************************************************************
-
     Base class for `NetworkManager` used in unittests.
     This class is instantiated once per unittested node.
 
@@ -1241,15 +1209,6 @@ public class TestNetworkManager : NetworkManager
                "' without first creating it");
     }
 
-    ///
-    protected final override TestNetworkClient getNetworkClient (
-        ITaskManager taskman, BanManager banman, Address address,
-        ValidatorAPI api, Duration retry, size_t max_retries)
-    {
-        return new TestNetworkClient(taskman, banman, address, api, retry,
-            max_retries);
-    }
-
     /***************************************************************************
 
         Params:
@@ -1287,12 +1246,6 @@ public class TestNetworkManager : NetworkManager
         (Address address)
     {
         assert(0, "Not supported");
-    }
-
-    /// Overridable for LocalRest which uses public keys
-    protected final override void registerAsListener (NetworkClient client)
-    {
-        (cast(TestNetworkClient)client).registerListenerAddress(this.address);
     }
 }
 
@@ -1379,23 +1332,6 @@ public interface TestAPI : ValidatorAPI
 
     /// Get the active validator count for the current block height
     public ulong countActive (in Height height);
-
-    /***************************************************************************
-
-        Register the given address to listen for gossiping messages.
-
-        This method is the API endpoint for LocalRest, which is corresponding to
-        the `register_address` REST interface.
-
-        Params:
-            address = the address of node to register
-
-        Throws:
-            `Exception` if the request failed.
-
-    ***************************************************************************/
-
-    public void registerListenerAddress (Address address);
 
     /// Get the list of expected quorum configs
     public QuorumConfig[] getExpectedQuorums (in PublicKey[], Height);
@@ -1556,12 +1492,6 @@ private mixin template TestNodeMixin ()
     public override ulong countActive (in Height height)
     {
         return this.enroll_man.validator_set.countActive(height);
-    }
-
-    /// Localrest: the address (key) is provided directly to the network manager
-    public override void registerListenerAddress (Address address)
-    {
-        this.network.registerListener(address);
     }
 
     /// Manually initiate a clock synchronization event

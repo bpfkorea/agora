@@ -112,21 +112,6 @@ public Listeners runNode (Config config)
         return result.node.getBanManager().isBanned(address.toAddressString());
     };
 
-    // Register a path for `register_listener` adding client's address.
-    router.route("/register_listener")
-        .post((scope HTTPServerRequest req, scope HTTPServerResponse res)
-        {
-            string addr = format("http://%s:%d",
-                req.clientAddress.toAddressString(), req.clientAddress.port());
-
-            // TODO: disabled as this code is wrong. The client port here is not
-            // the listening port of the node which tried to establish a connection.
-            version (none)
-                result.node.registerListener(addr);
-            res.statusCode = 200;
-            res.writeVoidBody();
-        });
-
     setTimer(0.seconds, &result.node.start, Periodic.No);  // asynchronous
 
     auto tls_ctx = getTLSContext();

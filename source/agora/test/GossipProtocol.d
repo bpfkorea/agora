@@ -65,9 +65,6 @@ unittest
     scope(failure) network.printLogs();
     network.waitForDiscovery();
 
-    import core.thread;
-    Thread.sleep(2.seconds);  // registerListener() can take a while..
-
     auto nodes = network.clients;
     auto node_1 = nodes[0];
 
