@@ -60,12 +60,17 @@ jobs:
         brew install coreutils libsodium pkg-config
         echo "LIBRARY_PATH=${LD_LIBRARY_PATH-}:/usr/local/lib/" >> $GITHUB_ENV
         echo "PKG_CONFIG_PATH=/usr/local/opt/sqlite/lib/pkgconfig:/usr/local/opt/openssl@1.1/lib/pkgconfig/" >> $GITHUB_ENV
+        env | grep HOME
+        curl https://get.wasmer.io -sSfL | WASMER_DIR=${HOME}/.wasmer sh
+        echo 'WASMER_DIR=${HOME}/.wasmer' >> $GITHUB_ENV
 
     - name: '[Linux] Install dependencies & setup environment'
       if: runner.os == 'Linux'
       run: |
         sudo apt-get update
         sudo apt-get install libsodium-dev libsqlite3-dev clang
+        curl https://get.wasmer.io -sSfL | WASMER_DIR=${HOME}/.wasmer sh
+        echo 'WASMER_DIR=${HOME}/.wasmer' >> $GITHUB_ENV
 
     - name: '[Windows] Install dependencies & setup environment'
       if: runner.os == 'Windows'

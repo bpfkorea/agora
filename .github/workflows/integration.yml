@@ -27,6 +27,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install libsodium-dev libsqlite3-dev clang
 
+    - name: Install Wasmer
+      run: |
+        curl https://get.wasmer.io -sSfL | WASMER_DIR=${HOME}/.wasmer sh
+        echo 'WASMER_DIR=${HOME}/.wasmer' >> $GITHUB_ENV
+
     - name: Checkout faucet
       uses: actions/checkout@v2
       with:

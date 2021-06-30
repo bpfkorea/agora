@@ -3,6 +3,10 @@ FROM bpfk/agora-builder:latest AS Builder
 ARG DUB_OPTIONS
 ARG AGORA_VERSION="HEAD"
 RUN apk --no-cache add linux-headers python3 npm
+WORKDIR /
+RUN wget https://github.com/wasmerio/wasmer/releases/download/2.0.0/wasmer-linux-musl-amd64.tar.gz
+RUN tar -zxvf wasmer-linux-musl-amd64.tar.gz
+RUN wasmer -V
 ADD . /root/agora/
 WORKDIR /root/agora/talos/
 RUN npm ci && npm run build
@@ -22,5 +26,9 @@ RUN apk --no-cache add --allow-untrusted -X /root/packages/build/ ldc-runtime=1.
 RUN apk --no-cache add llvm-libunwind libgcc libsodium libstdc++ sqlite-libs
 COPY --from=Builder /root/agora/talos/build/ /usr/share/agora/talos/
 COPY --from=Builder /root/agora/build/agora /usr/local/bin/agora
+WORKDIR /
+RUN wget https://github.com/wasmerio/wasmer/releases/download/2.0.0/wasmer-linux-musl-amd64.tar.gz
+RUN tar -zxvf wasmer-linux-musl-amd64.tar.gz
+RUN wasmer -V
 WORKDIR /agora/
 ENTRYPOINT [ "/usr/local/bin/agora" ]

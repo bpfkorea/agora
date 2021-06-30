@@ -39,6 +39,7 @@ Additionally, the following are dependencies:
 - `openssl`:    Binary (to detect the version) and development library
 - `sqlite3`:    Development library
 - `zlib`:       Development library
+- `wasmer`:     Web Assembly Engine - [Install](https://github.com/wasmerio/wasmer-install#readme)
 
 Additionally, on OSX, `PKG_CONFIG_PATH` needs to be properly set to pick up `sqlite3` and `openssl`.
 Provided you installed those packages via `brew`, you can run the following command prior to building:

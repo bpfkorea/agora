@@ -36,6 +36,11 @@ jobs:
           sudo apt-get install libsodium-dev
           sudo apt-get install clang
 
+      - name: Install Wasmer
+        run: |
+          curl https://get.wasmer.io -sSfL | WASMER_DIR=${HOME}/.wasmer sh
+          echo 'WASMER_DIR=${HOME}/.wasmer' >> $GITHUB_ENV
+
       - name: Build documentation
         run: |
           AGORA_VERSION=HEAD dub build -b ddox

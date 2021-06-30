@@ -58,3 +58,6 @@
 [submodule "serialization"]
 	path = submodules/serialization
 	url = https://github.com/bosagora/serialization.git
+[submodule "wasmer-d"]
+	path = submodules/wasmer-d
+	url = https://github.com/chances/wasmer-d.git

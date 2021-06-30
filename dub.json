@@ -175,6 +175,7 @@
         "localrest":        { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] },
         "ocean":            { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] },
         "serialization":    { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] },
-        "vibe-d":           { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] }
+        "vibe-d":           { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] },
+        "wasmer":           { "version": "*", "dflags" : [ "-preview=in", "-revert=dtorfields" ] }
     }
 }

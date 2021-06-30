@@ -1,6 +1,10 @@
 # Build Agora from source
 FROM bpfk/agora-builder:latest AS RegistryBuilder
 ARG AGORA_VERSION="HEAD"
+WORKDIR /
+RUN wget https://github.com/wasmerio/wasmer/releases/download/2.0.0/wasmer-linux-musl-amd64.tar.gz
+RUN tar -zxvf wasmer-linux-musl-amd64.tar.gz
+RUN wasmer -V
 ADD . /root/agora/
 WORKDIR /root/agora/
 RUN apk --no-cache add llvm-libunwind-dev dub
