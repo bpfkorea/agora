@@ -94,7 +94,7 @@ private class NodeManager (): TestAPIManager
         if (this.nodes.length < 1)  // Use first node as test node
         {
             assert(conf.validator.enabled);
-            log.trace("Create node {} as cathup test node", this.nodes.length);
+            log.trace("Create node #{} ({}) as cathup test node", this.nodes.length, conf.validator.key_pair.address);
             this.addNewNode!(TestNode!())(conf, file, line);
         }
         else
