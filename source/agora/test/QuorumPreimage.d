@@ -148,25 +148,25 @@ unittest
         QuorumConfig(6, [A, B, G, C, E, F, H]),
 
         // 1
-        QuorumConfig(6, [A, B, G, C, E, F, H]),
+        QuorumConfig(6, [A, B, G, C, D, E, H]),
 
         // 2
-        QuorumConfig(6, [A, B, G, C, D, E, H]),
+        QuorumConfig(6, [A, G, C, D, E, F, H]),
 
         // 3
         QuorumConfig(6, [A, G, C, D, E, F, H]),
 
         // 4
-        QuorumConfig(6, [A, B, G, C, E, F, H]),
+        QuorumConfig(6, [B, G, C, D, E, F, H]),
 
         // 5
-        QuorumConfig(6, [A, G, C, D, E, F, H]),
+        QuorumConfig(6, [A, B, G, D, E, F, H]),
 
         // 6
         QuorumConfig(6, [A, B, G, C, D, F, H]),
 
         // 7
-        QuorumConfig(6, [B, G, C, D, E, F, H]),
+        QuorumConfig(6, [A, B, G, C, D, F, H]),
     ];
 
     static assert(quorums_1 != quorums_2);
@@ -195,28 +195,28 @@ unittest
     // which use a different preimage
     enum quorums_3 = [
         // 0
-        QuorumConfig(6, [A, G, C, D, E, F, H]),
+        QuorumConfig(6, [A, B, G, C, D, F, H]),
 
         // 1
-        QuorumConfig(6, [A, B, G, C, D, E, H]),
+        QuorumConfig(6, [A, B, G, D, E, F, H]),
 
         // 2
-        QuorumConfig(6, [A, G, C, D, E, F, H]),
+        QuorumConfig(6, [B, G, C, D, E, F, H]),
 
         // 3
         QuorumConfig(6, [B, G, C, D, E, F, H]),
 
         // 4
-        QuorumConfig(6, [A, B, G, C, E, F, H]),
+        QuorumConfig(6, [A, B, G, C, D, E, H]),
 
         // 5
-        QuorumConfig(6, [A, B, G, C, E, F, H]),
+        QuorumConfig(6, [A, B, G, D, E, F, H]),
 
         // 6
         QuorumConfig(6, [A, B, G, C, E, F, H]),
 
         // 7
-        QuorumConfig(6, [A, B, G, C, D, E, H]),
+        QuorumConfig(6, [A, B, G, C, E, F, H]),
     ];
 
     static assert(quorums_2 != quorums_3);

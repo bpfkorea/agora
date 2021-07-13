@@ -28,6 +28,7 @@ import agora.test.Base;
 
 import geod24.Registry;
 
+import core.thread;
 import std.array;
 
 /// test behavior when getBlockHeight() call fails
@@ -177,6 +178,12 @@ unittest
 
     node_bad.clearFilter();
     node_validators.each!(node => node.clearFilter());
+
+    // FIXME: This waiting time is now needed to give the nodes
+    // the time to create the seeds of all the pre-images. But
+    // this waiting time should removed by setting default seeds
+    // to `PreImageCycle`.
+    Thread.sleep(10.seconds);
 
     // node test will accept its blocks from node_validator,
     // as the blocks in node_bad do not pass validation

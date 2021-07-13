@@ -415,12 +415,12 @@ private struct BlockHeaderFmt
 @safe unittest
 {
     static immutable GenesisHStr = `Height: 0, Prev: 0x0000...0000, Root: 0xaf40...c93d, Enrollments: [
-{ utxo: 0x210f...3b64, seed: 0x0d74...0a8e, cycles: 20, sig: 0x0183...a67c }
-{ utxo: 0x3b44...ba77, seed: 0x45a8...6332, cycles: 20, sig: 0xe3f9...ac00 }
-{ utxo: 0x7bac...ea8f, seed: 0x0725...9c0c, cycles: 20, sig: 0x375e...ea05 }
-{ utxo: 0x9b27...6b2c, seed: 0xe2f3...cf5d, cycles: 20, sig: 0xa72e...92b5 }
-{ utxo: 0xab19...1255, seed: 0x2789...37bb, cycles: 20, sig: 0xe9a3...d55f }
-{ utxo: 0xdb76...2a0a, seed: 0x6724...e510, cycles: 20, sig: 0x07ff...d225 }]
+{ utxo: 0x210f...3b64, seed: 0xcfc5...33e1, cycles: 20, sig: 0x0183...5f8c }
+{ utxo: 0x3b44...ba77, seed: 0xff4e...d698, cycles: 20, sig: 0xe3f9...9bb0 }
+{ utxo: 0x7bac...ea8f, seed: 0xfb40...06ea, cycles: 20, sig: 0x375e...b319 }
+{ utxo: 0x9b27...6b2c, seed: 0xe0dc...7c3e, cycles: 20, sig: 0xa72e...97c8 }
+{ utxo: 0xab19...1255, seed: 0x2bd8...ee80, cycles: 20, sig: 0xe9a3...2c74 }
+{ utxo: 0xdb76...2a0a, seed: 0x00eb...fb56, cycles: 20, sig: 0x07ff...88b7 }]
 Signature: 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
 Validators: 0/0 !(),
 Random seed: [0x0000...0000],
@@ -458,12 +458,12 @@ private struct BlockFmt
 @safe unittest
 {
     static immutable ResultStr = `Height: 0, Prev: 0x0000...0000, Root: 0xaf40...c93d, Enrollments: [
-{ utxo: 0x210f...3b64, seed: 0x0d74...0a8e, cycles: 20, sig: 0x0183...a67c }
-{ utxo: 0x3b44...ba77, seed: 0x45a8...6332, cycles: 20, sig: 0xe3f9...ac00 }
-{ utxo: 0x7bac...ea8f, seed: 0x0725...9c0c, cycles: 20, sig: 0x375e...ea05 }
-{ utxo: 0x9b27...6b2c, seed: 0xe2f3...cf5d, cycles: 20, sig: 0xa72e...92b5 }
-{ utxo: 0xab19...1255, seed: 0x2789...37bb, cycles: 20, sig: 0xe9a3...d55f }
-{ utxo: 0xdb76...2a0a, seed: 0x6724...e510, cycles: 20, sig: 0x07ff...d225 }]
+{ utxo: 0x210f...3b64, seed: 0xcfc5...33e1, cycles: 20, sig: 0x0183...5f8c }
+{ utxo: 0x3b44...ba77, seed: 0xff4e...d698, cycles: 20, sig: 0xe3f9...9bb0 }
+{ utxo: 0x7bac...ea8f, seed: 0xfb40...06ea, cycles: 20, sig: 0x375e...b319 }
+{ utxo: 0x9b27...6b2c, seed: 0xe0dc...7c3e, cycles: 20, sig: 0xa72e...97c8 }
+{ utxo: 0xab19...1255, seed: 0x2bd8...ee80, cycles: 20, sig: 0xe9a3...2c74 }
+{ utxo: 0xdb76...2a0a, seed: 0x00eb...fb56, cycles: 20, sig: 0x07ff...88b7 }]
 Signature: 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
 Validators: 0/0 !(),
 Random seed: [0x0000...0000],
@@ -513,12 +513,12 @@ private struct RangeFmt (R)
     static immutable ResultStr = `
 ====================================================
 Height: 0, Prev: 0x0000...0000, Root: 0xaf40...c93d, Enrollments: [
-{ utxo: 0x210f...3b64, seed: 0x0d74...0a8e, cycles: 20, sig: 0x0183...a67c }
-{ utxo: 0x3b44...ba77, seed: 0x45a8...6332, cycles: 20, sig: 0xe3f9...ac00 }
-{ utxo: 0x7bac...ea8f, seed: 0x0725...9c0c, cycles: 20, sig: 0x375e...ea05 }
-{ utxo: 0x9b27...6b2c, seed: 0xe2f3...cf5d, cycles: 20, sig: 0xa72e...92b5 }
-{ utxo: 0xab19...1255, seed: 0x2789...37bb, cycles: 20, sig: 0xe9a3...d55f }
-{ utxo: 0xdb76...2a0a, seed: 0x6724...e510, cycles: 20, sig: 0x07ff...d225 }]
+{ utxo: 0x210f...3b64, seed: 0xcfc5...33e1, cycles: 20, sig: 0x0183...5f8c }
+{ utxo: 0x3b44...ba77, seed: 0xff4e...d698, cycles: 20, sig: 0xe3f9...9bb0 }
+{ utxo: 0x7bac...ea8f, seed: 0xfb40...06ea, cycles: 20, sig: 0x375e...b319 }
+{ utxo: 0x9b27...6b2c, seed: 0xe0dc...7c3e, cycles: 20, sig: 0xa72e...97c8 }
+{ utxo: 0xab19...1255, seed: 0x2bd8...ee80, cycles: 20, sig: 0xe9a3...2c74 }
+{ utxo: 0xdb76...2a0a, seed: 0x00eb...fb56, cycles: 20, sig: 0x07ff...88b7 }]
 Signature: 0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000,
 Validators: 0/0 !(),
 Random seed: [0x0000...0000],
@@ -534,7 +534,7 @@ Outputs (6):
 boa1xzval2a3...gsh2(2,000,000)<Freeze>, boa1xzval3ah...tv9n(2,000,000)<Freeze>, boa1xzval4nv...6gfy(2,000,000)<Freeze>,
 boa1xrval5rz...jkm8(2,000,000)<Freeze>, boa1xrval6hd...34l5(2,000,000)<Freeze>, boa1xrval7gw...scrh(2,000,000)<Freeze>
 ====================================================
-Height: 1, Prev: 0x50fe...6ea0, Root: 0xbbc4...73d7, Enrollments: []
+Height: 1, Prev: 0x2515...9397, Root: 0xbbc4...73d7, Enrollments: []
 Signature: 0x000000000000000000016f605ea9638d7bff58d2c0cc2467c18e38b36367be78000000000000000000016f605ea9638d7bff58d2c0cc2467c18e38b36367be78,
 Validators: 4/6 !(1, 4),
 Random seed: [0x0000...0000],

@@ -436,7 +436,7 @@ public class EnrollmentManager
     {
         // Generate the random seed to use
         auto cycle = PreImageCycle(key.secret, cycle_length);
-        return makeEnrollment(utxo, key, cycle[height], cycle_length, cycle.nonce);
+        return makeEnrollment(utxo, key, cycle[height], cycle_length);
     }
 
     /***************************************************************************
@@ -1267,7 +1267,8 @@ unittest
         assert(man.addValidator(enroll, kp.address, Height(1), storage.getUTXOFinder(),
             storage.storage) is null);
 
-        auto cache = PreImageCache(PreImageCycle.NumberOfCycles, params.ValidatorCycle);
+        auto cache = PreImageCache(PreImageCycle.PreImageCount / params.ValidatorCycle,
+            params.ValidatorCycle);
         cache.reset(hashMulti(kp.secret, "consensus.preimages", 0));
 
         PreImageInfo preimage = { utxo : utxos[idx],
