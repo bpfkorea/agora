@@ -2,9 +2,9 @@
 
    Defines a monetary type used in the blockchain
 
-   This struct can hold an amount between 0 and 500_000_000 * 10^7,
-   as there is an absolute maximum supply of 500M and each coin can be divided
-   in up to 10^7 units.
+   This struct can hold an amount between 0 and 4_948_159_353 * 10^7,
+   as there is an absolute maximum supply of 4_948_159_353 coins and
+   each coin can be divided in up to 10^7 units.
 
    This struct does not expose operation overloading on purpose.
    Having operator overloading would mean that any error should be reported
@@ -33,7 +33,7 @@ public struct Amount
     /// Number of units ('cents') per coins
     public static immutable Amount UnitPerCoin   = Amount(10_000_000, true);
     /// Maximum number of BOA coins that can ever be in circulation
-    public static immutable ulong  MaxCoinSupply = 500_000_000;
+    public static immutable ulong  MaxCoinSupply = 4_948_159_353;
     /// Maximum amount of money that can ever be in circulation
     public static immutable Amount MaxUnitSupply =
         Amount(UnitPerCoin.value * MaxCoinSupply, true);
@@ -84,6 +84,14 @@ public struct Amount
         scope SinkT dg = (scope v) { ret ~= v; };
         this.toString(dg);
         return ret;
+    }
+
+    /// Non-throwing version of toString
+    /// Use it only for debugging when called from nothrow function
+    public string toStringNT () const @safe nothrow
+    {
+        try return this.toString();
+        catch (Exception e) {return "Exception happened when calling Amount.toStringNT()";}
     }
 
     /// Support for Vibe.d deserialization
@@ -448,8 +456,8 @@ nothrow pure @nogc @safe unittest
 pure @safe unittest
 {
     import std.exception;
-    assert(Amount.fromString(`5000000000000000`) == Amount.MaxUnitSupply);
-    assertThrown!Exception(Amount.fromString(`5000000000000001`));
+    assert(Amount.fromString(`49481593530000000`) == Amount.MaxUnitSupply);
+    assertThrown!Exception(Amount.fromString(`49481593530000001`));
     Amount maxv = Amount.MaxUnitSupply;
     assert(maxv.isValid());
     assert(!maxv.add(Amount(1)));
@@ -461,7 +469,7 @@ pure @safe nothrow @nogc unittest
     assert(Amount.UnitPerCoin.integral() == 1);
     assert(Amount.UnitPerCoin.decimal() == 0);
 
-    assert(Amount.MaxUnitSupply.integral() == 500_000_000);
+    assert(Amount.MaxUnitSupply.integral() == 4_948_159_353);
     assert(Amount.MaxUnitSupply.decimal() == 0);
 
     assert(Amount(500).integral() == 0);

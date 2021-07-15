@@ -104,6 +104,13 @@ public struct Logger
         }
     }
 
+    /// Logger.enabled` is not `@safe`
+    public bool enabled (Ocean.Level level) @trusted nothrow
+    {
+        scope (failure) assert(0);
+        return this.logger.enabled(level);
+    }
+
     // Supports `log = Log.lookup("yo")`,
     // where `log` is of `typeof(this)` type
     public ref Logger opAssign (Ocean.Logger newLogger)

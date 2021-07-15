@@ -1949,6 +1949,15 @@ public struct TestConf
     /// Transaction put into the relay queue will expire, and will be removed
     /// after `relay_tx_cache_exp`.
     Duration relay_tx_cache_exp = 60.minutes;
+
+    /// The number of blocks between 2 block reward payout
+    /// The value of 3 means block reward payout happens at at block 1, 4, 7...
+    public ushort block_reward_gap = 10;
+
+    /// The delay (measured in blocks) after which block reward is payed
+    /// The value of 5 means the block reward payout for confirming blocks
+    /// [(X-confirmation_payout_gap), (X)] happens at block (X + block_reward_delay)
+    public ushort block_reward_delay = 5;
 }
 
 /*******************************************************************************
@@ -1996,6 +2005,8 @@ public APIManager makeTestNetwork (APIManager : TestAPIManager = TestAPIManager)
             validator_tx_fee_cut : test_conf.validator_tx_fee_cut,
             payout_period : test_conf.payout_period,
             min_fee : test_conf.min_fee,
+            block_reward_gap : test_conf.block_reward_gap,
+            block_reward_delay : test_conf.block_reward_delay,
         };
 
         return result;

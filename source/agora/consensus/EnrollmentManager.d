@@ -84,7 +84,7 @@ public class EnrollmentManager
 {
     /// The period for revealing a preimage
     /// It is an hour interval if a block is made in every 10 minutes
-    public static immutable uint PreimageRevealPeriod = 6;
+    public const uint PreimageRevealPeriod;
 
     /// Logger instance
     private Logger log;
@@ -166,11 +166,13 @@ public class EnrollmentManager
             cacheDB = The cache database, used by `EnrollmentPool`
             key_pair = the keypair of the owner node
             params = the consensus-critical constants
+            preimage_reveal_period = the period for revealing a preimage
 
     ***************************************************************************/
 
     public this (ManagedDatabase stateDB, ManagedDatabase cacheDB,
-                 KeyPair key_pair, immutable(ConsensusParams) params)
+                 KeyPair key_pair, immutable(ConsensusParams) params,
+                 uint preimage_reveal_period = 6)
     {
         this.log = Logger(__MODULE__);
         assert(params !is null);
@@ -182,6 +184,7 @@ public class EnrollmentManager
         this.validator_set = new ValidatorSet(stateDB, params);
         this.enroll_pool = new EnrollmentPool(cacheDB);
 
+        this.PreimageRevealPeriod = preimage_reveal_period;
 
         // create the table for enrollment data for a node itself
         this.db.execute("CREATE TABLE IF NOT EXISTS node_enroll_data " ~
@@ -239,6 +242,27 @@ public class EnrollmentManager
             return ulong.max;
         }
         return this.keymap.key_to_index[height][K];
+    }
+
+    /***************************************************************************
+
+        Params:
+            height = the height at which to look up the mapping for
+            index = the index for which to find the associated Key
+
+        Returns:
+            the key belonging to this index,
+            or `PublicKey.init` if none was found
+
+    ***************************************************************************/
+
+    public PublicKey getValidatorAtIndex (in Height height, in ulong index)
+        const @safe nothrow
+    {
+        if (height !in this.keymap.index_to_key || index !in this.keymap.index_to_key[height])
+            return PublicKey.init;
+        else
+            return this.keymap.index_to_key[height][index];
     }
 
     /***************************************************************************

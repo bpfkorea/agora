@@ -349,7 +349,7 @@ unittest
 unittest
 {
     import agora.common.Set;
-    auto tx_set = Set!Transaction.from([Transaction.init]);
+    auto tx_set = Set!(const Transaction).from([Transaction.init]);
     testSymmetry(tx_set);
 }
 

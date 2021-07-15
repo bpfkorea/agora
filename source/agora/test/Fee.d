@@ -212,10 +212,6 @@ unittest
     {
         createAndExpectNewBlock(Height(block_idx));
     }
-
-    // Node with the different config should not accept any blocks
-    auto bad_node = nodes[0];
-    assert(bad_node.getBlockHeight() == Height(0));
 }
 
 // Fees from the previous block should not trigger a new block creation

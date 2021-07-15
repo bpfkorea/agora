@@ -26,6 +26,7 @@ import agora.common.Config;
 import agora.common.ManagedDatabase;
 import agora.common.Set;
 import agora.common.Types;
+import agora.consensus.Reward;
 import agora.consensus.data.Block;
 import agora.consensus.protocol.Data;
 import agora.consensus.data.Enrollment;
@@ -38,6 +39,7 @@ import agora.consensus.Fee;
 import agora.consensus.validation;
 import agora.consensus.validation.Block : validateBlockTimeOffset;
 import agora.consensus.Fee;
+import agora.crypto.ECC : Point;
 import agora.crypto.Hash;
 import agora.crypto.Key;
 import agora.network.Clock;
@@ -115,6 +117,9 @@ public class Ledger
     /// but less than current time + block_time_offset_tolerance
     public Duration block_time_offset_tolerance;
 
+    /// Block Reward Calculator
+    private Reward reward;
+
     /***************************************************************************
 
         Constructor
@@ -154,6 +159,7 @@ public class Ledger
         this.clock = clock;
         this.block_time_offset_tolerance = block_time_offset_tolerance;
         this.storage.load(params.Genesis);
+        this.reward = new Reward(params);
 
         // ensure latest checksum can be read
         this.last_block = this.storage.readLastBlock();
@@ -317,6 +323,79 @@ public class Ledger
         // If we were looking for this TX, stop
         this.unknown_txs.remove(tx.hashFull());
         return true;
+    }
+
+    /***************************************************************************
+
+        Returns the public keys of the validators that signed the block at
+        the specified height, and and also not classified as 'missing' validator
+
+        Params:
+            height = block height
+            missing_validator_cnt = out parameter containing the missing validator count
+
+        Returns: the public keys of the validators that signed the block at
+                 the specified height, and and also not
+                 classified as 'missing' validator
+
+    ***************************************************************************/
+
+    private Point[] getRewardEligibleValidators (Height height,
+                                ref uint missing_validator_cnt) nothrow @safe
+    {
+        Point[] keys;
+        Block block;
+        try
+        {
+            block = this.storage.readBlock(height);
+        }
+        catch (Exception e) {
+            log.error("unable to read block at height: {}", height);
+            return null;
+        }
+
+        immutable validator_cnt = enroll_man.getCountOfValidators(height);
+        foreach (i; 0 .. validator_cnt)
+        {
+            missing_validator_cnt += block.header.missing_validators.length;
+            auto validator_pkey = enroll_man.getValidatorAtIndex(height, i);
+            if (block.header.validators[i] && !block.header.missing_validators.canFind(i))
+                keys ~= validator_pkey;
+        }
+
+        return keys;
+    }
+
+    /***************************************************************************
+
+        Returns a map indexed by the public keys of validators who signed blocks
+            and also not classified as 'missing' validator at least once between
+            `start_height` and `end_height`
+
+        The value corresponding to the public key shows how many blocks the
+        validator signed between `start_height` and `end_height`
+
+        Params:
+            start_height = starting block height(inclusive)
+            end_height = ending block height(inclusive)
+            missing_validator_cnt = ref parameter containing the missing validator count
+
+        Returns: a map indexed by public keys of validators who signed blocks
+                 and also not classified as 'missing' validator at least once
+                 between `start_height` and `end_height`
+
+    ***************************************************************************/
+
+    private ushort[Point] getRewardEligibleValidators (Height start_height,
+                            Height end_height, ref uint missing_validator_cnt) nothrow @safe
+    {
+        ushort[Point] signed_cnt_keys_map;
+
+        foreach (height; start_height .. end_height + 1)
+            foreach (point; getRewardEligibleValidators(height, missing_validator_cnt))
+                signed_cnt_keys_map[point]++;
+
+        return signed_cnt_keys_map;
     }
 
     /***************************************************************************
@@ -569,18 +648,81 @@ public class Ledger
         const commons_fee = this.fee_man.getCommonsBudgetFee(tot_fee,
             tot_data_fee, stakes);
 
+        ulong[Point] pkey_to_output_ind;
         Output[] coinbase_tx_outputs;
         // pay the commons budget
         if (commons_fee > Amount(0))
+        {
             coinbase_tx_outputs ~= Output(commons_fee,
                 this.params.CommonsBudgetAddress, OutputType.Coinbase);
+            pkey_to_output_ind[this.params.CommonsBudgetAddress.data] = pkey_to_output_ind.length;
+        }
 
         // pay the validator for the past blocks
         if (auto payouts = this.fee_man.getAccumulatedFees(height))
             foreach (pair; payouts.byKeyValue())
                 if (pair.value > Amount(0))
+                {
                     coinbase_tx_outputs ~= Output(pair.value, pair.key, OutputType.Coinbase);
+                    pkey_to_output_ind[pair.key.data] = pkey_to_output_ind.length;
+                }
+
+        ////////
+        // calculating block reward
+        ///////
+        if (reward.isPayoutTime(height))
+        {
+            immutable period_end = Height(height - params.BlockRewardDelay);
+            immutable period_start = Height(period_end - params.BlockRewardGap + 1);
+            Amount remainder;
+
+            // calculate the penalty for missing singatures
+            uint missing_validators_cnt;
+            auto pkey_sigcounts = getRewardEligibleValidators(period_start, period_end, missing_validators_cnt);
+            double total_actual_sigcnt = pkey_sigcounts.byValue().fold!((a, b) => a + b)(0);
+            log.trace("Total actual signatures count: {}", total_actual_sigcnt);
+            double total_expected_sigcnt = iota(period_start.value, period_end.value + 1)
+                .map!(height => this.enroll_man.getCountOfValidators(Height(height))).fold!((a, b) => a + b)(cast(size_t) 0);
+            log.trace("Total expected signatures count: {}", total_expected_sigcnt);
+            log.trace("Total missing validators count: {}", missing_validators_cnt);
+            immutable comply_perc = (total_actual_sigcnt / total_expected_sigcnt) * 100;
+
+            // calculate the validator block reward for each validator
+            auto each_validator_reward = this.reward.getEachValidatorReward(
+                            height, pkey_sigcounts, remainder, comply_perc);
+
+            // calculate the foundation block reward
+            Amount foundation_reward = this.reward.getTotalCommonsBudgetReward(height, comply_perc);
+            foundation_reward.mustAdd(remainder);
+            each_validator_reward.update(
+                Point(params.CommonsBudgetAddress[]),
+                {
+                    auto amount = Amount(foundation_reward);
+                    return amount;
+                },
+                (ref Amount amount)
+                {
+                    amount.mustAdd(foundation_reward);
+                    return amount;
+                }
+            );
+
+            // merge the block reward with fee reward
+            foreach (ref pkey_reward; each_validator_reward.byKeyValue())
+                if (pkey_reward.value != Amount(0))
+                {
+                    if (auto pkey_ind_found = (pkey_reward.key in pkey_to_output_ind))
+                        coinbase_tx_outputs[*pkey_ind_found].value.mustAdd(pkey_reward.value);
+                    else
+                        coinbase_tx_outputs ~= Output(pkey_reward.value, PublicKey(pkey_reward.key[]), OutputType.Coinbase);
+                }
+
+        }
         coinbase_tx_outputs.sort;
+
+        // This method returns an array of coinbase transaction even if the array
+        // contains at most one element. Returning an array as opposed to a
+        // Nullable!Transaction greatly simplifies the calling code
         return coinbase_tx_outputs.length > 0 ?
             [ Transaction([Input(height)], coinbase_tx_outputs) ] : [];
     }
@@ -786,11 +928,6 @@ public class Ledger
             this.log.error("validateBlock: Exception thrown by getRandomSeed while externalizing valid block: {}", exc);
             return "Internal error: Could not calculate random seed at current height";
         }
-
-        auto expected_cb_txs = this.getCoinbaseTX(block.txs, block.header.missing_validators);
-        auto incoming_cb_txs = block.txs.filter!(tx => tx.isCoinbase);
-        if (!isPermutation(expected_cb_txs, incoming_cb_txs))
-            return "Invalid Coinbase transaction";
 
         // Finally, validate the signatures
         return this.validateBlockSignature(block);

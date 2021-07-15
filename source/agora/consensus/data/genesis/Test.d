@@ -147,7 +147,7 @@ unittest
 
     Amount amount;
     assert(GenesisBlock.txs.all!(tx => tx.getSumOutput(amount)));
-    assert(amount == Amount.MaxUnitSupply, amount.toString());
+    assert(amount == Amount(500_000_000_0000000), amount.toString());
     assert(GenesisBlock.merkle_tree.length == GenesisMerkleTree.length);
     assert(GenesisBlock.header.merkle_root == GenesisBlock.merkle_tree[$-1]);
 }
