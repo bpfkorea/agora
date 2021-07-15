@@ -96,8 +96,6 @@ public string isInvalidReason (
             return reason;
     }
 
-    const tx_hash = hashFull(tx);
-
     string isInvalidInput (in Input input, ref UTXO utxo_value,
         ref Amount sum_unspent)
     {

@@ -1072,7 +1072,7 @@ public abstract class FlashNode : FlashControlAPI
     {
         if (auto chans = reg_pk in this.channels)
             if (auto channel = chan_id in *chans)
-                return channel.beginCollaborativeClose();
+                return channel.beginCollaborativeClose(this.listener.getEstimatedTxFee());
 
         return Result!bool(ErrorCode.InvalidChannelID, "Channel ID not found");
     }
@@ -1119,7 +1119,11 @@ public abstract class FlashNode : FlashControlAPI
 
         // create funding, don't sign it yet as we'll share it first
         auto funding_tx = createFundingTx(funding_utxo, funding_utxo_hash,
-            capacity, pair_pk);
+            capacity, pair_pk, this.listener.getEstimatedTxFee());
+
+        if (funding_tx == Transaction.init)
+            return Result!Hash(ErrorCode.RejectedFundingUTXO,
+                format("The provided UTXO does not have requested funds for TX fees"));
 
         const funding_tx_hash = hashFull(funding_tx);
         const Hash chan_id = funding_tx_hash;

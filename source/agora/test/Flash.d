@@ -556,9 +556,9 @@ private class FlashListener : TestFlashListenerAPI
         assert(0);
     }
 
-    public Amount getEstimatedTxFee (uint size_bytes)
+    public Amount getEstimatedTxFee ()
     {
-        assert(0);
+        return Amount(1);
     }
 }
 
@@ -1043,7 +1043,7 @@ unittest
     auto block11 = node_1.getBlocksFrom(11, 1)[0];
     log.info("bob closing tx: {}", bob.getClosingTx(bob_pubkey,
         bob_charlie_chan_id));
-    assert(block11.txs[0] == bob.getClosingTx(bob_pubkey, bob_charlie_chan_id));
+    assert(block11.txs.canFind(bob.getClosingTx(bob_pubkey, bob_charlie_chan_id)));
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
         ChannelState.Closed);
 
@@ -1058,7 +1058,7 @@ unittest
     auto block12 = node_1.getBlocksFrom(12, 1)[0];
     log.info("alice closing tx: {}", alice.getClosingTx(alice_pubkey,
         alice_bob_chan_id));
-    assert(block12.txs[0] == alice.getClosingTx(alice_pubkey, alice_bob_chan_id));
+    assert(block12.txs.canFind(alice.getClosingTx(alice_pubkey, alice_bob_chan_id)));
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
         ChannelState.Closed);
 }
@@ -1429,10 +1429,11 @@ unittest
     factory.listener.waitUntilChannelState(bob_charlie_chan_id_2,
         ChannelState.Closed);
     auto block12 = node_1.getBlocksFrom(12, 1)[0];
-    assert(block12.txs[0] == bob.getClosingTx(bob_pubkey, bob_charlie_chan_id_2));
-    assert(block12.txs[0].outputs.length == 2);
-    assert(block12.txs[0].outputs.count!(o => o.value == Amount(8000)) == 1); // No fees
-    assert(block12.txs[0].outputs.count!(o => o.value == Amount(2000)) == 1);
+    auto closing_tx = bob.getClosingTx(bob_pubkey, bob_charlie_chan_id_2);
+    assert(block12.txs.canFind(closing_tx));
+    assert(closing_tx.outputs.length == 2);
+    assert(closing_tx.outputs.count!(o => o.value == Amount(8000)) == 1); // No fees
+    assert(closing_tx.outputs.count!(o => o.value == Amount(2000 - closing_tx.sizeInBytes)) == 1); // Minus the closing TX fee
 
     assert(alice.beginCollaborativeClose(alice_pubkey, alice_bob_chan_id).error
         == ErrorCode.None);
@@ -1440,10 +1441,11 @@ unittest
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
         ChannelState.Closed);
     auto block13 = node_1.getBlocksFrom(13, 1)[0];
-    assert(block13.txs[0] == alice.getClosingTx(alice_pubkey, alice_bob_chan_id));
-    assert(block13.txs[0].outputs.length == 2);
-    assert(block13.txs[0].outputs.count!(o => o.value == Amount(7990)) == 1); // Fees
-    assert(block13.txs[0].outputs.count!(o => o.value == Amount(2010)) == 1);
+    closing_tx = alice.getClosingTx(alice_pubkey, alice_bob_chan_id);
+    assert(block13.txs.canFind(closing_tx));
+    assert(closing_tx.outputs.length == 2);
+    assert(closing_tx.outputs.count!(o => o.value == Amount(7990)) == 1); // Fees
+    assert(closing_tx.outputs.count!(o => o.value == Amount(2010 - closing_tx.sizeInBytes)) == 1); // Minus the closing TX fee
 
     assert(bob.beginCollaborativeClose(bob_pubkey, bob_charlie_chan_id).error
         == ErrorCode.None);
@@ -1451,8 +1453,9 @@ unittest
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
         ChannelState.Closed);
     auto block14 = node_1.getBlocksFrom(14, 1)[0];
-    assert(block14.txs[0] == bob.getClosingTx(bob_pubkey, bob_charlie_chan_id));
-    assert(block14.txs[0].outputs.length == 1); // No updates
+    closing_tx = bob.getClosingTx(bob_pubkey, bob_charlie_chan_id);
+    assert(block14.txs.canFind(closing_tx));
+    assert(closing_tx.outputs.length == 1); // No updates
 }
 
 unittest
@@ -1548,8 +1551,9 @@ unittest
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
         ChannelState.Closed);
     auto block10 = node_1.getBlocksFrom(10, 1)[0];
-    assert(block10.txs[0] == bob.getClosingTx(bob_pubkey, alice_bob_chan_id));
-    assert(block10.txs[0].outputs.length == 1); // No updates
+    auto closing_tx = bob.getClosingTx(bob_pubkey, alice_bob_chan_id);
+    assert(block10.txs.canFind(closing_tx));
+    assert(closing_tx.outputs.length == 1); // No updates
 }
 
 /// Test node serialization & loading
@@ -1742,6 +1746,11 @@ unittest
     // error on not enough funds on funding UTXO
     res = alice.openNewChannel(alice_pubkey,
         utxo, utxo_hash, Amount.MaxUnitSupply, Settle_10_Blocks, bob_pair.V);
+    assert(res.error == ErrorCode.RejectedFundingUTXO);
+
+    // error on not enough funds on funding UTXO for TX fees
+    res = alice.openNewChannel(alice_pubkey,
+        utxo, utxo_hash, utxo.output.value, Settle_10_Blocks, bob_pair.V);
     assert(res.error == ErrorCode.RejectedFundingUTXO);
 
     // error on not own funding UTXO

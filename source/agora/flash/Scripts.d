@@ -167,21 +167,30 @@ public Unlock createUnlockSettle (Signature sig, in ulong seq_id)
         utxo_hash = hash of `utxo`
         capacity = initial capacity of the channel
         pair_pk = Pair PublicKey
+        fee = TX fee
 
     Returns:
         the funding transaction
 
 *******************************************************************************/
 
-public Transaction createFundingTx (in UTXO utxo, in Hash utxo_hash, 
-    in Amount capacity, in Point pair_pk) @safe nothrow
+public Transaction createFundingTx (in UTXO utxo, in Hash utxo_hash,
+    in Amount capacity, in Point pair_pk, Amount fee) @safe nothrow
 {
     auto inputs = [Input(utxo_hash)];
     auto outputs = [Output(capacity,
         Lock(LockType.Key, pair_pk[].dup))];
 
+    // Account for the refund output
+    auto max_size = Transaction(inputs,
+        outputs ~ [Output(Amount.init, utxo.output.lock)]).sizeInBytes();
+    if (!fee.mul(max_size))
+        assert(0);
+
     Amount rem_funds = utxo.output.value;
-    if (rem_funds.sub(capacity) && rem_funds > 0.coins)
+    if (!rem_funds.sub(capacity) || !rem_funds.sub(fee))
+        return Transaction.init;
+    if (rem_funds > 0.coins)
         outputs ~= Output(rem_funds, utxo.output.lock);
 
     return Transaction(inputs, outputs);

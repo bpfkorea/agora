@@ -498,7 +498,7 @@ public class Channel
 
         // initial output allocates all the funds back to the channel creator
         const seq_id = 0;
-        const Balance balance = { refund_amount : this.conf.capacity };
+        Balance balance = { refund_amount : this.conf.capacity };
         Output[] outputs = this.buildBalanceOutputs(balance);
 
         const funding_utxo = UTXO(0,
@@ -1733,9 +1733,12 @@ LOuter: while (1)
         The counter-party should return its signature for the closing
         transaction.
 
+        Params:
+            fee = amount of fees to include in closing TX
+
     ***************************************************************************/
 
-    public Result!bool beginCollaborativeClose () @trusted
+    public Result!bool beginCollaborativeClose (Amount fee) @trusted
     {
         if (this.state != ChannelState.Open &&
             this.state != ChannelState.RejectedCollaborativeClose)
@@ -1748,7 +1751,6 @@ LOuter: while (1)
 
         this.taskman.setTimer(100.msecs,
         {
-            const Fee = Amount(100);  // todo: coordinate based on return value
             Pair priv_nonce = Pair.random();
             const fail_time = Clock.currTime() + this.flash_conf.max_retry_time;
             Result!Point close_res = Result!Point(ErrorCode.Unknown);
@@ -1769,7 +1771,7 @@ LOuter: while (1)
 
                 close_res = this.peer.closeChannel(this.kp.address,
                     PublicKey(this.peer_pk), this.conf.chan_id, this.cur_seq_id,
-                    priv_nonce.V, Fee);
+                    priv_nonce.V, fee);
                 if (close_res.error)
                 {
                     // todo: retry with bigger fee if smaller fee was rejected?
@@ -1781,7 +1783,7 @@ LOuter: while (1)
                 break;
             }
 
-            this.collectCloseSignatures(priv_nonce, close_res.value);
+            this.collectCloseSignatures(priv_nonce, close_res.value, fee);
         });
 
         return Result!bool(true);
@@ -1829,15 +1831,29 @@ LOuter: while (1)
 
         Params:
             balance = the balance to convert
+            fee = fees to deduct from the outputs
 
         Returns:
             an Output array, to be used in the settle / close transactions
 
     ***************************************************************************/
 
-    private Output[] buildBalanceOutputs (in Balance balance)
+    private Output[] buildBalanceOutputs (Balance balance, Amount fee = 0.coins)
     {
         Output[] outputs;
+
+        // Deduct the fees from payment amount as much as possible
+        if (balance.payment_amount >= fee)
+        {
+            if (!balance.payment_amount.sub(fee))
+                assert(0);
+        }
+        else
+        {
+            if (!fee.sub(balance.payment_amount)  || !balance.refund_amount.sub(fee))
+                assert(0);
+            balance.payment_amount = 0.coins;
+        }
 
         if (balance.refund_amount != Amount(0))
             outputs ~= Output(balance.refund_amount,
@@ -1878,14 +1894,25 @@ LOuter: while (1)
         Params:
             priv_nonce = the private nonce of this node
             peer_nonce = the public nonce of the peer
+            fee = amount of fees to include in closing TX
 
     ***************************************************************************/
 
-    private void collectCloseSignatures (Pair priv_nonce, Point peer_nonce)
+    private void collectCloseSignatures (Pair priv_nonce, Point peer_nonce, Amount fee)
     {
         // todo: index is hardcoded
         const utxo = UTXO.getHash(hashFull(this.funding_tx_signed), 0);
-        const outputs = this.buildBalanceOutputs(this.cur_balance);
+        const nofee_outputs = this.buildBalanceOutputs(this.cur_balance);
+        auto dummy_closing_tx = createClosingTx(utxo, nofee_outputs);
+        dummy_closing_tx.inputs[0].unlock = genKeyUnlock(Signature.init);
+        if (!fee.mul(dummy_closing_tx.sizeInBytes))
+        {
+            this.state = ChannelState.RejectedCollaborativeClose;
+            this.onChannelNotify(this.kp.address, this.conf.chan_id,
+                this.state, ErrorCode.RejectedClosingFee);
+        }
+
+        const outputs = this.buildBalanceOutputs(this.cur_balance, fee);
         this.pending_close.tx = createClosingTx(utxo, outputs);
 
         const nonce_pair_pk = priv_nonce.V + peer_nonce;
@@ -2005,7 +2032,7 @@ LOuter: while (1)
         // this again.
         this.taskman.setTimer(100.msecs,
         {
-            this.collectCloseSignatures(priv_nonce, peer_nonce);
+            this.collectCloseSignatures(priv_nonce, peer_nonce, fee);
         });
 
         return Result!Point(pub_nonce);

@@ -119,13 +119,10 @@ public interface FlashListenerAPI
 
     /***************************************************************************
 
-        Params:
-            size_bytes = TX size in bytes
-
         Returns:
-            Appropriate amount of fees
+            Appropriate amount of fees per byte
 
     ***************************************************************************/
 
-    public Amount getEstimatedTxFee (uint size_bytes);
+    public Amount getEstimatedTxFee ();
 }

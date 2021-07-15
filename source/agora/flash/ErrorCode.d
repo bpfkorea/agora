@@ -117,4 +117,7 @@ public enum ErrorCode : ushort
     /// Either funding UTXO does not belong to the given PublicKey or does not
     /// have enough funds
     RejectedFundingUTXO,
+
+    /// Too much fee request for closing TX
+    RejectedClosingFee,
 }
