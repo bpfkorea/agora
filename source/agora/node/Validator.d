@@ -284,66 +284,6 @@ public class Validator : FullNode, API
 
     /***************************************************************************
 
-        Store the block in the ledger if valid.
-        If block is not yet signed by this node then sign it and also
-        gossip the block sig from this node to other nodes.
-
-        Params:
-            block = block to be added to the Ledger
-
-    ***************************************************************************/
-
-    protected override bool acceptBlock (const ref Block block) @trusted
-    {
-        import agora.common.BitMask;
-        import agora.crypto.Schnorr;
-        import std.algorithm;
-        import std.range;
-        import std.format;
-
-        if (!super.acceptBlock(block))
-            return false;
-
-        auto signed_validators = BitMask(block.header.validators.count);
-        signed_validators.copyFrom(block.header.validators);
-
-        auto node_validator_index = this.nominator.enroll_man
-            .getIndexOfValidator(block.header.height, this.config.validator.key_pair.address);
-
-        // It can be a block before this validator was enrolled
-        if (node_validator_index == ulong.max)
-        {
-            log.trace("This validator {} was not active at height {}",
-                this.config.validator.key_pair.address, block.header.height);
-            return true;
-        }
-
-        auto sig = this.nominator.createBlockSignature(block);
-        assert(node_validator_index < block.header.validators.count,
-            format!"The validator index %s is invalid"(node_validator_index));
-        if (signed_validators[node_validator_index])
-        {
-            log.trace("This node's signature is already in the block signature");
-            // Gossip this signature as it may have been only shared via ballot signing
-            this.network.gossipBlockSignature(ValidatorBlockSig(block.header.height,
-                this.config.validator.key_pair.address, sig.s));
-        }
-        else
-        {
-            signed_validators[node_validator_index] = true;
-            this.network.gossipBlockSignature(ValidatorBlockSig(block.header.height,
-                this.config.validator.key_pair.address, sig.s));
-            log.trace("Periodic Catchup: ADD to block signature R: {} and s: {}",
-                sig.R, sig.s.toString(PrintMode.Clear));
-            const signed_block = block.updateSignature(
-                multiSigCombine([ block.header.signature, sig ]), signed_validators);
-            this.ledger.updateBlockMultiSig(signed_block.header);
-        }
-        return true;
-    }
-
-    /***************************************************************************
-
         Receive an SCP envelope.
 
         API:
