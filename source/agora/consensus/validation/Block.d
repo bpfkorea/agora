@@ -115,9 +115,6 @@ public string isInvalidReason (in Block block, Engine engine, Height prev_height
     if (block.header.prev_block != prev_hash)
         return "Block: Header.prev_block does not match previous block";
 
-    if (block.txs.length == 0)
-        return "Block: Must contain at least one transaction";
-
     if (block.header.enrollments.length + active_validators_next_block <
         Enrollment.MinValidatorCount)
         return "Block: Insufficient number of active validators";
@@ -128,17 +125,10 @@ public string isInvalidReason (in Block block, Engine engine, Height prev_height
     if (!block.txs.isSorted())
         return "Block: Transactions are not sorted";
 
-    bool only_coinbase = true;
     foreach (const ref tx; block.txs)
-    {
-        only_coinbase &= tx.isCoinbase;
         if (auto fail_reason = VTx.isInvalidReason(tx, engine, findUTXO,
             block.header.height, checkFee))
             return fail_reason;
-    }
-
-    if (only_coinbase)
-        return "Block: Must contain other transactions than Coinbase";
 
     Hash[] merkle_tree;
     if (block.header.merkle_root != Block.buildMerkleTree(block.txs, merkle_tree))

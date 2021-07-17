@@ -613,7 +613,7 @@ unittest
         utxo, utxo_hash, Amount(10_000), Settle_1_Blocks, bob_pair.V);
     assert(chan_id_res.error == ErrorCode.None, chan_id_res.message);
     const chan_id = chan_id_res.value;
-    factory.listener.waitUntilChannelState(chan_id, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(chan_id, ChannelState.WaitingForFunding);
 
     // await funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -719,7 +719,7 @@ unittest
         utxo, utxo_hash, Amount(10_000), Settle_4_Blocks, bob_pair.V);
     assert(chan_id_res.error == ErrorCode.None, chan_id_res.message);
     const chan_id = chan_id_res.value;
-    factory.listener.waitUntilChannelState(chan_id, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(chan_id, ChannelState.WaitingForFunding);
 
     // await funding transaction
     network.expectHeightAndPreImg(Height(5), network.blocks[0].header);
@@ -853,7 +853,7 @@ unittest
         utxo, utxo_hash, Amount(10_000), Settle_1_Blocks, bob_pair.V);
     assert(chan_id_res.error == ErrorCode.None, chan_id_res.message);
     const chan_id = chan_id_res.value;
-    factory.listener.waitUntilChannelState(chan_id, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(chan_id, ChannelState.WaitingForFunding);
 
     // await funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -975,7 +975,7 @@ unittest
     const alice_bob_chan_id = alice_bob_chan_id_res.value;
     log.info("Alice bob channel ID: {}", alice_bob_chan_id);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await alice & bob channel funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -1001,7 +1001,7 @@ unittest
     const bob_charlie_chan_id = bob_charlie_chan_id_res.value;
     log.info("Bob Charlie channel ID: {}", bob_charlie_chan_id);
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await bob & bob channel funding transaction
     network.expectHeightAndPreImg(Height(10), network.blocks[0].header);
@@ -1039,6 +1039,8 @@ unittest
     log.info("Beginning bob => charlie collaborative close..");
     assert(bob.beginCollaborativeClose(bob_pubkey, bob_charlie_chan_id).error
         == ErrorCode.None);
+    factory.listener.waitUntilChannelState(bob_charlie_chan_id,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(11), network.blocks[0].header);
     auto block11 = node_1.getBlocksFrom(11, 1)[0];
     log.info("bob closing tx: {}", bob.getClosingTx(bob_pubkey,
@@ -1054,6 +1056,8 @@ unittest
     log.info("Beginning alice => bob collaborative close..");
     assert(alice.beginCollaborativeClose(alice_pubkey,
         alice_bob_chan_id).error == ErrorCode.None);
+    factory.listener.waitUntilChannelState(alice_bob_chan_id,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(12), network.blocks[0].header);
     auto block12 = node_1.getBlocksFrom(12, 1)[0];
     log.info("alice closing tx: {}", alice.getClosingTx(alice_pubkey,
@@ -1137,7 +1141,7 @@ unittest
     const alice_bob_chan_id = alice_bob_chan_id_res.value;
     log.info("Alice bob channel ID: {}", alice_bob_chan_id);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await alice & bob channel funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -1162,7 +1166,7 @@ unittest
     const bob_charlie_chan_id = bob_charlie_chan_id_res.value;
     log.info("Bob Charlie channel ID: {}", bob_charlie_chan_id);
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await bob & bob channel funding transaction
     network.expectHeightAndPreImg(Height(10), network.blocks[0].header);
@@ -1187,7 +1191,7 @@ unittest
     const charlie_alice_chan_id = charlie_alice_chan_id_res.value;
     log.info("Charlie Alice channel ID: {}", charlie_alice_chan_id);
     factory.listener.waitUntilChannelState(charlie_alice_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await bob & bob channel funding transaction
     network.expectHeightAndPreImg(Height(11), network.blocks[0].header);
@@ -1303,7 +1307,7 @@ unittest
     const alice_bob_chan_id = alice_bob_chan_id_res.value;
     log.info("Alice bob channel ID: {}", alice_bob_chan_id);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await alice & bob channel funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -1328,7 +1332,7 @@ unittest
     const bob_charlie_chan_id = bob_charlie_chan_id_res.value;
     log.info("Bob Charlie channel ID: {}", bob_charlie_chan_id);
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await bob & bob channel funding transaction
     network.expectHeightAndPreImg(Height(10), network.blocks[0].header);
@@ -1425,6 +1429,8 @@ unittest
 
     assert(bob.beginCollaborativeClose(bob_pubkey, bob_charlie_chan_id_2).error
         == ErrorCode.None);
+    factory.listener.waitUntilChannelState(bob_charlie_chan_id_2,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(12), network.blocks[0].header);
     factory.listener.waitUntilChannelState(bob_charlie_chan_id_2,
         ChannelState.Closed);
@@ -1436,6 +1442,8 @@ unittest
 
     assert(alice.beginCollaborativeClose(alice_pubkey, alice_bob_chan_id).error
         == ErrorCode.None);
+    factory.listener.waitUntilChannelState(alice_bob_chan_id,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(13), network.blocks[0].header);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
         ChannelState.Closed);
@@ -1447,6 +1455,8 @@ unittest
 
     assert(bob.beginCollaborativeClose(bob_pubkey, bob_charlie_chan_id).error
         == ErrorCode.None);
+    factory.listener.waitUntilChannelState(bob_charlie_chan_id,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(14), network.blocks[0].header);
     factory.listener.waitUntilChannelState(bob_charlie_chan_id,
         ChannelState.Closed);
@@ -1522,7 +1532,7 @@ unittest
     const alice_bob_chan_id = alice_bob_chan_id_res.value;
     log.info("Alice bob channel ID: {}", alice_bob_chan_id);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
-        ChannelState.SettingUp);
+        ChannelState.WaitingForFunding);
 
     // await alice & bob channel funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -1544,6 +1554,8 @@ unittest
 
     assert(bob.beginCollaborativeClose(bob_pubkey, alice_bob_chan_id).error
         == ErrorCode.None);
+    factory.listener.waitUntilChannelState(alice_bob_chan_id,
+        ChannelState.StartedCollaborativeClose);
     network.expectHeightAndPreImg(Height(10), network.blocks[0].header);
     factory.listener.waitUntilChannelState(alice_bob_chan_id,
         ChannelState.Closed);
@@ -1604,7 +1616,7 @@ unittest
     assert(chan_id_res.error == ErrorCode.None,
         chan_id_res.message);
     const chan_id = chan_id_res.value;
-    factory.listener.waitUntilChannelState(chan_id, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(chan_id, ChannelState.WaitingForFunding);
 
     // await funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);
@@ -1760,7 +1772,7 @@ unittest
     const chan_id_res = alice.openNewChannel(alice_pubkey,
         utxo, utxo_hash, Amount(10_000), Settle_10_Blocks, bob_pair.V);
     assert(chan_id_res.error == ErrorCode.None, chan_id_res.message);
-    factory.listener.waitUntilChannelState(res.value, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(res.value, ChannelState.WaitingForFunding);
     const chan_id = chan_id_res.value;
 
     // await funding transaction
@@ -1920,7 +1932,7 @@ unittest
         utxo, utxo_hash, Amount(10_000), Settle_1_Blocks, bob_pair.V);
     assert(chan_id_res.error == ErrorCode.None, chan_id_res.message);
     const chan_id = chan_id_res.value;
-    factory.listener.waitUntilChannelState(chan_id, ChannelState.SettingUp);
+    factory.listener.waitUntilChannelState(chan_id, ChannelState.WaitingForFunding);
 
     // await funding transaction
     network.expectHeightAndPreImg(Height(9), network.blocks[0].header);

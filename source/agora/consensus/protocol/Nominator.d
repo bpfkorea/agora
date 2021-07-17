@@ -367,11 +367,6 @@ extern(D):
     protected bool prepareNominatingSet (out ConsensusData data) @safe
     {
         this.ledger.prepareNominatingSet(data, MaxTransactionsPerBlock, this.nomination_start_time);
-        if (data.tx_set.length < 1)
-        {
-            this.log.trace("prepareNominatingSet(): No transaction to nominate yet");
-            return false;
-        }
 
         // check whether the consensus data is valid before nominating it.
         if (auto msg = this.ledger.validateConsensusData(data, data.missing_validators))
@@ -971,10 +966,6 @@ extern(D):
             abort();
         }
 
-        // enrollment data may be empty, but not transaction set
-        if (data.tx_set.length == 0)
-            assert(0, format!"Transaction set empty for slot %s"(height));
-
         log.info("Externalized consensus data set at {}: {}", height, prettify(data));
         try
         {
@@ -1164,6 +1155,11 @@ extern(D):
             if (this.total_adjusted_fee > other.total_adjusted_fee)
                 return -1;
             else if (this.total_adjusted_fee < other.total_adjusted_fee)
+                return 1;
+
+            if (this.consensus_data.tx_set.length > other.consensus_data.tx_set.length)
+                return -1;
+            else if (this.consensus_data.tx_set.length < other.consensus_data.tx_set.length)
                 return 1;
 
             if (this.hash < other.hash)

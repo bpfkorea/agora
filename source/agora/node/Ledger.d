@@ -588,10 +588,8 @@ public class Ledger
     /// Error message describing the reason of validation failure
     public static enum InvalidConsensusDataReason : string
     {
-        NoTransactions = "Transaction set doesn't contain any transactions",
         NotEnoughValidators = "Enrollment: Insufficient number of active validators",
         MayBeValid = "May be valid",
-        OnlyCoinbaseTX = "Transaction set only includes a Coinbase transaction",
         TooManyMPVs = "More MPVs than active enrollments",
         NoUTXO = "Couldn't find UTXO for one or more Enrollment",
         NotInPool = "Transaction is not in the pool",
@@ -639,9 +637,6 @@ public class Ledger
     {
         const validating = this.getBlockHeight() + 1;
         auto utxo_finder = this.utxo_set.getUTXOFinder();
-
-        if (!data.tx_set.length)
-            return InvalidConsensusDataReason.NoTransactions;
 
         Transaction[] tx_set;
         if (auto fail_reason = this.getValidTXSet(data, tx_set))
@@ -1153,10 +1148,7 @@ public class Ledger
             return InvalidConsensusDataReason.MayBeValid;
         }
 
-        // Check if we have any real TXs
-        if (tx_set.any!(tx => !tx.isCoinbase))
-            return null;
-        return InvalidConsensusDataReason.OnlyCoinbaseTX;
+        return null;
     }
 
     /***************************************************************************
@@ -2359,45 +2351,4 @@ unittest
                 mpv_stake.output.address).array.length == 0);
         });
     }
-}
-
-// Coinbase only ConsensusData and blocks should not be validated
-unittest
-{
-    import agora.utils.WellKnownKeys : CommonsBudget;
-    import agora.consensus.data.genesis.Test;
-
-    ConsensusConfig config = { validator_cycle: 20, payout_period: 1 };
-    auto params = new immutable(ConsensusParams)(GenesisBlock,
-        CommonsBudget.address, config);
-
-    const(Block)[] blocks = [ GenesisBlock ];
-    auto mock_clock = new MockClock(params.GenesisTimestamp + 1);
-    scope ledger = new TestLedger(genesis_validator_keys[0], blocks, params, 600.seconds, mock_clock);
-
-    auto txs = blocks[$-1].spendable.map!(txb =>
-        txb.deduct(Amount.UnitPerCoin).sign()).array();
-    assert(ledger.acceptTransaction(txs[0]));
-    ledger.forceCreateBlock(1);
-
-    ConsensusData data;
-    ledger.prepareNominatingSet(data, 1, mock_clock.networkTime());
-    // Coinbase TX should not be nominated.
-    assert(data.tx_set.length == 0);
-
-    const Transaction[] empty_tx_set;
-    const uint[] empty_mpvs;
-
-    auto cb_tx_set = ledger.getCoinbaseTX(empty_tx_set, empty_mpvs);
-    data.tx_set ~= cb_tx_set.map!(tx => tx.hashFull()).array;
-    assert(data.tx_set.length == 1);
-    // Coinbase only nomination, Should not validate
-    assert(ledger.validateConsensusData(data, []) ==
-        Ledger.InvalidConsensusDataReason.OnlyCoinbaseTX);
-    assert(!ledger.externalize(data));
-
-    auto last_block = ledger.getLastBlock();
-    const block = makeNewTestBlock(last_block, cb_tx_set);
-    ledger.simulatePreimages(block.header.height);
-    assert(ledger.validateBlock(block) == "Block: Must contain other transactions than Coinbase");
 }

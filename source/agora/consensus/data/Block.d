@@ -304,12 +304,13 @@ public struct Block
 
     public static Hash buildMerkleTree (in Transaction[] txs,
         ref Hash[] merkle_tree) nothrow @safe
-    in
     {
-        assert(txs !is null, "When calling buildMerkleTree, `txs` must not be null.");
-    }
-    do
-    {
+        if (txs.length == 0)
+        {
+            merkle_tree.length = 0;
+            return Hash.init;
+        }
+
         immutable pow2_size = getPow2Aligned(txs.length);
         const MerkleLength = (pow2_size * 2) - 1;
 

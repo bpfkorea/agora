@@ -1015,15 +1015,15 @@ public class TestAPIManager
 
     ***************************************************************************/
 
-    public void generateBlocks (Height height,
+    public void generateBlocks (Height height, bool no_txs = false,
         string file = __FILE__, int line = __LINE__)
     {
-        generateBlocks(iota(GenesisValidators), height, file, line);
+        generateBlocks(iota(GenesisValidators), height, no_txs, file, line);
     }
 
     /// Ditto
     public void generateBlocks (Idxs)(Idxs client_idxs, Height height,
-        string file = __FILE__, int line = __LINE__)
+        bool no_txs = false, string file = __FILE__, int line = __LINE__)
     {
         static assert (isInputRange!Idxs);
 
@@ -1033,7 +1033,7 @@ public class TestAPIManager
 
         // Call addBlock for each block to be externalised for these clients
         iota(height - last_block.header.height)
-            .each!(_ => this.addBlock(client_idxs, file, line));
+            .each!(_ => this.addBlock(client_idxs, no_txs, file, line));
     }
 
      /**************************************************************************
@@ -1048,35 +1048,44 @@ public class TestAPIManager
 
     ***************************************************************************/
 
-    void addBlock (string file = __FILE__, int line = __LINE__)
+    void addBlock (bool no_txs = false,
+        string file = __FILE__, int line = __LINE__)
     {
-        addBlock(iota(0, GenesisValidators), file, line);
+        addBlock(iota(0, GenesisValidators), no_txs, file, line);
     }
 
     /// Ditto
-    void addBlock (Idxs)(Idxs client_idxs,
+    void addBlock (Idxs)(Idxs client_idxs, bool no_txs = false,
         string file = __FILE__, int line = __LINE__)
     {
         static assert (isInputRange!Idxs);
 
         auto first_client = this.clients[client_idxs.front];
-        const last_block = first_client.getBlock(first_client.getBlockHeight());
-
+        auto last_height = first_client.getBlockHeight();
         // traget height will be one more than previous block
-        Height target_height = last_block.header.height + 1;
+        Height target_height = Height(last_height + 1);
 
-        // Get spendables from last block
-        auto spendables = last_block.spendable().array;
+        while (!no_txs)
+        {
+            const last_block = first_client.getBlock(last_height);
 
-        // Show the last block if not enough spendables
-        assert(spendables.length >= 1,
-            format!"[%s:%s] No spendables in block:\n%s"
-                (file, line, prettify(last_block)));
+            // Get spendables from a previous block
+            auto spendables = last_block.spendable().array;
 
-        // Send transaction to the first client
-        spendables.takeExactly(1)
-            .map!(txb => txb.sign())
-            .each!(tx => first_client.putTransaction(tx));
+            if (spendables.length == 0)
+            {
+                assert(last_height != 0, "Can't find spendables");
+                last_height--;
+            }
+            else
+            {
+                // Send transaction to the first client
+                spendables.takeExactly(1)
+                    .map!(txb => txb.sign())
+                    .each!(tx => first_client.putTransaction(tx));
+                break;
+            }
+        }
 
         // Get preimage height from enrollment to this next block
         auto enrolled_height = target_height <= GenesisValidatorCycle ? 0

@@ -616,6 +616,21 @@ LOuter: while (1)
     {
         assert(this.state == ChannelState.SettingUp);
 
+        // if we're the funder then it's time to publish the funding tx
+        if (this.is_owner)
+        {
+            auto funding_tx_signed = this.conf.funding_tx.clone();
+            funding_tx_signed.inputs[0].unlock
+                = genKeyUnlock(this.kp.sign(this.conf.funding_tx));
+
+            log.info("Publishing funding tx..");
+            this.txPublisher(funding_tx_signed);
+        }
+
+        this.trigger_utxo = UTXO.getHash(update_pair.update_tx.hashFull(), 0);
+        this.channel_updates ~= update_pair;
+        this.known_settle_txs.put(update_pair.settle_tx.hashFull());
+
         // this is not technically an error, but it would be very strange
         // that a funding tx was published before signing was complete,
         // as the funding party carries the risk of having their funds locked.
@@ -625,27 +640,11 @@ LOuter: while (1)
         else
             this.state = ChannelState.WaitingForFunding;
 
-        // if we're the funder then it's time to publish the funding tx
-        if (this.is_owner)
-        {
-            this.funding_tx_signed = this.conf.funding_tx.clone();
-            this.funding_tx_signed.inputs[0].unlock
-                = genKeyUnlock(this.kp.sign(this.conf.funding_tx));
-
-            log.info("Publishing funding tx..");
-            this.txPublisher(this.funding_tx_signed);
-        }
-
-        this.trigger_utxo = UTXO.getHash(update_pair.update_tx.hashFull(), 0);
-        this.channel_updates ~= update_pair;
-        this.known_settle_txs.put(update_pair.settle_tx.hashFull());
+        this.onChannelNotify(this.kp.address, this.conf.chan_id, this.state,
+            ErrorCode.None);
 
         if (this.state == ChannelState.Open)
-        {
             this.dump();
-            this.onChannelNotify(this.kp.address, this.conf.chan_id, this.state,
-                ErrorCode.None);
-        }
     }
 
     /***************************************************************************
@@ -915,9 +914,9 @@ LOuter: while (1)
         Height update_height = this.height;
         auto new_balance = this.foldHTLCs(this.cur_balance, this.secrets,
             this.revert_htlcs, update_height);
-        auto new_outputs = this.buildBalanceOutputs(new_balance);
         if (new_balance == cur_balance)
             return;  // nothing to propose yet
+        auto new_outputs = this.buildBalanceOutputs(new_balance);
 
         this.outbound_in_progress = true;
         scope (exit) this.outbound_in_progress = false;
@@ -1628,29 +1627,29 @@ LOuter: while (1)
         {
             if (tx.hashFull() == this.conf.funding_tx_hash)
             {
-                log.info("{}: Funding tx externalized({})",
-                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify);
+                log.info("{}: Funding tx externalized({}) on height {}",
+                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify, block.header.height);
                 this.onFundingTxExternalized(tx);
             }
             else
             if (this.isClosingTx(tx))
             {
-                log.info("{}: Close tx externalized({})",
-                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify);
+                log.info("{}: Close tx externalized({}) on height {}",
+                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify, block.header.height);
                 this.onCloseTxExternalized(tx);
             }
             else
             if (this.isUpdateTx(tx))
             {
-                log.info("{}: Update tx externalized({})",
-                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify);
+                log.info("{}: Update tx externalized({}) on height {}",
+                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify, block.header.height);
                 this.onUpdateTxExternalized(tx);
             }
             else
             if (this.isSettleTx(tx))
             {
-                log.info("{}: Settle tx externalized({})",
-                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify);
+                log.info("{}: Settle tx externalized({}) on height {}",
+                    this.kp.address.flashPrettify, tx.hashFull().flashPrettify, block.header.height);
                 this.onSettleTxExternalized(tx);
             }
         }
@@ -1743,8 +1742,6 @@ LOuter: while (1)
                 "Channel is not open");
 
         this.state = ChannelState.StartedCollaborativeClose;
-        this.onChannelNotify(this.kp.address, this.conf.chan_id, this.state,
-            ErrorCode.None);
 
         this.taskman.setTimer(100.msecs,
         {
@@ -1782,6 +1779,8 @@ LOuter: while (1)
             }
 
             this.collectCloseSignatures(priv_nonce, close_res.value);
+            this.onChannelNotify(this.kp.address, this.conf.chan_id, ChannelState.StartedCollaborativeClose,
+                ErrorCode.None);
         });
 
         return Result!bool(true);
@@ -1806,8 +1805,6 @@ LOuter: while (1)
             return Result!bool(ErrorCode.ChannelNotOpen, "Channel is not open");
 
         this.state = ChannelState.StartedUnilateralClose;
-        this.onChannelNotify(this.kp.address, this.conf.chan_id, this.state,
-            ErrorCode.None);
 
         this.taskman.setTimer(100.msecs,
         {
@@ -1817,6 +1814,9 @@ LOuter: while (1)
                 this.kp.address.flashPrettify,
                 trigger_tx.hashFull().flashPrettify);
             this.txPublisher(trigger_tx);
+
+            this.onChannelNotify(this.kp.address, this.conf.chan_id,
+                ChannelState.StartedUnilateralClose, ErrorCode.None);
         });
 
         return Result!bool(true);
@@ -1995,8 +1995,6 @@ LOuter: while (1)
         // cover this fee.
 
         this.state = ChannelState.StartedCollaborativeClose;
-        this.onChannelNotify(this.kp.address, this.conf.chan_id, this.state,
-            ErrorCode.None);
         Pair priv_nonce = Pair.random();
         Point pub_nonce = priv_nonce.V;
 
@@ -2006,6 +2004,8 @@ LOuter: while (1)
         this.taskman.setTimer(100.msecs,
         {
             this.collectCloseSignatures(priv_nonce, peer_nonce);
+            this.onChannelNotify(this.kp.address, this.conf.chan_id,
+                ChannelState.StartedCollaborativeClose, ErrorCode.None);
         });
 
         return Result!Point(pub_nonce);
