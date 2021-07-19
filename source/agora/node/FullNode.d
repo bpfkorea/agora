@@ -531,6 +531,9 @@ public class FullNode : API
             // so just skip older heights
             if (block.header.height <= this.ledger.getBlockHeight())
                 continue;
+            // Only add if we have at least half the signatures for this block
+            else if (block.header.validators.setCount < block.header.validators.count / 2)
+                continue;
             else if (!this.ledger.acceptBlock(block))
                 break;
             this.recordBlockStats(block);
