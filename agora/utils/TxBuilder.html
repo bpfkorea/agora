@@ -1,0 +1,1293 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Module agora.utils.TxBuilder</title>
+		<link rel="stylesheet" type="text/css" href="../../styles/ddox.css"/>
+		<link rel="stylesheet" href="../../prettify/prettify.css" type="text/css"/>
+		<script type="text/javascript" src="../../scripts/jquery.js">/**/</script><script type="text/javascript" src="../../scripts/ddox.js">/**/</script>
+	</head>
+	<body onload="setupDdox();">
+		<nav id="main-nav">
+			<noscript>
+				<p style="color: red">The search functionality needs JavaScript enabled</p>
+			</noscript>
+			<div id="symbolSearchPane" style="display: none">
+				<form action="#" method="GET">
+					<input id="symbolSearch" type="text" name="q" placeholder="Search for symbols" autocomplete="off" onchange="performSymbolSearch(40);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
+				</form>
+				<ul id="symbolSearchResults" class="symbolList" style="display: none"></ul><script type="application/javascript" src="../../symbols.js"></script><script type="application/javascript">var symbolSearchRootDir = "../../";
+$('#symbolSearchPane').show();</script>
+			</div>
+			<ul class="tree-view">
+				<li class="tree-view ">
+					<div class="package ">agora
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/api/Admin.html">Admin</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/api/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/api/Handlers.html">Handlers</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/api/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">common
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Amount.html">Amount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/BitMask.html">BitMask</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/FileBasedLock.html">FileBasedLock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/ManagedDatabase.html">ManagedDatabase</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Metadata.html">Metadata</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Set.html">Set</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Task.html">Task</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/common/VibeTask.html">VibeTask</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">consensus
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">data
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">
+						<a href="../../agora/consensus/data/genesis.html">genesis</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/genesis/Coinnet.html">Coinnet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/genesis/Test.html">Test</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/Params.html">Params</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/PreImageInfo.html">PreImageInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/Transaction.html">Transaction</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/UTXO.html">UTXO</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/ValidatorBlockSig.html">ValidatorBlockSig</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/data/ValidatorInfo.html">ValidatorInfo</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">protocol
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/protocol/Data.html">Data</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/protocol/Nominator.html">Nominator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">state
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/state/UTXOCache.html">UTXOCache</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/state/UTXODB.html">UTXODB</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/state/UTXOSet.html">UTXOSet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/state/ValidatorSet.html">ValidatorSet</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">
+						<a href="../../agora/consensus/validation.html">validation</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/validation/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/validation/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/validation/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/validation/Transaction.html">Transaction</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/EnrollmentPool.html">EnrollmentPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/consensus/SCPEnvelopeStore.html">SCPEnvelopeStore</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">crypto
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/crypto/Bech32.html">Bech32</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/crypto/Crc16.html">Crc16</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/crypto/Key.html">Key</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">flash
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/api/FlashAPI.html">FlashAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/api/FlashControlAPI.html">FlashControlAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/api/FlashListenerAPI.html">FlashListenerAPI</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Channel.html">Channel</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/ErrorCode.html">ErrorCode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Invoice.html">Invoice</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Network.html">Network</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Node.html">Node</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/OnionPacket.html">OnionPacket</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Route.html">Route</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Scripts.html">Scripts</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/flash/UpdateSigner.html">UpdateSigner</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">network
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/network/Client.html">Client</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/network/Clock.html">Clock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/network/Manager.html">Manager</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">node
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">admin
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/admin/AdminInterface.html">AdminInterface</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/admin/Setup.html">Setup</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/BlockStorage.html">BlockStorage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/main.html">main</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/Runner.html">Runner</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/TransactionPool.html">TransactionPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/TransactionRelayer.html">TransactionRelayer</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/node/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">registry
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/registry/API.html">API</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/registry/Server.html">Server</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">script
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/Engine.html">Engine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/Lock.html">Lock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/Opcodes.html">Opcodes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/ScopeCondition.html">ScopeCondition</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/script/Stack.html">Stack</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">stats
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/App.html">App</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/EndpointReq.html">EndpointReq</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Registry.html">Registry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Server.html">Server</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Stats.html">Stats</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Tx.html">Tx</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/stats/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">test
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Base.html">Base</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/BlockTimeConsensus.html">BlockTimeConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Byzantine.html">Byzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Crypto.html">Crypto</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/EnrollDifferentUTXOs.html">EnrollDifferentUTXOs</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Flash.html">Flash</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/GenesisBlock.html">GenesisBlock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/GossipProtocol.html">GossipProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/InvalidBlockSigByzantine.html">InvalidBlockSigByzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/LocalTransactions.html">LocalTransactions</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/LockHeight.html">LockHeight</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/ManyBlocks.html">ManyBlocks</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/ManyValidators.html">ManyValidators</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/MissingPreImageDetection.html">MissingPreImageDetection</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/MultiRoundConsensus.html">MultiRoundConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/NameRegistry.html">NameRegistry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/NetworkClient.html">NetworkClient</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/NetworkDiscovery.html">NetworkDiscovery</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/NetworkManager.html">NetworkManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/PeriodicCatchup.html">PeriodicCatchup</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/PreimageSharing.html">PreimageSharing</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/QuorumPreimage.html">QuorumPreimage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/QuorumShuffle.html">QuorumShuffle</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Restart.html">Restart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/RestoreSCPState.html">RestoreSCPState</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/RestoreSlashingInfo.html">RestoreSlashingInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Simple.html">Simple</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/SlashingMisbehavingValidator.html">SlashingMisbehavingValidator</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/TimeBlockInterval.html">TimeBlockInterval</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/TimeDrift.html">TimeDrift</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/Timeout.html">Timeout</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/TransactionReplacement.html">TransactionReplacement</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/UnlockAge.html">UnlockAge</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/ValidatorCleanRestart.html">ValidatorCleanRestart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/ValidatorCount.html">ValidatorCount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/ValidatorRecurringEnrollment.html">ValidatorRecurringEnrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/test/VariableBlockSize.html">VariableBlockSize</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view ">
+					<div class="package ">utils
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">gc
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/gc/bits.html">bits</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/gc/GC.html">GC</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/gc/os.html">os</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/gc/pooltable.html">pooltable</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/Backoff.html">Backoff</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/InetUtils.html">InetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/Log.html">Log</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/PrettyPrinter.html">PrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/SCPPrettyPrinter.html">SCPPrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/Test.html">Test</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/TracyAPI.html">TracyAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module selected">
+						<a href="../../agora/utils/TxBuilder.html">TxBuilder</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/Utility.html">Utility</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/WellKnownKeys.html">WellKnownKeys</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../agora/utils/Workarounds.html">Workarounds</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">mmdb
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../mmdb/MaxMindDB.html">MaxMindDB</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scpd
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">quorum
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../scpd/quorum/QuorumIntersectionChecker.html">QuorumIntersectionChecker</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/quorum/QuorumTracker.html">QuorumTracker</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scp
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/BallotProtocol.html">BallotProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/LocalNode.html">LocalNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/NominationProtocol.html">NominationProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/QuorumSetUtils.html">QuorumSetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/SCP.html">SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/SCPDriver.html">SCPDriver</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/Slot.html">Slot</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/scp/Utils.html">Utils</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">tests
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../scpd/tests/GlueTypes.html">GlueTypes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/tests/LayoutTest.html">LayoutTest</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/tests/SizeTest.html">SizeTest</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">types
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../scpd/types/Stellar_SCP.html">Stellar_SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/types/Stellar_types.html">Stellar_types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/types/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/types/XDRBase.html">XDRBase</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../scpd/Cpp.html">Cpp</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+		</nav>
+		<div id="main-contents">
+			<h1>Module agora.utils.TxBuilder</h1><p>An helper utility to build transactions
+</p><section><p>This utility exposes a mutable transaction builder, used to simplify
+    generating complex <code class="lang-d"><span class="typ">Transaction</span></code>s, as well as ensuring that generated
+    transactions are valid. Generating invalid <code class="lang-d"><span class="typ">Transaction</span></code>s is not supported,
+    however one can generate a valid <code class="lang-d"><span class="typ">Transaction</span></code> and mutate it afterwards.
+</p>
+</section>
+
+			<section><section><h2>Basics</h2>
+<p>When building a transaction, one must first attach an <code class="lang-d"><span class="typ">Output</span></code>,
+    or a <code class="lang-d"><span class="typ">Transaction</span></code>, using either the constructors or <code class="lang-d"><span class="pln">attach</span></code>.
+    All attached outputs are contributed towards a "refund" <code class="lang-d"><span class="typ">Output</span></code>.
+    Operations will draw from this refund transactions and create new <code class="lang-d"><span class="typ">Output</span></code>s.
+</p>
+
+<p>    In order to finalize the <code class="lang-d"><span class="typ">Transaction</span></code>, one must call <code class="lang-d"><span class="pln">sign</span></code>, which will
+    return the signed <code class="lang-d"><span class="typ">Transaction</span></code>. If there is any fund left, the refund
+    <code class="lang-d"><span class="typ">Output</span></code> will be the last output in the transaction.
+</p>
+
+<p>    An example would be:
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">auto </span><span class="pln">tx1 </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="pln">myTx</span><span class="pun">)<wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">addr1</span><span class="pun">, </span><span class="pln">addr2</span><span class="pun">)
+                          <wbr/>.</span><span class="pln">attach</span><span class="pun">(</span><span class="pln">otherTx</span><span class="pun">)<wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">addr3</span><span class="pun">, </span><span class="pln">addr4</span><span class="pun">)
+                          <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+</span><span class="com">// Equivalent to:
+</span><span class="kwd">auto </span><span class="pln">tx2 </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="pln">myTx<wbr/></span><span class="pun">.</span><span class="pln">outputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">)
+               <wbr/>.</span><span class="pln">attach</span><span class="pun">(</span><span class="pln">myTx</span><span class="pun">)<wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">addr1</span><span class="pun">, </span><span class="pln">addr2</span><span class="pun">)
+               <wbr/>.</span><span class="pln">attach</span><span class="pun">(</span><span class="pln">otherTx</span><span class="pun">)<wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">addr3</span><span class="pun">, </span><span class="pln">addr4</span><span class="pun">)
+               <wbr/>.</span><span class="pln">sign</span><span class="pun">();</span></code></pre>
+<p>    This will create 4 or 5 outputs, depending on the amounts. The first two
+    will split <code class="lang-d"><span class="pln">myTx</span></code> evenly towards <code class="lang-d"><span class="pln">addr1</span></code> and <code class="lang-d"><span class="pln">addr2</span></code>, the next two will
+    split <code class="lang-d"><span class="pln">otherTx</span></code> evenly between <code class="lang-d"><span class="pln">addr3</span></code> and <code class="lang-d"><span class="pln">addr4</span></code>. If either transaction
+    has an uneven amount, a refund transaction towards the owner of the first
+    output of <code class="lang-d"><span class="pln">myTx</span></code> will be created.
+</p>
+</section>
+<section><h2>Refund Address</h2>
+<p>When making a <code class="lang-d"><a href="../../agora/utils/TxBuilder/tx_builder.html"><span class="typ">TxBuilder</span></a></code>, the minimum requirement is to provide a refund
+    address. If an output is provided, the address which owns this output
+    will be the refund address, and if a <code class="lang-d"><span class="typ">Transaction</span></code> is provided, the owner
+    of the first output will be the refund address.
+</p>
+</section>
+<section><h2>Well Known addresses</h2>
+<p>This utility relies on the signing keys used for the inputs to be part
+    of well-known address (see <code class="lang-d"><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span></code>).
+</p>
+</section>
+<section><h2>Error handling</h2>
+<p>Since this is an utility inteded purely for testing, passing invalid data
+    or inability to perform an operation will result in an assertion failure.
+</p>
+</section>
+<section><h2>Chaining</h2>
+<p>As can be seen in the example, operations which modify the state will
+    return a reference to the <code class="lang-d"><a href="../../agora/utils/TxBuilder/tx_builder.html"><span class="typ">TxBuilder</span></a></code> to allow for easy chaining.
+</p>
+</section>
+<section><h2>Note</h2>
+<p>This <code class="lang-d"><span class="kwd">struct</span></code> is currently not reusable as there is not yet a use case for
+    it, but could be made so in the future. Currently, calling <code class="lang-d"><span class="pln">sign</span></code> will
+    invalidate the internal state.
+</p>
+</section>
+<section><h2>Example</h2>
+<p>Test for a split with the same amount of outputs as inputs
+Essentially doing an equality transformation
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">immutable </span><span class="typ">Number </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="typ">Number </span><span class="pun">== </span><span class="lit">8</span><span class="pun">);
+
+</span><span class="kwd">const </span><span class="pln">tx </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="typ">Number</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 8 txs, hence it's just equality
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number</span><span class="pun">);
+</span><span class="com">// Since the amount is evenly distributed in Genesis,
+// they all have the same value
+</span><span class="kwd">const </span><span class="typ">ExpectedAmount </span><span class="pun">= </span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">front</span><span class="pun">()<wbr/>.</span><span class="pln">leftover<wbr/></span><span class="pun">.</span><span class="pln">value</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">all</span><span class="pun">!(</span><span class="pln">val </span><span class="pun">=&gt; </span><span class="pln">val<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">ExpectedAmount</span><span class="pun">));
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test with twice as many outputs as inputs
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">immutable </span><span class="typ">Number </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">* </span><span class="lit">2</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="typ">Number </span><span class="pun">== </span><span class="lit">16</span><span class="pun">);
+
+</span><span class="kwd">const </span><span class="pln">resTx1 </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="typ">Number</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 16 txs
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx1<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number </span><span class="pun">/ </span><span class="lit">2</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx1<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number</span><span class="pun">);
+
+</span><span class="com">// 488M / 16
+</span><span class="kwd">const </span><span class="typ">Amount ExpectedAmount1 </span><span class="pun">= </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">30_500_000L </span><span class="pun">* </span><span class="lit">10_000_000L</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx1<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">all</span><span class="pun">!(</span><span class="pln">val </span><span class="pun">=&gt; </span><span class="pln">val<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">ExpectedAmount1</span><span class="pun">));
+
+</span><span class="com">// Test with multi input keys
+// Split into 32 outputs
+</span><span class="kwd">const </span><span class="pln">resTx2 </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="pln">resTx1</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">iota</span><span class="pun">(</span><span class="typ">Number </span><span class="pun">* </span><span class="lit">2</span><span class="pun">)<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">_ </span><span class="pun">=&gt; </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">()<wbr/>.</span><span class="pln">address</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 32 txs
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx2<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx2<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Number </span><span class="pun">* </span><span class="lit">2</span><span class="pun">);
+
+</span><span class="com">// 500M / 32
+</span><span class="kwd">const </span><span class="typ">Amount ExpectedAmount2 </span><span class="pun">= </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">15_250_000L </span><span class="pun">* </span><span class="lit">10_000_000L</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">resTx2<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">all</span><span class="pun">!(</span><span class="pln">val </span><span class="pun">=&gt; </span><span class="pln">val<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">ExpectedAmount2</span><span class="pun">));
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test with remainder
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">const </span><span class="pln">result </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="lit">3</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 4 txs (3 targets + 1 refund)
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">8</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">isSorted</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">4</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">isSorted</span><span class="pun">);
+
+</span><span class="com">// 488M / 3
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">!(</span><span class="pln">o </span><span class="pun">=&gt; </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">162_666_666_6666_666L</span><span class="pun">)) == </span><span class="lit">3</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">!(</span><span class="pln">o </span><span class="pun">=&gt; </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">2</span><span class="pun">)) == </span><span class="lit">1</span><span class="pun">); </span><span class="com">// left over chance
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test with one output key
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">const </span><span class="pln">result </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">([</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">A<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">])
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 1 txs
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">8</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+
+</span><span class="com">// 500M
+</span><span class="kwd">const </span><span class="typ">Amount ExpectedAmount </span><span class="pun">= </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">488_000_000L </span><span class="pun">* </span><span class="lit">10_000_000L</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">ExpectedAmount</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test changing the refund address (and merging outputs by extension)
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">const </span><span class="pln">result </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    </span><span class="com">// Refund needs to be called first as it resets the outputs
+    <wbr/></span><span class="pun">.</span><span class="pln">refund</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">Z<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="lit">3</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="com">// This transaction has 4 txs (3 targets + 1 refund)
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">8</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">4</span><span class="pun">);
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">== [
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">2</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">Z<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">162_666_666_6666_666L</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">A<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">162_666_666_6666_666L</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">C<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">162_666_666_6666_666L</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">D<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+]<wbr/>.</span><span class="pln">sort<wbr/></span><span class="pun">.</span><span class="pln">array</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test with a range of tuples
+</p>
+<pre class="code"><code class="lang-d"><span class="typ">Output</span><span class="pun">[</span><span class="lit">4</span><span class="pun">] </span><span class="pln">outs </span><span class="pun">= [
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">100</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">A<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">200</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">C<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">300</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">D<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+    </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">400</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">E<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">),
+];
+
+</span><span class="com">// The hash is incorrect (it's not a proper UTXO hash)
+// but TxBuilder only care about strictly monotonic hashes
+</span><span class="kwd">auto </span><span class="pln">tup_rng </span><span class="pun">= </span><span class="pln">outs</span><span class="pun">[]<wbr/>.</span><span class="pln">zip</span><span class="pun">(</span><span class="pln">outs</span><span class="pun">[]<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">o </span><span class="pun">=&gt; </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">()));
+</span><span class="kwd">auto </span><span class="pln">result </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">F<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">attach</span><span class="pun">(</span><span class="pln">tup_rng</span><span class="pun">)<wbr/>.</span><span class="pln">sign</span><span class="pun">();
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">4</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">] == </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">1000</span><span class="pun">), </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">F<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">));
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+
+<pre class="code"><code class="lang-d"><span class="kwd">auto </span><span class="pln">spendable </span><span class="pun">= </span><span class="pln">genesisSpendable</span><span class="pun">();
+</span><span class="kwd">assert</span><span class="pun">(!</span><span class="pln">genesisSpendable<wbr/></span><span class="pun">.</span><span class="pln">empty</span><span class="pun">);
+</span><span class="typ">Amount </span><span class="pln">total</span><span class="pun">;
+</span><span class="pln">genesisSpendable<wbr/></span><span class="pun">.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">total<wbr/></span><span class="pun">.</span><span class="pln">mustAdd</span><span class="pun">(</span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">leftover<wbr/></span><span class="pun">.</span><span class="pln">value</span><span class="pun">));
+</span><span class="com">// Arbitrarily low value
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">total </span><span class="pun">&gt; </span><span class="typ">Amount<wbr/></span><span class="pun">.</span><span class="typ">MinFreezeAmount</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test with unfrozen remainder
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">const </span><span class="pln">result </span><span class="pun">= <a href="../../agora/utils/TxBuilder/tx_builder.html"></span><span class="typ">TxBuilder</span></a><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">payments<wbr/></span><span class="pun">.</span><span class="pln">front</span><span class="pun">)
+    <wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="lit">3</span><span class="pun">))
+    <wbr/>.</span><span class="pln">sign</span><span class="pun">(</span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">);
+
+</span><span class="com">// This transaction has 4 outputs (3 freeze + 1 refund)
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">inputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">8</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">4</span><span class="pun">);
+
+</span><span class="com">// 488M / 3
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">!(</span><span class="pln">o </span><span class="pun">=&gt;
+    </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">162_666_666_6666_666L</span><span class="pun">) &amp;&amp; </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">type </span><span class="pun">== </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">) == </span><span class="lit">3</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">result<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">!(</span><span class="pln">o </span><span class="pun">=&gt;
+    </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">== </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">2</span><span class="pun">) &amp;&amp; </span><span class="pln">o<wbr/></span><span class="pun">.</span><span class="pln">type </span><span class="pun">== </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Payment</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">); </span><span class="com">// left over change
+</span></code></pre>
+</section>
+</section>
+			<section>
+				<h2>Structs</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<code>
+								<a id="OutputRef" class="public" href="../../agora/utils/TxBuilder/output_ref.html">OutputRef</a>
+							</code>
+						</td>
+						<td>A reference to an <code class="lang-d"><span class="typ">Output</span></code> within a <code class="lang-d"><span class="typ">Transaction</span></code>
+</td>
+					</tr>
+					<tr>
+						<td>
+							<code>
+								<a id="TxBuilder" class="public" href="../../agora/utils/TxBuilder/tx_builder.html">TxBuilder</a>
+							</code>
+						</td>
+						<td></td>
+					</tr>
+				</table>
+			</section>
+			<footer>
+				<table class="license-info">
+					<tr>
+						<th>Authors</th>
+						<td>
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Copyright</th>
+						<td>
+							<p>Copyright (c) 2019-2021 BOSAGORA Foundation
+        All rights reserved.
+</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>License</th>
+						<td>
+							<p>MIT License. See LICENSE for details.
+</p>
+
+						</td>
+					</tr>
+				</table>
+				<p class="faint">Generated using the DDOX documentation generator</p>
+			</footer>
+		</div>
+	</body>
+</html>

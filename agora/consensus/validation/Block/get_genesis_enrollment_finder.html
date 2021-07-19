@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Function getGenesisEnrollmentFinder</title>
+		<link rel="stylesheet" type="text/css" href="../../../../styles/ddox.css"/>
+		<link rel="stylesheet" href="../../../../prettify/prettify.css" type="text/css"/>
+		<script type="text/javascript" src="../../../../scripts/jquery.js">/**/</script><script type="text/javascript" src="../../../../scripts/ddox.js">/**/</script>
+	</head>
+	<body onload="setupDdox();">
+		<nav id="main-nav">
+			<noscript>
+				<p style="color: red">The search functionality needs JavaScript enabled</p>
+			</noscript>
+			<div id="symbolSearchPane" style="display: none">
+				<form action="#" method="GET">
+					<input id="symbolSearch" type="text" name="q" placeholder="Search for symbols" autocomplete="off" onchange="performSymbolSearch(40);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
+				</form>
+				<ul id="symbolSearchResults" class="symbolList" style="display: none"></ul><script type="application/javascript" src="../../../../symbols.js"></script><script type="application/javascript">var symbolSearchRootDir = "../../../../";
+$('#symbolSearchPane').show();</script>
+			</div>
+			<ul class="tree-view">
+				<li class="tree-view ">
+					<div class="package ">agora
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/api/Admin.html">Admin</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/api/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/api/Handlers.html">Handlers</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/api/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">common
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Amount.html">Amount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/BitMask.html">BitMask</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/FileBasedLock.html">FileBasedLock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/ManagedDatabase.html">ManagedDatabase</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Metadata.html">Metadata</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Set.html">Set</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Task.html">Task</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/common/VibeTask.html">VibeTask</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view ">
+					<div class="package ">consensus
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">data
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">
+						<a href="../../../../agora/consensus/data/genesis.html">genesis</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/genesis/Coinnet.html">Coinnet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/genesis/Test.html">Test</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/Params.html">Params</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/PreImageInfo.html">PreImageInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/Transaction.html">Transaction</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/UTXO.html">UTXO</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/ValidatorBlockSig.html">ValidatorBlockSig</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/data/ValidatorInfo.html">ValidatorInfo</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">protocol
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/protocol/Data.html">Data</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/protocol/Nominator.html">Nominator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">state
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/state/UTXOCache.html">UTXOCache</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/state/UTXODB.html">UTXODB</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/state/UTXOSet.html">UTXOSet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/state/ValidatorSet.html">ValidatorSet</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view ">
+					<div class="package ">
+						<a href="../../../../agora/consensus/validation.html">validation</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module selected">
+						<a href="../../../../agora/consensus/validation/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/validation/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/validation/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/validation/Transaction.html">Transaction</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/EnrollmentPool.html">EnrollmentPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/consensus/SCPEnvelopeStore.html">SCPEnvelopeStore</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">crypto
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/crypto/Bech32.html">Bech32</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/crypto/Crc16.html">Crc16</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/crypto/Key.html">Key</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">flash
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/api/FlashAPI.html">FlashAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/api/FlashControlAPI.html">FlashControlAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/api/FlashListenerAPI.html">FlashListenerAPI</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Channel.html">Channel</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/ErrorCode.html">ErrorCode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Invoice.html">Invoice</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Network.html">Network</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Node.html">Node</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/OnionPacket.html">OnionPacket</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Route.html">Route</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Scripts.html">Scripts</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/flash/UpdateSigner.html">UpdateSigner</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">network
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/network/Client.html">Client</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/network/Clock.html">Clock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/network/Manager.html">Manager</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">node
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">admin
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/admin/AdminInterface.html">AdminInterface</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/admin/Setup.html">Setup</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/BlockStorage.html">BlockStorage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/main.html">main</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/Runner.html">Runner</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/TransactionPool.html">TransactionPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/TransactionRelayer.html">TransactionRelayer</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/node/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">registry
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/registry/API.html">API</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/registry/Server.html">Server</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">script
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/Engine.html">Engine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/Lock.html">Lock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/Opcodes.html">Opcodes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/ScopeCondition.html">ScopeCondition</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/script/Stack.html">Stack</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">stats
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/App.html">App</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/EndpointReq.html">EndpointReq</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Registry.html">Registry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Server.html">Server</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Stats.html">Stats</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Tx.html">Tx</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/stats/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">test
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Base.html">Base</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/BlockTimeConsensus.html">BlockTimeConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Byzantine.html">Byzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Crypto.html">Crypto</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/EnrollDifferentUTXOs.html">EnrollDifferentUTXOs</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Flash.html">Flash</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/GenesisBlock.html">GenesisBlock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/GossipProtocol.html">GossipProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/InvalidBlockSigByzantine.html">InvalidBlockSigByzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/LocalTransactions.html">LocalTransactions</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/LockHeight.html">LockHeight</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/ManyBlocks.html">ManyBlocks</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/ManyValidators.html">ManyValidators</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/MissingPreImageDetection.html">MissingPreImageDetection</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/MultiRoundConsensus.html">MultiRoundConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/NameRegistry.html">NameRegistry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/NetworkClient.html">NetworkClient</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/NetworkDiscovery.html">NetworkDiscovery</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/NetworkManager.html">NetworkManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/PeriodicCatchup.html">PeriodicCatchup</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/PreimageSharing.html">PreimageSharing</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/QuorumPreimage.html">QuorumPreimage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/QuorumShuffle.html">QuorumShuffle</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Restart.html">Restart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/RestoreSCPState.html">RestoreSCPState</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/RestoreSlashingInfo.html">RestoreSlashingInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Simple.html">Simple</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/SlashingMisbehavingValidator.html">SlashingMisbehavingValidator</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/TimeBlockInterval.html">TimeBlockInterval</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/TimeDrift.html">TimeDrift</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/Timeout.html">Timeout</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/TransactionReplacement.html">TransactionReplacement</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/UnlockAge.html">UnlockAge</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/ValidatorCleanRestart.html">ValidatorCleanRestart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/ValidatorCount.html">ValidatorCount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/ValidatorRecurringEnrollment.html">ValidatorRecurringEnrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/test/VariableBlockSize.html">VariableBlockSize</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">utils
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">gc
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/gc/bits.html">bits</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/gc/GC.html">GC</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/gc/os.html">os</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/gc/pooltable.html">pooltable</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/Backoff.html">Backoff</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/InetUtils.html">InetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/Log.html">Log</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/PrettyPrinter.html">PrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/SCPPrettyPrinter.html">SCPPrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/Test.html">Test</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/TracyAPI.html">TracyAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/TxBuilder.html">TxBuilder</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/Utility.html">Utility</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/WellKnownKeys.html">WellKnownKeys</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../agora/utils/Workarounds.html">Workarounds</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">mmdb
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../mmdb/MaxMindDB.html">MaxMindDB</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scpd
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">quorum
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/quorum/QuorumIntersectionChecker.html">QuorumIntersectionChecker</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/quorum/QuorumTracker.html">QuorumTracker</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scp
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/BallotProtocol.html">BallotProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/LocalNode.html">LocalNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/NominationProtocol.html">NominationProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/QuorumSetUtils.html">QuorumSetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/SCP.html">SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/SCPDriver.html">SCPDriver</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/Slot.html">Slot</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/scp/Utils.html">Utils</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">tests
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/tests/GlueTypes.html">GlueTypes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/tests/LayoutTest.html">LayoutTest</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/tests/SizeTest.html">SizeTest</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">types
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/types/Stellar_SCP.html">Stellar_SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/types/Stellar_types.html">Stellar_types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/types/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/types/XDRBase.html">XDRBase</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../../scpd/Cpp.html">Cpp</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+		</nav>
+		<div id="main-contents">
+			<h1>Function getGenesisEnrollmentFinder</h1><p></p>
+			<div class="prototype">
+				<code class="lang-d">
+					<div class="single-prototype">
+			<span class="kwd">nothrow</span> <span class="kwd">@trusted</span> <span class="typ">bool</span> <span class="kwd">delegate</span><span class="pun">(</span><span class="kwd">in</span> <span class="kwd">ref</span> <span class="pln">geod24<wbr/></span><span class="pun">.</span><span class="pln">bitblob<wbr/></span><span class="pun">.</span><span class="typ">BitBlob</span>!(64L)<span class="pun">, </span><span class="kwd">out</span> <a href="../../../../agora/consensus/state/ValidatorSet/enrollment_state.html"><span class="typ">EnrollmentState</span></a><span class="pun">)</span> <span class="pln">getGenesisEnrollmentFinder</span><span class="pun">(</span><span class="pun">)</span><span class="pln"> </span><span class="kwd">nothrow @trusted</span><span class="pun">;</span>
+					</div>
+				</code>
+			</div>
+			
+			<section><h2>Returns</h2>
+<p>EnrollmentFinder for GenesisBlock, a delegate to query enrollments
+in GenesisBlock
+</p>
+</section>
+<section><h2>Example</h2>
+
+<pre class="code"><code class="lang-d"><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">algorithm</span><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">range</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">engine </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">Engine</span><span class="pun">(</span><span class="typ">TestStackMaxTotalSize</span><span class="pun">, </span><span class="typ">TestStackMaxItemSize</span><span class="pun">);
+</span><span class="kwd">scope </span><span class="pln">utxos </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">();
+</span><span class="kwd">scope </span><span class="pln">findUTXO </span><span class="pun">= &amp;</span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">fee_man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">FeeManager</span><span class="pun">();
+</span><span class="kwd">scope </span><span class="pln">checker </span><span class="pun">= &amp;</span><span class="pln">fee_man<wbr/></span><span class="pun">.</span><span class="pln">check</span><span class="pun">;
+</span><span class="kwd">scope </span><span class="pln">findGenesisEnrollments </span><span class="pun">= </span><span class="pln">getGenesisEnrollmentFinder</span><span class="pun">();
+
+</span><span class="kwd">auto </span><span class="pln">gen_key </span><span class="pun">= </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="typ">Genesis</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">isGenesisBlockValid</span><span class="pun">());
+</span><span class="kwd">auto </span><span class="pln">gen_hash </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">();
+
+</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">txs<wbr/></span><span class="pun">.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">));
+</span><span class="kwd">auto </span><span class="pln">block </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">sign</span><span class="pun">()));
+
+</span><span class="com">// height check
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height </span><span class="pun">= </span><span class="lit">100</span><span class="pun">;
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">;
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">/// .prev_block check
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">prev_block </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">();
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">prev_block </span><span class="pun">= </span><span class="pln">gen_hash</span><span class="pun">;
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">/// Check consistency of `txs` field
+</span><span class="pun">{
+    </span><span class="kwd">auto </span><span class="pln">saved_txs </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs</span><span class="pun">;
+
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs </span><span class="pun">= </span><span class="pln">saved_txs</span><span class="pun">[</span><span class="lit">0 </span><span class="pun">.. $ - </span><span class="lit">1</span><span class="pun">];
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs </span><span class="pun">= (</span><span class="pln">saved_txs </span><span class="pun">~ </span><span class="pln">saved_txs</span><span class="pun">)<wbr/>.</span><span class="pln">sort<wbr/></span><span class="pun">.</span><span class="pln">array</span><span class="pun">;
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs </span><span class="pun">= </span><span class="pln">saved_txs</span><span class="pun">;
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="com">/// Txs sorting check
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs<wbr/></span><span class="pun">.</span><span class="pln">reverse</span><span class="pun">;
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs<wbr/></span><span class="pun">.</span><span class="pln">reverse</span><span class="pun">;
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+}
+
+</span><span class="com">/// no matching utxo =&gt; fail
+</span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">txs<wbr/></span><span class="pun">.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">));
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();  </span><span class="com">// genesis is spent
+</span><span class="kwd">auto </span><span class="pln">prev_txs </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs</span><span class="pun">;
+</span><span class="pln">prev_txs<wbr/></span><span class="pun">.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">));  </span><span class="com">// these will be spent
+
+</span><span class="kwd">auto </span><span class="pln">prev_block </span><span class="pun">= </span><span class="pln">block</span><span class="pun">;
+</span><span class="pln">block </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">prev_txs<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="typ">TxBuilder</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">)<wbr/>.</span><span class="pln">sign</span><span class="pun">()));
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">prev_txs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">&gt; </span><span class="lit">0</span><span class="pun">);  </span><span class="com">// sanity check
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">tx</span><span class="pun">; </span><span class="pln">prev_txs</span><span class="pun">)
+{
+    </span><span class="com">// one utxo missing from the set =&gt; fail
+    </span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">storage<wbr/></span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(), </span><span class="lit">0</span><span class="pun">));
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+        </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+    </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">prev_block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+        </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+}
+
+</span><span class="com">// the key is hashMulti(hash(prev_tx), index)
+</span><span class="typ">Output</span><span class="pun">[</span><span class="typ">Hash</span><span class="pun">] </span><span class="pln">utxo_set</span><span class="pun">;
+
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">tx</span><span class="pun">; </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">txs</span><span class="pun">)
+    </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="kwd">ref </span><span class="pln">output</span><span class="pun">; </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs</span><span class="pun">)
+        </span><span class="pln">utxo_set</span><span class="pun">[</span><span class="pln">hashMulti</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">, </span><span class="pln">idx</span><span class="pun">)] = </span><span class="pln">output</span><span class="pun">;
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">!= </span><span class="lit">0</span><span class="pun">);
+</span><span class="kwd">const </span><span class="pln">utxo_set_len </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">length</span><span class="pun">;
+
+</span><span class="com">// contains the used set of UTXOs during validation (to prevent double-spend)
+</span><span class="typ">Output</span><span class="pun">[</span><span class="typ">Hash</span><span class="pun">] </span><span class="pln">used_set</span><span class="pun">;
+</span><span class="kwd">scope </span><span class="typ">UTXOFinder </span><span class="pln">findNonSpent </span><span class="pun">= (</span><span class="kwd">in </span><span class="typ">Hash </span><span class="pln">utxo_hash</span><span class="pun">, </span><span class="kwd">out </span><span class="pln">UTXO value</span><span class="pun">)
+{
+    </span><span class="kwd">if </span><span class="pun">(</span><span class="pln">utxo_hash </span><span class="kwd">in </span><span class="pln">used_set</span><span class="pun">)
+        </span><span class="kwd">return false</span><span class="pun">;  </span><span class="com">// double-spend
+
+    </span><span class="kwd">if </span><span class="pun">(</span><span class="kwd">auto </span><span class="pln">utxo </span><span class="pun">= </span><span class="pln">utxo_hash </span><span class="kwd">in </span><span class="pln">utxo_set</span><span class="pun">)
+    {
+        </span><span class="pln">used_set</span><span class="pun">[</span><span class="pln">utxo_hash</span><span class="pun">] = *</span><span class="pln">utxo</span><span class="pun">;
+        </span><span class="pln">value<wbr/></span><span class="pun">.</span><span class="pln">unlock_height </span><span class="pun">= </span><span class="lit">0</span><span class="pun">;
+        </span><span class="pln">value<wbr/></span><span class="pun">.</span><span class="pln">output </span><span class="pun">= *</span><span class="pln">utxo</span><span class="pun">;
+        </span><span class="kwd">return true</span><span class="pun">;
+    }
+
+    </span><span class="kwd">return false</span><span class="pun">;
+};
+
+</span><span class="com">// consumed all utxo =&gt; fail
+</span><span class="pln">block </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">sign</span><span class="pun">()));
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findNonSpent</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">// All `payment` utxos have been consumed
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">used_set<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">+ </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">frozens<wbr/></span><span class="pun">.</span><span class="pln">front<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="pln">utxo_set_len</span><span class="pun">);
+
+</span><span class="com">// reset state
+</span><span class="pln">used_set<wbr/></span><span class="pun">.</span><span class="pln">clear</span><span class="pun">();
+
+</span><span class="com">// Double spend =&gt; fail
+</span><span class="kwd">auto </span><span class="pln">double_spend </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">txs<wbr/></span><span class="pun">.</span><span class="pln">dup</span><span class="pun">;
+</span><span class="pln">double_spend</span><span class="pun">[$ - </span><span class="lit">1</span><span class="pun">] = </span><span class="pln">double_spend</span><span class="pun">[$ - </span><span class="lit">2</span><span class="pun">];
+</span><span class="pln">block </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="typ">GenesisBlock</span><span class="pun">, </span><span class="pln">double_spend</span><span class="pun">);
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+        </span><span class="pln">findNonSpent</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">// we stopped validation due to a double-spend
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">used_set<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="pln">double_spend<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">- </span><span class="lit">1</span><span class="pun">);
+
+</span><span class="pln">block </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">prev_txs<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="typ">TxBuilder</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">)<wbr/>.</span><span class="pln">sign</span><span class="pun">()));
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">// modify the last hex byte of the merkle root
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">merkle_root</span><span class="pun">[][$ - </span><span class="lit">1</span><span class="pun">]++;
+
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">// now restore it back to what it was
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">merkle_root</span><span class="pun">[][$ - </span><span class="lit">1</span><span class="pun">]--;
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span><span class="kwd">const </span><span class="pln">last_root </span><span class="pun">= </span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">merkle_root</span><span class="pun">;
+
+</span><span class="pln">block </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">prev_txs<wbr/></span><span class="pun">.</span><span class="pln">enumerate<wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">en </span><span class="pun">=&gt;
+    </span><span class="typ">TxBuilder</span><span class="pun">(</span><span class="pln">en<wbr/></span><span class="pun">.</span><span class="pln">value</span><span class="pun">)<wbr/>.</span><span class="pln">split</span><span class="pun">(</span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="pln">byRange</span><span class="pun">()<wbr/>.</span><span class="pln">take</span><span class="pun">(</span><span class="pln">en<wbr/></span><span class="pun">.</span><span class="pln">index </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">)<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">k </span><span class="pun">=&gt; </span><span class="pln">k<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">))<wbr/>.</span><span class="pln">sign</span><span class="pun">()));
+
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="com">// the previous merkle root should not match the new txs
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">merkle_root </span><span class="pun">= </span><span class="pln">last_root</span><span class="pun">;
+</span><span class="pln">block<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(),
+    </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../../agora/common/Amount.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">common<wbr/></span><span class="pun">.</span><span class="typ">Amount</span></a><span class="pun">;
+</span><span class="kwd">import <a href="../../../../agora/consensus/data/Enrollment.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Enrollment</span></a><span class="pun">;
+</span><span class="kwd">import <a href="../../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">algorithm</span><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">range</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">engine </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">Engine</span><span class="pun">(</span><span class="typ">TestStackMaxTotalSize</span><span class="pun">, </span><span class="typ">TestStackMaxItemSize</span><span class="pun">);
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">();
+</span><span class="typ">UTXOFinder </span><span class="pln">findUTXO </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">();
+
+</span><span class="kwd">scope </span><span class="pln">fee_man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">FeeManager</span><span class="pun">();
+</span><span class="kwd">scope </span><span class="pln">checker </span><span class="pun">= &amp;</span><span class="pln">fee_man<wbr/></span><span class="pun">.</span><span class="pln">check</span><span class="pun">;
+</span><span class="kwd">scope </span><span class="pln">findGenesisEnrollments </span><span class="pun">= </span><span class="pln">getGenesisEnrollmentFinder</span><span class="pun">();
+
+</span><span class="kwd">auto </span><span class="pln">gen_key </span><span class="pun">= </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="typ">Genesis</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">isGenesisBlockValid</span><span class="pun">());
+</span><span class="kwd">auto </span><span class="pln">gen_hash </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">();
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">txs</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="kwd">auto </span><span class="pln">txs_1 </span><span class="pun">= </span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">sign</span><span class="pun">())<wbr/>.</span><span class="pln">array</span><span class="pun">();
+
+</span><span class="kwd">auto </span><span class="pln">block1 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="typ">GenesisBlock</span><span class="pun">, </span><span class="pln">txs_1</span><span class="pun">);
+</span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="pln">genesis_validator_keys<wbr/></span><span class="pun">.</span><span class="pln">length</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="pln">txs_1</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="typ">KeyPair </span><span class="pln">keypair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+</span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_2</span><span class="pun">;
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="pln">pre_tx</span><span class="pun">; </span><span class="pln">txs_1</span><span class="pun">)
+{
+    </span><span class="typ">Input </span><span class="pln">input </span><span class="pun">= </span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">pre_tx</span><span class="pun">), </span><span class="lit">0</span><span class="pun">);
+
+    </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">([</span><span class="pln">input</span><span class="pun">], </span><span class="kwd">null</span><span class="pun">);
+    </span><span class="kwd">if </span><span class="pun">(</span><span class="pln">idx </span><span class="pun">== </span><span class="lit">7</span><span class="pun">)
+    {
+        </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">_</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+        {
+            </span><span class="typ">Output </span><span class="pln">output</span><span class="pun">;
+            </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">= </span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">100</span><span class="pun">);
+            </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">lock </span><span class="pun">= </span><span class="pln">genKeyLock</span><span class="pun">(</span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">);
+            </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">type </span><span class="pun">= </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Payment</span><span class="pun">;
+            </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="pln">output</span><span class="pun">;
+        }
+    }
+    </span><span class="kwd">else
+    </span><span class="pun">{
+        </span><span class="typ">Output </span><span class="pln">output</span><span class="pun">;
+        </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">value </span><span class="pun">= </span><span class="typ">Amount<wbr/></span><span class="pun">.</span><span class="typ">MinFreezeAmount</span><span class="pun">;
+        </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">lock </span><span class="pun">= </span><span class="pln">genKeyLock</span><span class="pun">(</span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">);
+        </span><span class="pln">output<wbr/></span><span class="pun">.</span><span class="pln">type </span><span class="pun">= </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">;
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="pln">output</span><span class="pun">;
+    }
+    </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">;
+    </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">gen_key</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+    </span><span class="pln">txs_2 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+}
+
+</span><span class="kwd">auto </span><span class="pln">block2 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block1</span><span class="pun">, </span><span class="pln">txs_2</span><span class="pun">);
+</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">), </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="pln">genesis_validator_keys<wbr/></span><span class="pun">.</span><span class="pln">length</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="pln">txs_2</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="typ">KeyPair </span><span class="pln">keypair2 </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+</span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_3</span><span class="pun">;
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+{
+    </span><span class="typ">Input </span><span class="pln">input </span><span class="pun">= </span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[</span><span class="lit">7</span><span class="pun">]), </span><span class="pln">idx</span><span class="pun">);
+
+    </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">(
+        [</span><span class="pln">input</span><span class="pun">],
+        [</span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">1</span><span class="pun">), </span><span class="pln">keypair2<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)]);
+    </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">keypair</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+    </span><span class="pln">txs_3 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+}
+
+</span><span class="typ">Pair </span><span class="pln">signature_noise </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">;
+</span><span class="typ">Pair </span><span class="pln">node_key_pair </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">fromScalar</span><span class="pun">(</span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">secret</span><span class="pun">);
+
+</span><span class="kwd">auto </span><span class="pln">utxo_hash1 </span><span class="pun">= </span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]), </span><span class="lit">0</span><span class="pun">);
+</span><span class="typ">Enrollment </span><span class="pln">enroll1</span><span class="pun">;
+</span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">utxo_key </span><span class="pun">= </span><span class="pln">utxo_hash1</span><span class="pun">;
+</span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">commitment </span><span class="pun">= </span><span class="pln">hashFull</span><span class="pun">(</span><span class="typ">Scalar<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">());
+</span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">cycle_length </span><span class="pun">= </span><span class="lit">1008</span><span class="pun">;
+</span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">enroll_sig </span><span class="pun">= </span><span class="pln">sign</span><span class="pun">(</span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">, </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">,
+    </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">enroll1</span><span class="pun">);
+
+</span><span class="kwd">auto </span><span class="pln">utxo_hash2 </span><span class="pun">= </span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]), </span><span class="lit">0</span><span class="pun">);
+</span><span class="typ">Enrollment </span><span class="pln">enroll2</span><span class="pun">;
+</span><span class="pln">enroll2<wbr/></span><span class="pun">.</span><span class="pln">utxo_key </span><span class="pun">= </span><span class="pln">utxo_hash2</span><span class="pun">;
+</span><span class="pln">enroll2<wbr/></span><span class="pun">.</span><span class="pln">commitment </span><span class="pun">= </span><span class="pln">hashFull</span><span class="pun">(</span><span class="typ">Scalar<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">());
+</span><span class="pln">enroll2<wbr/></span><span class="pun">.</span><span class="pln">cycle_length </span><span class="pun">= </span><span class="lit">1008</span><span class="pun">;
+</span><span class="pln">enroll2<wbr/></span><span class="pun">.</span><span class="pln">enroll_sig </span><span class="pun">= </span><span class="pln">sign</span><span class="pun">(</span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">, </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">,
+    </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">enroll2</span><span class="pun">);
+
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrollments</span><span class="pun">;
+</span><span class="pln">enrollments </span><span class="pun">~= </span><span class="pln">enroll1</span><span class="pun">;
+</span><span class="pln">enrollments </span><span class="pun">~= </span><span class="pln">enroll2</span><span class="pun">;
+</span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">!(</span><span class="str">"a.utxo_key &lt; b.utxo_key"</span><span class="pun">);
+
+</span><span class="kwd">auto </span><span class="pln">preimage_root </span><span class="pun">= </span><span class="typ">Hash</span><span class="pun">(</span><span class="str">"0x47c993d409aa7d77651ecaa5a5d29e47a7aee609c7" </span><span class="pun">~
+                          </span><span class="str">"cb376f5f8ff2a868c738233a2df5ba11d635c8576a47" </span><span class="pun">~
+                          </span><span class="str">"3864fc1c8fd1469f4be80b853764da53f6a5b41661"</span><span class="pun">);
+</span><span class="typ">uint</span><span class="pun">[] </span><span class="pln">missing_validators </span><span class="pun">= [];
+
+</span><span class="kwd">auto </span><span class="pln">block3 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block2</span><span class="pun">, </span><span class="pln">txs_3</span><span class="pun">, </span><span class="pln">genesis_validator_keys</span><span class="pun">, </span><span class="pln">enrollments</span><span class="pun">,
+    </span><span class="pln">missing_validators</span><span class="pun">);
+</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">), </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">!(</span><span class="str">"a.utxo_key &gt; b.utxo_key"</span><span class="pun">);
+</span><span class="pln">findUTXO </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">();
+</span><span class="com">// Block: The enrollments are not sorted in ascending order
+</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">), </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>test that there must always exist active validators
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../../agora/common/Amount.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">common<wbr/></span><span class="pun">.</span><span class="typ">Amount</span></a><span class="pun">;
+</span><span class="kwd">import <a href="../../../../agora/consensus/data/Enrollment.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Enrollment</span></a><span class="pun">;
+</span><span class="kwd">import <a href="../../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">algorithm</span><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">range</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">engine </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">Engine</span><span class="pun">(</span><span class="typ">TestStackMaxTotalSize</span><span class="pun">, </span><span class="typ">TestStackMaxItemSize</span><span class="pun">);
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">();
+</span><span class="typ">UTXOFinder </span><span class="pln">findUTXO </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">();
+
+</span><span class="kwd">scope </span><span class="pln">fee_man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">FeeManager</span><span class="pun">();
+</span><span class="kwd">scope </span><span class="pln">checker </span><span class="pun">= &amp;</span><span class="pln">fee_man<wbr/></span><span class="pun">.</span><span class="pln">check</span><span class="pun">;
+</span><span class="kwd">scope </span><span class="pln">findGenesisEnrollments </span><span class="pun">= </span><span class="pln">getGenesisEnrollmentFinder</span><span class="pun">();
+
+</span><span class="kwd">auto </span><span class="pln">gen_key </span><span class="pun">= </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="typ">Genesis</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">isGenesisBlockValid</span><span class="pun">());
+</span><span class="kwd">auto </span><span class="pln">gen_hash </span><span class="pun">= </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">();
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">txs</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="kwd">auto </span><span class="pln">txs_1 </span><span class="pun">= </span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">sign</span><span class="pun">())<wbr/>.</span><span class="pln">array</span><span class="pun">();
+
+</span><span class="kwd">auto </span><span class="pln">block1 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="typ">GenesisBlock</span><span class="pun">, </span><span class="pln">txs_1</span><span class="pun">);
+</span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="typ">GenesisBlock<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">gen_hash</span><span class="pun">, </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="pln">txs_1</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="typ">KeyPair </span><span class="pln">keypair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+</span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_2</span><span class="pun">;
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="pln">pre_tx</span><span class="pun">; </span><span class="pln">txs_1</span><span class="pun">)
+{
+    </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">(
+        [</span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">pre_tx</span><span class="pun">), </span><span class="lit">0</span><span class="pun">)],
+        </span><span class="kwd">null</span><span class="pun">);
+
+    </span><span class="kwd">if </span><span class="pun">(</span><span class="pln">idx </span><span class="pun">&lt;= </span><span class="lit">2</span><span class="pun">)
+    {
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount<wbr/></span><span class="pun">.</span><span class="typ">MinFreezeAmount</span><span class="pun">, </span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">);
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount<wbr/></span><span class="pun">.</span><span class="typ">MinFreezeAmount</span><span class="pun">, </span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">);
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount<wbr/></span><span class="pun">.</span><span class="typ">MinFreezeAmount</span><span class="pun">, </span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">);
+    }
+    </span><span class="kwd">else
+    </span><span class="pun">{
+        </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">_</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+            </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs </span><span class="pun">~= </span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">100</span><span class="pun">), </span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">);
+    }
+    </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">outputs<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">;
+    </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">gen_key</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+    </span><span class="pln">txs_2 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+}
+
+</span><span class="kwd">auto </span><span class="pln">block2 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block1</span><span class="pun">, </span><span class="pln">txs_2</span><span class="pun">);
+</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block1<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">), </span><span class="pln">findUTXO</span><span class="pun">,
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="kwd">ref </span><span class="pln">tx</span><span class="pun">; </span><span class="pln">txs_2</span><span class="pun">)
+    </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+
+</span><span class="com">// When all existing validators expire at the new block height and the number of enrollments
+// in the new block is 0, the block is considered invalid.
+</span><span class="pun">{
+    </span><span class="typ">KeyPair </span><span class="pln">keypair2 </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+    </span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_3</span><span class="pun">;
+    </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+    {
+        </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">(
+            [</span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[$-</span><span class="lit">4</span><span class="pun">]), </span><span class="pln">idx</span><span class="pun">)],
+            [</span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">1</span><span class="pun">), </span><span class="pln">keypair2<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)]);
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">keypair</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+        </span><span class="pln">txs_3 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+    }
+
+    </span><span class="typ">Pair </span><span class="pln">signature_noise </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">;
+    </span><span class="typ">Pair </span><span class="pln">node_key_pair </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">fromScalar</span><span class="pun">(</span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">secret</span><span class="pun">);
+
+    </span><span class="kwd">auto </span><span class="pln">block3 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block2</span><span class="pun">, </span><span class="pln">txs_3</span><span class="pun">);
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+    </span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">),
+        </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="lit">0</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+}
+
+</span><span class="com">// When all existing validators expire at the new block height but the number of enrollments
+// in the new block is at least 1, the block may be considered valid.
+</span><span class="pun">{
+    </span><span class="typ">KeyPair </span><span class="pln">keypair2 </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+    </span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_3</span><span class="pun">;
+    </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+    {
+        </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">(
+            [</span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[$-</span><span class="lit">3</span><span class="pun">]), </span><span class="pln">idx</span><span class="pun">)],
+            [</span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">1</span><span class="pun">), </span><span class="pln">keypair2<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)]);
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">keypair</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+        </span><span class="pln">txs_3 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+    }
+
+    </span><span class="typ">Pair </span><span class="pln">signature_noise </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">;
+    </span><span class="typ">Pair </span><span class="pln">node_key_pair </span><span class="pun">= </span><span class="typ">Pair<wbr/></span><span class="pun">.</span><span class="pln">fromScalar</span><span class="pun">(</span><span class="pln">keypair<wbr/></span><span class="pun">.</span><span class="pln">secret</span><span class="pun">);
+
+    </span><span class="kwd">auto </span><span class="pln">utxo_hash1 </span><span class="pun">= </span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]), </span><span class="lit">0</span><span class="pun">);
+    </span><span class="typ">Enrollment </span><span class="pln">enroll1</span><span class="pun">;
+    </span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">utxo_key </span><span class="pun">= </span><span class="pln">utxo_hash1</span><span class="pun">;
+    </span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">commitment </span><span class="pun">= </span><span class="pln">hashFull</span><span class="pun">(</span><span class="typ">Scalar<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">());
+    </span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">cycle_length </span><span class="pun">= </span><span class="lit">1008</span><span class="pun">;
+    </span><span class="pln">enroll1<wbr/></span><span class="pun">.</span><span class="pln">enroll_sig </span><span class="pun">= </span><span class="pln">sign</span><span class="pun">(</span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">node_key_pair<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">, </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">V</span><span class="pun">,
+        </span><span class="pln">signature_noise<wbr/></span><span class="pun">.</span><span class="pln">v</span><span class="pun">, </span><span class="pln">enroll1</span><span class="pun">);
+
+    </span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrollments</span><span class="pun">;
+    </span><span class="pln">enrollments </span><span class="pun">~= </span><span class="pln">enroll1</span><span class="pun">;
+    </span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">!(</span><span class="str">"a.utxo_key &lt; b.utxo_key"</span><span class="pun">);
+
+    </span><span class="kwd">auto </span><span class="pln">preimage_root </span><span class="pun">= </span><span class="typ">Hash</span><span class="pun">(</span><span class="str">"0x47c993d409aa7d77651ecaa5a5d29e47a7aee609c7" </span><span class="pun">~
+                              </span><span class="str">"cb376f5f8ff2a868c738233a2df5ba11d635c8576a47" </span><span class="pun">~
+                              </span><span class="str">"3864fc1c8fd1469f4be80b853764da53f6a5b41661"</span><span class="pun">);
+    </span><span class="typ">uint</span><span class="pun">[] </span><span class="pln">missing_validators </span><span class="pun">= [];
+
+    </span><span class="kwd">auto </span><span class="pln">block3 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block2</span><span class="pun">, </span><span class="pln">txs_3</span><span class="pun">, </span><span class="pln">genesis_validator_keys</span><span class="pun">, </span><span class="pln">enrollments</span><span class="pun">,
+        </span><span class="pln">missing_validators</span><span class="pun">);
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">);
+    </span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">),
+        </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="lit">0</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+}
+
+</span><span class="com">// When there are still active validators at the new block height,
+// then new block does not need to contain new enrollments to be considered valid
+</span><span class="pun">{
+    </span><span class="typ">KeyPair </span><span class="pln">keypair2 </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+    </span><span class="typ">Transaction</span><span class="pun">[] </span><span class="pln">txs_3</span><span class="pun">;
+    </span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">; </span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">8</span><span class="pun">)
+    {
+        </span><span class="typ">Transaction </span><span class="pln">tx </span><span class="pun">= </span><span class="typ">Transaction</span><span class="pun">(
+            [</span><span class="typ">Input</span><span class="pun">(</span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">txs_2</span><span class="pun">[$-</span><span class="lit">1</span><span class="pun">]), </span><span class="pln">idx</span><span class="pun">)],
+            [</span><span class="typ">Output</span><span class="pun">(</span><span class="typ">Amount</span><span class="pun">(</span><span class="lit">1</span><span class="pun">), </span><span class="pln">keypair2<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)]);
+        </span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">inputs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">unlock </span><span class="pun">= </span><span class="typ">VTx<wbr/></span><span class="pun">.</span><span class="pln">signUnlock</span><span class="pun">(</span><span class="pln">keypair</span><span class="pun">, </span><span class="pln">tx</span><span class="pun">);
+        </span><span class="pln">txs_3 </span><span class="pun">~= </span><span class="pln">tx</span><span class="pun">;
+    }
+
+    </span><span class="kwd">auto </span><span class="pln">block3 </span><span class="pun">= </span><span class="pln">makeNewTestBlock</span><span class="pun">(</span><span class="pln">block2</span><span class="pun">, </span><span class="pln">txs_3</span><span class="pun">);
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">enrollments<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+    </span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">!</span><span class="kwd">false</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">),
+        </span><span class="pln">findUTXO</span><span class="pun">, </span><span class="lit">0</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+
+    </span><span class="pln">findUTXO </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">();
+    </span><span class="pln">block3<wbr/></span><span class="pun">.</span><span class="pln">assertValid</span><span class="pun">(</span><span class="pln">engine</span><span class="pun">, </span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">, </span><span class="pln">hashFull</span><span class="pun">(</span><span class="pln">block2<wbr/></span><span class="pun">.</span><span class="pln">header</span><span class="pun">), </span><span class="pln">findUTXO</span><span class="pun">,
+        </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="typ">MinValidatorCount</span><span class="pun">, </span><span class="pln">checker</span><span class="pun">, </span><span class="pln">findGenesisEnrollments</span><span class="pun">);
+}
+</span></code></pre>
+</section>
+
+			<footer>
+				<table class="license-info">
+					<tr>
+						<th>Authors</th>
+						<td>
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Copyright</th>
+						<td>
+							<p>Copyright (c) 2019-2021 BOSAGORA Foundation
+        All rights reserved.
+</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>License</th>
+						<td>
+							<p>MIT License. See LICENSE for details.
+</p>
+
+						</td>
+					</tr>
+				</table>
+				<p class="faint">Generated using the DDOX documentation generator</p>
+			</footer>
+		</div>
+	</body>
+</html>

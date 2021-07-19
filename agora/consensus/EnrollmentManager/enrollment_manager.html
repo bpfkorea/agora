@@ -1,0 +1,1721 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Class EnrollmentManager</title>
+		<link rel="stylesheet" type="text/css" href="../../../styles/ddox.css"/>
+		<link rel="stylesheet" href="../../../prettify/prettify.css" type="text/css"/>
+		<script type="text/javascript" src="../../../scripts/jquery.js">/**/</script><script type="text/javascript" src="../../../scripts/ddox.js">/**/</script>
+	</head>
+	<body onload="setupDdox();">
+		<nav id="main-nav">
+			<noscript>
+				<p style="color: red">The search functionality needs JavaScript enabled</p>
+			</noscript>
+			<div id="symbolSearchPane" style="display: none">
+				<form action="#" method="GET">
+					<input id="symbolSearch" type="text" name="q" placeholder="Search for symbols" autocomplete="off" onchange="performSymbolSearch(40);" onkeypress="this.onchange();" onpaste="this.onchange();" oninput="this.onchange();"/>
+				</form>
+				<ul id="symbolSearchResults" class="symbolList" style="display: none"></ul><script type="application/javascript" src="../../../symbols.js"></script><script type="application/javascript">var symbolSearchRootDir = "../../../";
+$('#symbolSearchPane').show();</script>
+			</div>
+			<ul class="tree-view">
+				<li class="tree-view ">
+					<div class="package ">agora
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/api/Admin.html">Admin</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/api/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/api/Handlers.html">Handlers</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/api/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">common
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Amount.html">Amount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/BitMask.html">BitMask</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/FileBasedLock.html">FileBasedLock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/ManagedDatabase.html">ManagedDatabase</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Metadata.html">Metadata</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Set.html">Set</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Task.html">Task</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/common/VibeTask.html">VibeTask</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view ">
+					<div class="package ">consensus
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">data
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">
+						<a href="../../../agora/consensus/data/genesis.html">genesis</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/genesis/Coinnet.html">Coinnet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/genesis/Test.html">Test</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/Params.html">Params</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/PreImageInfo.html">PreImageInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/Transaction.html">Transaction</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/UTXO.html">UTXO</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/ValidatorBlockSig.html">ValidatorBlockSig</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/data/ValidatorInfo.html">ValidatorInfo</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">protocol
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/protocol/Data.html">Data</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/protocol/Nominator.html">Nominator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">state
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/state/UTXOCache.html">UTXOCache</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/state/UTXODB.html">UTXODB</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/state/UTXOSet.html">UTXOSet</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/state/ValidatorSet.html">ValidatorSet</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">
+						<a href="../../../agora/consensus/validation.html">validation</a>
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/validation/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/validation/Enrollment.html">Enrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/validation/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/validation/Transaction.html">Transaction</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module selected">
+						<a href="../../../agora/consensus/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/EnrollmentPool.html">EnrollmentPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/PreImage.html">PreImage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/consensus/SCPEnvelopeStore.html">SCPEnvelopeStore</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">crypto
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/crypto/Bech32.html">Bech32</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/crypto/Crc16.html">Crc16</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/crypto/Key.html">Key</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">flash
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">api
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/api/FlashAPI.html">FlashAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/api/FlashControlAPI.html">FlashControlAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/api/FlashListenerAPI.html">FlashListenerAPI</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Channel.html">Channel</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Config.html">Config</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/ErrorCode.html">ErrorCode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Invoice.html">Invoice</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Network.html">Network</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Node.html">Node</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/OnionPacket.html">OnionPacket</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Route.html">Route</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Scripts.html">Scripts</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/Types.html">Types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/flash/UpdateSigner.html">UpdateSigner</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">network
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/network/Client.html">Client</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/network/Clock.html">Clock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/network/Manager.html">Manager</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">node
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">admin
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/admin/AdminInterface.html">AdminInterface</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/admin/Setup.html">Setup</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/BlockStorage.html">BlockStorage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/FullNode.html">FullNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/main.html">main</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/Runner.html">Runner</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/TransactionPool.html">TransactionPool</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/TransactionRelayer.html">TransactionRelayer</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/node/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">registry
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/registry/API.html">API</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/registry/Server.html">Server</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">script
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/Engine.html">Engine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/Lock.html">Lock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/Opcodes.html">Opcodes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/ScopeCondition.html">ScopeCondition</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/script/Stack.html">Stack</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">stats
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/App.html">App</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Block.html">Block</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/EndpointReq.html">EndpointReq</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Registry.html">Registry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Server.html">Server</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Stats.html">Stats</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Tx.html">Tx</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/stats/Validator.html">Validator</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">test
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/BanManager.html">BanManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Base.html">Base</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/BlockTimeConsensus.html">BlockTimeConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Byzantine.html">Byzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Crypto.html">Crypto</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/EnrollDifferentUTXOs.html">EnrollDifferentUTXOs</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/EnrollmentManager.html">EnrollmentManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Fee.html">Fee</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Flash.html">Flash</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/GenesisBlock.html">GenesisBlock</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/GossipProtocol.html">GossipProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/InvalidBlockSigByzantine.html">InvalidBlockSigByzantine</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Ledger.html">Ledger</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/LocalTransactions.html">LocalTransactions</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/LockHeight.html">LockHeight</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/ManyBlocks.html">ManyBlocks</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/ManyValidators.html">ManyValidators</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/MissingPreImageDetection.html">MissingPreImageDetection</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/MultiRoundConsensus.html">MultiRoundConsensus</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/NameRegistry.html">NameRegistry</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/NetworkClient.html">NetworkClient</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/NetworkDiscovery.html">NetworkDiscovery</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/NetworkManager.html">NetworkManager</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/PeriodicCatchup.html">PeriodicCatchup</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/PreimageSharing.html">PreimageSharing</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Quorum.html">Quorum</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/QuorumPreimage.html">QuorumPreimage</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/QuorumShuffle.html">QuorumShuffle</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Restart.html">Restart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/RestoreSCPState.html">RestoreSCPState</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/RestoreSlashingInfo.html">RestoreSlashingInfo</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Script.html">Script</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Simple.html">Simple</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/SlashingMisbehavingValidator.html">SlashingMisbehavingValidator</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/TimeBlockInterval.html">TimeBlockInterval</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/TimeDrift.html">TimeDrift</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/Timeout.html">Timeout</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/TransactionReplacement.html">TransactionReplacement</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/UnlockAge.html">UnlockAge</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/ValidatorCleanRestart.html">ValidatorCleanRestart</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/ValidatorCount.html">ValidatorCount</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/ValidatorRecurringEnrollment.html">ValidatorRecurringEnrollment</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/test/VariableBlockSize.html">VariableBlockSize</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">utils
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">gc
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/gc/bits.html">bits</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/gc/GC.html">GC</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/gc/os.html">os</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/gc/pooltable.html">pooltable</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/Backoff.html">Backoff</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/InetUtils.html">InetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/Log.html">Log</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/PrettyPrinter.html">PrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/SCPPrettyPrinter.html">SCPPrettyPrinter</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/Test.html">Test</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/TracyAPI.html">TracyAPI</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/TxBuilder.html">TxBuilder</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/Utility.html">Utility</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/WellKnownKeys.html">WellKnownKeys</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../agora/utils/Workarounds.html">Workarounds</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">mmdb
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../mmdb/MaxMindDB.html">MaxMindDB</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scpd
+					</div>
+			<ul class="tree-view">
+				<li class="tree-view collapsed">
+					<div class="package ">quorum
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/quorum/QuorumIntersectionChecker.html">QuorumIntersectionChecker</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/quorum/QuorumTracker.html">QuorumTracker</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">scp
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/BallotProtocol.html">BallotProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/LocalNode.html">LocalNode</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/NominationProtocol.html">NominationProtocol</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/QuorumSetUtils.html">QuorumSetUtils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/SCP.html">SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/SCPDriver.html">SCPDriver</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/Slot.html">Slot</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/scp/Utils.html">Utils</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">tests
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/tests/GlueTypes.html">GlueTypes</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/tests/LayoutTest.html">LayoutTest</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/tests/SizeTest.html">SizeTest</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li class="tree-view collapsed">
+					<div class="package ">types
+					</div>
+			<ul class="tree-view">
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/types/Stellar_SCP.html">Stellar_SCP</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/types/Stellar_types.html">Stellar_types</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/types/Utils.html">Utils</a>
+					</div>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/types/XDRBase.html">XDRBase</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+				<li>
+					<div class="module ">
+						<a href="../../../scpd/Cpp.html">Cpp</a>
+					</div>
+				</li>
+			</ul>
+				</li>
+			</ul>
+		</nav>
+		<div id="main-contents">
+			<h1>Class EnrollmentManager</h1><p>Handle enrollment data and manage the validators set
+</p>
+			<div class="prototype">
+				<code class="lang-d">
+					<div class="single-prototype">
+			<span class="kwd">class</span> <span class="typ">EnrollmentManager</span>
+			<span class="pun">;</span>
+					</div>
+				</code>
+			</div>
+			<section></section>
+
+			<section><h2>Constructors</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.this.html" class="public">
+								<code>this</code>
+							</a>
+							<span class="tableEntryAnnotation">(stateDB, cacheDB, key_pair, params)</span>
+						</td>
+						<td>Constructor
+</td>
+					</tr>
+				</table>
+			</section>
+			<section><h2>Fields</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Type</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.enroll_pool.html" class="public"><code>enroll_pool</code></a>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><a href="../../../agora/consensus/EnrollmentPool/enrollment_pool.html"><span class="typ">EnrollmentPool</span></a></code></td><td>Enrollment pool managing enrollments waiting to be a validator
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.keymap.html" class="public"><code>keymap</code></a>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="typ">ValidatorKeyMap</span></code></td><td>Enrollment pool managing enrollments waiting to be a validator
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.preimage_reveal_period.html" class="public"><code>PreimageRevealPeriod</code></a>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><span class="kwd">immutable</span><span class="pun">(</span><span class="typ">uint</span><span class="pun">)</span></code></td><td>The period for revealing a preimage
+It is an hour interval if a block is made in every 10 minutes
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.validator_set.html" class="public"><code>validator_set</code></a>
+						</td>
+						<td class="typecol"><code class="prettyprint lang-d"><a href="../../../agora/consensus/state/ValidatorSet/validator_set.html"><span class="typ">ValidatorSet</span></a></code></td><td>Validator set managing validators' information such as Enrollment object
+enrolled height, and preimages.
+</td>
+					</tr>
+				</table>
+			</section>
+			<section><h2>Methods</h2>
+				<table>
+					<col class="caption"/>
+					<tr>
+						<th>Name</th><th>Description</th>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.add_enrollment.html" class="public">
+								<code>addEnrollment</code>
+							</a>
+							<span class="tableEntryAnnotation">(enroll, pubkey, height, finder)</span>
+						</td>
+						<td>Add a enrollment data to the enrollment pool
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.add_preimage.html" class="public">
+								<code>addPreimage</code>
+							</a>
+							<span class="tableEntryAnnotation">(preimage)</span>
+						</td>
+						<td>Add a pre-image information to a validator data
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.add_preimages.html" class="public">
+								<code>addPreimages</code>
+							</a>
+							<span class="tableEntryAnnotation">(preimages)</span>
+						</td>
+						<td>Add pre-images for enrolled validators
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.add_validator.html" class="public">
+								<code>addValidator</code>
+							</a>
+							<span class="tableEntryAnnotation">(enroll, pubkey, height, finder, self_utxos)</span>
+						</td>
+						<td>Add a validator to the validator set or update the enrolled height.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.create_enrollment.html" class="public">
+								<code>createEnrollment</code>
+							</a>
+							<span class="tableEntryAnnotation">(utxo, height)</span>
+						</td>
+						<td>Build an <code class="lang-d"><span class="typ">Enrollment</span></code> using <code class="lang-d"><a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html"><span class="pln">makeEnrollment</span></a></code>, stores and returns it
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_commitment.html" class="public">
+								<code>getCommitment</code>
+							</a>
+							<span class="tableEntryAnnotation">()</span>
+						</td>
+						<td>Get the commitment for the enrollment for this node
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_commitment_nonce.html" class="public">
+								<code>getCommitmentNonce</code>
+							</a>
+							<span class="tableEntryAnnotation">(key, height)</span>
+						</td>
+						<td>Retrieves the R from the (R, s) of the signature in the commitment
+        for the associated public key
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_count_of_validators.html" class="public">
+								<code>getCountOfValidators</code>
+							</a>
+							<span class="tableEntryAnnotation">(height)</span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrolled_utxo.html" class="public">
+								<code>getEnrolledUTXO</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, finder)</span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrolled_utx_os.html" class="public">
+								<code>getEnrolledUTXOs</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, keys)</span>
+						</td>
+						<td>Get all the enrolled validator's UTXO keys.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrollment.html" class="public">
+								<code>getEnrollment</code>
+							</a>
+							<span class="tableEntryAnnotation">(enroll_hash)</span>
+						</td>
+						<td>Get the enrollment with the key
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrollment_finder.html" class="public">
+								<code>getEnrollmentFinder</code>
+							</a>
+							<span class="tableEntryAnnotation">()</span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrollment_key.html" class="public">
+								<code>getEnrollmentKey</code>
+							</a>
+							<span class="tableEntryAnnotation">()</span>
+						</td>
+						<td>Get the key for the enrollment for this node
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrollment_public_key.html" class="public">
+								<code>getEnrollmentPublicKey</code>
+							</a>
+							<span class="tableEntryAnnotation">()</span>
+						</td>
+						<td>Get the public key of node that is used for a enrollment
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_enrollments.html" class="public">
+								<code>getEnrollments</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, peekUTXO)</span>
+						</td>
+						<td>Get the unregistered enrollments that can be validator in the next
+        block based on the current block height.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_expiring_validators.html" class="public">
+								<code>getExpiringValidators</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, ex_validators)</span>
+						</td>
+						<td>Query Validators that have just finished their cycle
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_index_of_enrollment.html" class="public">
+								<code>getIndexOfEnrollment</code>
+							</a>
+							<span class="tableEntryAnnotation">(height)</span>
+						</td>
+						<td>Get the index of this node's enrollment in the sorted enrolled UTXOs
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_index_of_validator.html" class="public">
+								<code>getIndexOfValidator</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, K)</span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_next_preimage.html" class="public">
+								<code>getNextPreimage</code>
+							</a>
+							<span class="tableEntryAnnotation">(preimage, height)</span>
+						</td>
+						<td>Get a pre-image for revelation
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_our_preimage.html" class="public">
+								<code>getOurPreimage</code>
+							</a>
+							<span class="tableEntryAnnotation">(height)</span>
+						</td>
+						<td>Get the pre-image hash for this validator
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_validator_preimage.html" class="public">
+								<code>getValidatorPreimage</code>
+							</a>
+							<span class="tableEntryAnnotation">(utxo)</span>
+						</td>
+						<td>Get validator's pre-image from the validator set.
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_validator_preimages.html" class="public">
+								<code>getValidatorPreimages</code>
+							</a>
+							<span class="tableEntryAnnotation">(start_height, end_height)</span>
+						</td>
+						<td>Get validators' pre-image information
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.get_validator_stakes.html" class="public">
+								<code>getValidatorStakes</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, peekUTXO, utxos, missing_validators)</span>
+						</td>
+						<td>Query stakes of active Validators
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.is_enrolled.html" class="public">
+								<code>isEnrolled</code>
+							</a>
+							<span class="tableEntryAnnotation">(height, finder)</span>
+						</td>
+						<td></td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.is_invalid_candidate_reason.html" class="public">
+								<code>isInvalidCandidateReason</code>
+							</a>
+							<span class="tableEntryAnnotation">(enroll, pubkey, height, findUTXO)</span>
+						</td>
+						<td>Check if an enrollment is a valid candidate for the proposed height
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html" class="public">
+								<code>makeEnrollment</code>
+							</a>
+							<span class="tableEntryAnnotation">(utxo, key, seed, cycle_length, offset)</span>
+						</td>
+						<td>Build enrollment data for an arbitrary utxo + key combination
+</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.remove_all_validators.html" class="public">
+								<code>removeAllValidators</code>
+							</a>
+							<span class="tableEntryAnnotation">()</span>
+						</td>
+						<td>Remove all validators from the validator set
+</td>
+					</tr>
+				</table>
+			</section>
+			<section><h2>Example</h2>
+<p>tests for member functions of EnrollmentManager
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">algorithm</span><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">range</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">;
+</span><span class="typ">Hash</span><span class="pun">[] </span><span class="pln">utxo_hashes</span><span class="pun">;
+
+</span><span class="kwd">auto </span><span class="pln">gen_key_pair </span><span class="pun">= </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys<wbr/></span><span class="pun">.</span><span class="typ">Genesis</span><span class="pun">;
+</span><span class="typ">KeyPair </span><span class="pln">key_pair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+
+</span><span class="com">// genesisSpendable returns 8 outputs
+</span><span class="kwd">auto </span><span class="pln">pairs </span><span class="pun">= </span><span class="pln">iota</span><span class="pun">(</span><span class="lit">8</span><span class="pun">)<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">idx </span><span class="pun">=&gt; </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">])<wbr/>.</span><span class="pln">array</span><span class="pun">;
+</span><span class="pln">genesisSpendable</span><span class="pun">()
+    <wbr/>.</span><span class="pln">enumerate
+    <wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">tup </span><span class="pun">=&gt; </span><span class="pln">tup<wbr/></span><span class="pun">.</span><span class="pln">value
+        <wbr/></span><span class="pun">.</span><span class="pln">refund</span><span class="pun">(</span><span class="pln">pairs</span><span class="pun">[</span><span class="pln">tup<wbr/></span><span class="pun">.</span><span class="pln">index</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">)
+        <wbr/>.</span><span class="pln">sign</span><span class="pun">(</span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">))
+    <wbr/>.</span><span class="pln">each</span><span class="pun">!((</span><span class="pln">tx</span><span class="pun">) {
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+        </span><span class="pln">utxo_hashes </span><span class="pun">~= </span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(), </span><span class="lit">0</span><span class="pun">);
+    });
+
+</span><span class="kwd">auto </span><span class="pln">utxos </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">storage</span><span class="pun">;
+
+</span><span class="com">// create an EnrollmentManager object
+</span><span class="kwd">auto </span><span class="pln">params </span><span class="pun">= </span><span class="kwd">new immutable</span><span class="pun">(</span><span class="typ">ConsensusParams</span><span class="pun">)();
+</span><span class="kwd">auto </span><span class="pln">man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">EnrollmentManager</span><span class="pun">(</span><span class="pln">key_pair</span><span class="pun">, </span><span class="pln">params</span><span class="pun">);
+</span><span class="com">// Useful constant
+</span><span class="kwd">const </span><span class="typ">EnrollAt1 </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">);
+
+</span><span class="com">// check the return value of `getEnrollmentPublicKey`
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address </span><span class="pun">== </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollmentPublicKey</span><span class="pun">());
+
+</span><span class="com">// create and add the first Enrollment object
+</span><span class="kwd">auto </span><span class="pln">utxo_hash </span><span class="pun">= </span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">0</span><span class="pun">];
+
+</span><span class="com">// The UTXO belongs to key_pair but we sign with genesis key pair and check it fails
+</span><span class="typ">Enrollment </span><span class="pln">fail_enroll </span><span class="pun">=
+    <a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html"></span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="pln">makeEnrollment</span></a><span class="pun">(</span><span class="pln">utxo_hash</span><span class="pun">, </span><span class="pln">gen_key_pair</span><span class="pun">, </span><span class="typ">EnrollAt1</span><span class="pun">, </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(!</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">fail_enroll</span><span class="pun">, </span><span class="pln">gen_key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt1</span><span class="pun">,
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">()));
+
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrolls_before </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">EnrollAt1</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls_before<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">ordered_enrollments</span><span class="pun">;
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="pln">kp</span><span class="pun">; </span><span class="pln">pairs</span><span class="pun">[</span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">3</span><span class="pun">])
+{
+    </span><span class="kwd">auto </span><span class="pln">enroll </span><span class="pun">= <a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html"></span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="pln">makeEnrollment</span></a><span class="pun">(
+        </span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">], </span><span class="pln">kp</span><span class="pun">, </span><span class="typ">EnrollAt1</span><span class="pun">, </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">);
+
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">kp<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt1</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">enroll_pool<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">() == </span><span class="pln">idx </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">);
+    </span><span class="pln">ordered_enrollments </span><span class="pun">~= </span><span class="pln">enroll</span><span class="pun">;
+}
+
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">EnrollAt1</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">3</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">isStrictlyMonotonic</span><span class="pun">!(</span><span class="str">"a.utxo_key &lt; b.utxo_key"</span><span class="pun">));
+
+</span><span class="com">// get a stored Enrollment object
+</span><span class="typ">Enrollment </span><span class="pln">stored_enroll</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">((</span><span class="pln">stored_enroll </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollment</span><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">1</span><span class="pun">])) !=
+    </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="pln">init</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">stored_enroll </span><span class="pun">== </span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);
+
+</span><span class="com">// remove an Enrollment object
+</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">enroll_pool<wbr/></span><span class="pun">.</span><span class="pln">remove</span><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">enroll_pool<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">() == </span><span class="lit">2</span><span class="pun">);
+
+</span><span class="com">// test for getEnrollment with removed enrollment
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollment</span><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]) == </span><span class="typ">Enrollment<wbr/></span><span class="pun">.</span><span class="pln">init</span><span class="pun">);
+
+</span><span class="com">// test for enrollment block height update
+</span><span class="kwd">const </span><span class="typ">EnrollAt9 </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">9</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">EnrollAt9 </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">0</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">getEnrolledHeight</span><span class="pun">(</span><span class="typ">EnrollAt9</span><span class="pun">, </span><span class="pln">utxo_hash</span><span class="pun">) == </span><span class="typ">ulong<wbr/></span><span class="pun">.</span><span class="pln">max</span><span class="pun">);
+</span><span class="com">// Add removed enrollment to the pool with the new height
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(
+    <a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html"></span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="pln">makeEnrollment</span></a><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="pln">pairs</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="typ">EnrollAt9</span><span class="pun">, </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">),
+        </span><span class="pln">pairs</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt9</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+</span><span class="com">// The expired enrollments in the pool from height 1 are cleared on this next call
+// to get enrollments at a higher height. We do have an enrollment at height 9
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">EnrollAt9</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">)<wbr/>.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(
+           </span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="pln">pairs</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt9</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">)
+       </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">getEnrolledHeight</span><span class="pun">(</span><span class="typ">EnrollAt9 </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">, </span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]<wbr/>.</span><span class="pln">utxo_key</span><span class="pun">) == </span><span class="typ">EnrollAt9</span><span class="pun">);
+</span><span class="com">// One Enrollment was moved to validator set
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">EnrollAt9 </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">);
+</span><span class="com">// Check last block of cycle is still active
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">EnrollAt9 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">);
+</span><span class="com">// Check block in next cycle is no longer active
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">EnrollAt9 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">0</span><span class="pun">);
+</span><span class="com">// Pool should now be empty
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">enroll_pool<wbr/></span><span class="pun">.</span><span class="pln">count</span><span class="pun">() == </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">EnrollAt9</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">)<wbr/>.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="com">// clear up all validators
+</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">removeAll</span><span class="pun">();
+
+</span><span class="com">// Adding enrollments in reverse order of utxo order to show it still works
+</span><span class="kwd">const </span><span class="typ">EnrollAt10 </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">10</span><span class="pun">);
+</span><span class="pln">ordered_enrollments<wbr/></span><span class="pun">.</span><span class="pln">sort</span><span class="pun">!(</span><span class="str">"a.utxo_key &gt; b.utxo_key"</span><span class="pun">);
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="pln">ordered_enroll</span><span class="pun">; </span><span class="pln">ordered_enrollments</span><span class="pun">)
+    </span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">ordered_enroll</span><span class="pun">, </span><span class="pln">pairs</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt10</span><span class="pun">,
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">EnrollAt10</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">3</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">isStrictlyMonotonic</span><span class="pun">!(</span><span class="str">"a.utxo_key &lt; b.utxo_key"</span><span class="pun">));
+
+</span><span class="com">// A validator is enrolled at the height of 10.
+</span><span class="typ">PreImageInfo </span><span class="pln">preimage</span><span class="pun">;
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">EnrollAt10</span><span class="pun">,
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getNextPreimage</span><span class="pun">(</span><span class="pln">preimage</span><span class="pun">, </span><span class="typ">EnrollAt10</span><span class="pun">));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">preimage<wbr/></span><span class="pun">.</span><span class="pln">height </span><span class="pun">&gt;= </span><span class="typ">EnrollAt10</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">preimage<wbr/></span><span class="pun">.</span><span class="pln">hash </span><span class="pun">== </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">cycle</span><span class="pun">[</span><span class="pln">preimage<wbr/></span><span class="pun">.</span><span class="pln">height</span><span class="pun">]);
+
+</span><span class="com">// test for getting validators' UTXO keys
+</span><span class="typ">Hash</span><span class="pun">[] </span><span class="pln">keys</span><span class="pun">;
+
+</span><span class="com">// validator A with the `utxo_hash` and the enrolled height of 10.
+// validator B with the 'utxo_hash2' and the enrolled height of 11.
+// validator C with the 'utxo_hash3' and no enrolled height.
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">11</span><span class="pun">),
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="lit">12</span><span class="pun">)) == </span><span class="lit">2</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">getEnrolledUTXOs</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="lit">12</span><span class="pun">), </span><span class="pln">keys</span><span class="pun">));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">keys<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">2</span><span class="pun">);
+
+</span><span class="com">// set an enrolled height for validator C
+// set the block height to 1019, which means validator B is expired.
+// there is only one validator in the middle of 1020th block being made.
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(
+           </span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">2</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">12</span><span class="pun">), &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">)
+       </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle </span><span class="pun">+ </span><span class="lit">12</span><span class="pun">)) == </span><span class="lit">1</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">getEnrolledUTXOs</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle </span><span class="pun">+ </span><span class="lit">12</span><span class="pun">), </span><span class="pln">keys</span><span class="pun">));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">keys<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">] == </span><span class="pln">ordered_enrollments</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]<wbr/>.</span><span class="pln">utxo_key</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>tests for `ValidatorSet.countActive
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">range</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">;
+</span><span class="typ">Hash</span><span class="pun">[] </span><span class="pln">utxo_hashes</span><span class="pun">;
+
+</span><span class="typ">KeyPair </span><span class="pln">key_pair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+
+</span><span class="com">// genesisSpendable returns 8 outputs
+</span><span class="kwd">auto </span><span class="pln">pairs </span><span class="pun">= </span><span class="pln">iota</span><span class="pun">(</span><span class="lit">8</span><span class="pun">)<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">idx </span><span class="pun">=&gt; </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">])<wbr/>.</span><span class="pln">array</span><span class="pun">;
+</span><span class="pln">genesisSpendable</span><span class="pun">()
+    <wbr/>.</span><span class="pln">enumerate
+    <wbr/></span><span class="pun">.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">tup </span><span class="pun">=&gt; </span><span class="pln">tup<wbr/></span><span class="pun">.</span><span class="pln">value
+        <wbr/></span><span class="pun">.</span><span class="pln">refund</span><span class="pun">(</span><span class="pln">pairs</span><span class="pun">[</span><span class="pln">tup<wbr/></span><span class="pun">.</span><span class="pln">index</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">)
+        <wbr/>.</span><span class="pln">sign</span><span class="pun">(</span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">))
+    <wbr/>.</span><span class="pln">each</span><span class="pun">!((</span><span class="pln">tx</span><span class="pun">) {
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">);
+        </span><span class="pln">utxo_hashes </span><span class="pun">~= </span><span class="pln">UTXO<wbr/></span><span class="pun">.</span><span class="pln">getHash</span><span class="pun">(</span><span class="pln">tx<wbr/></span><span class="pun">.</span><span class="pln">hashFull</span><span class="pun">(), </span><span class="lit">0</span><span class="pun">);
+    });
+</span><span class="kwd">auto </span><span class="pln">utxos </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">storage</span><span class="pun">;
+
+</span><span class="com">// create an EnrollmentManager object
+</span><span class="kwd">auto </span><span class="pln">params </span><span class="pun">= </span><span class="kwd">new immutable</span><span class="pun">(</span><span class="typ">ConsensusParams</span><span class="pun">)(</span><span class="lit">20</span><span class="pun">);
+</span><span class="kwd">auto </span><span class="pln">man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">EnrollmentManager</span><span class="pun">(</span><span class="pln">key_pair</span><span class="pun">, </span><span class="pln">params</span><span class="pun">);
+
+</span><span class="typ">Height </span><span class="pln">height </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">2</span><span class="pun">);
+
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrollments</span><span class="pun">;
+</span><span class="kwd">foreach </span><span class="pun">(</span><span class="pln">idx</span><span class="pun">, </span><span class="pln">kp</span><span class="pun">; </span><span class="pln">pairs</span><span class="pun">[</span><span class="lit">0 </span><span class="pun">.. </span><span class="lit">3</span><span class="pun">])
+{
+    </span><span class="pln">enrollments </span><span class="pun">~= <a href="../../../agora/consensus/EnrollmentManager/enrollment_manager.make_enrollment.html"></span><span class="typ">EnrollmentManager<wbr/></span><span class="pun">.</span><span class="pln">makeEnrollment</span></a><span class="pun">(
+        </span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="pln">idx</span><span class="pun">], </span><span class="pln">kp</span><span class="pun">, </span><span class="pln">height</span><span class="pun">, </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">);
+}
+
+</span><span class="com">// create and add the first Enrollment object
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">,
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">()));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">0</span><span class="pun">);  </span><span class="com">// not active yet
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">,
+        </span><span class="pln">utxos</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">);  </span><span class="com">// updated
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="lit">3</span><span class="pun">;
+
+</span><span class="com">// create and add the second Enrollment object
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">,
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">()));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">);  </span><span class="com">// not active yet
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">1</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">,
+        </span><span class="pln">utxos</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">2</span><span class="pun">);  </span><span class="com">// updated
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="lit">4</span><span class="pun">;
+
+</span><span class="com">// create and add the third Enrollment object
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">2</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">,
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">()));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">2</span><span class="pun">);  </span><span class="com">// not active yet
+
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enrollments</span><span class="pun">[</span><span class="lit">2</span><span class="pun">], </span><span class="pln">WK<wbr/></span><span class="pun">.</span><span class="typ">Keys</span><span class="pun">[</span><span class="lit">2</span><span class="pun">]<wbr/>.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">height</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">,
+        </span><span class="pln">utxos</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">3</span><span class="pun">);  </span><span class="com">// updated
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="lit">5</span><span class="pun">;    </span><span class="com">// valid block height : 0 &lt;= H &lt; 20
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">3</span><span class="pun">);  </span><span class="com">// not cleared yet
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">); </span><span class="com">// valid block height : 2 &lt;= H &lt; 22
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">3</span><span class="pun">);
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">2 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">); </span><span class="com">// valid block height : 3 &lt;= H &lt; 23
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">2</span><span class="pun">);
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">3 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">); </span><span class="com">// valid block height : 4 &lt;= H &lt; 24
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">1</span><span class="pun">);
+
+</span><span class="pln">height </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">4 </span><span class="pun">+ </span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">ValidatorCycle</span><span class="pun">); </span><span class="com">// valid block height : 5 &lt;= H &lt; 25
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">validator_set<wbr/></span><span class="pun">.</span><span class="pln">countActive</span><span class="pun">(</span><span class="pln">height </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">) == </span><span class="lit">0</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>Test for the height when the enrollment will be available
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+</span><span class="kwd">import <a href="../../../agora/consensus/state/UTXOSet.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">state<wbr/></span><span class="pun">.</span><span class="typ">UTXOSet</span></a><span class="pun">;
+
+</span><span class="com">// create an EnrollmentManager
+</span><span class="kwd">const </span><span class="pln">validator_cycle </span><span class="pun">= </span><span class="lit">20</span><span class="pun">;
+</span><span class="typ">KeyPair </span><span class="pln">key_pair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+</span><span class="kwd">scope </span><span class="pln">man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">EnrollmentManager</span><span class="pun">(</span><span class="pln">key_pair</span><span class="pun">,
+    </span><span class="kwd">new immutable</span><span class="pun">(</span><span class="typ">ConsensusParams</span><span class="pun">)(</span><span class="pln">validator_cycle</span><span class="pun">));
+
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">UTXOSet</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">db</span><span class="pun">);
+</span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">refund</span><span class="pun">(</span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">sign</span><span class="pun">(</span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">))
+    <wbr/>.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">updateUTXOCache</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">), </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">params<wbr/></span><span class="pun">.</span><span class="typ">CommonsBudgetAddress</span><span class="pun">));
+</span><span class="kwd">auto </span><span class="pln">utxos </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOs</span><span class="pun">(</span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">);
+
+</span><span class="com">// create and add the first enrollment
+</span><span class="typ">Enrollment</span><span class="pun">[] </span><span class="pln">enrolls</span><span class="pun">;
+</span><span class="kwd">const </span><span class="pln">firstEnrolledAt10 </span><span class="pun">= </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">10</span><span class="pun">);
+</span><span class="kwd">auto </span><span class="pln">enroll </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">createEnrollment</span><span class="pun">(</span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="pln">firstEnrolledAt10</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">firstEnrolledAt10</span><span class="pun">,
+        </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">getUTXOFinder</span><span class="pun">()));
+
+</span><span class="com">// if the current height is smaller than the available height,
+// we can get no enrollment
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">- </span><span class="lit">1</span><span class="pun">), &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="com">// if the current height is equal to the available height we can get enrollments
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+
+</span><span class="com">// if the current height is more than the available height we don't
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="com">// make the enrollment a validator
+</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">firstEnrolledAt10</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">);
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="com">// add the enrollment that is already a validator, and check if
+// the enrollment can be nominated at the height before the cycle end
+</span><span class="kwd">auto </span><span class="pln">re_enroll </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">createEnrollment</span><span class="pun">(</span><span class="pln">utxos<wbr/></span><span class="pun">.</span><span class="pln">keys</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">re_enroll<wbr/></span><span class="pun">.</span><span class="pln">cycle_length </span><span class="pun">== </span><span class="pln">validator_cycle</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">re_enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+
+</span><span class="com">// Can only enroll at exact height as the preimage is for that height
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="typ">Height</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle </span><span class="pun">- </span><span class="lit">1</span><span class="pun">), &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">)<wbr/>.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+</span><span class="pln">enrolls </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">);
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">enrolls<wbr/></span><span class="pun">.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">1</span><span class="pun">);
+</span><span class="com">// We do this test after as the expired will be remved from the pool
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle </span><span class="pun">+ </span><span class="lit">1</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">)<wbr/>.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+
+</span><span class="com">// make the enrollment a validator again
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle</span><span class="pun">,
+    &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxos</span><span class="pun">));
+</span><span class="com">// Enrollment now gone from the pool
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollments</span><span class="pun">(</span><span class="pln">firstEnrolledAt10 </span><span class="pun">+ </span><span class="pln">validator_cycle</span><span class="pun">, &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">)<wbr/>.</span><span class="pln">length </span><span class="pun">== </span><span class="lit">0</span><span class="pun">);
+</span></code></pre>
+</section>
+<section><h2>Example</h2>
+<p>tests for adding enrollments from the same public key
+</p>
+<pre class="code"><code class="lang-d"><span class="kwd">import <a href="../../../agora/consensus/data/Transaction.html"></span><span class="pln">agora<wbr/></span><span class="pun">.</span><span class="pln">consensus<wbr/></span><span class="pun">.</span><span class="pln">data<wbr/></span><span class="pun">.</span><span class="typ">Transaction</span></a><span class="pun">;
+</span><span class="kwd">import </span><span class="pln">std<wbr/></span><span class="pun">.</span><span class="pln">algorithm</span><span class="pun">;
+
+</span><span class="kwd">scope </span><span class="pln">utxo_set </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">TestUTXOSet</span><span class="pun">;
+</span><span class="typ">KeyPair </span><span class="pln">key_pair </span><span class="pun">= </span><span class="typ">KeyPair<wbr/></span><span class="pun">.</span><span class="pln">random</span><span class="pun">();
+
+</span><span class="pln">genesisSpendable</span><span class="pun">()<wbr/>.</span><span class="pln">map</span><span class="pun">!(</span><span class="pln">txb </span><span class="pun">=&gt; </span><span class="pln">txb<wbr/></span><span class="pun">.</span><span class="pln">refund</span><span class="pun">(</span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">)<wbr/>.</span><span class="pln">sign</span><span class="pun">(</span><span class="typ">OutputType<wbr/></span><span class="pun">.</span><span class="typ">Freeze</span><span class="pun">))
+    <wbr/>.</span><span class="pln">each</span><span class="pun">!(</span><span class="pln">tx </span><span class="pun">=&gt; </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">put</span><span class="pun">(</span><span class="pln">tx</span><span class="pun">));
+</span><span class="typ">Hash</span><span class="pun">[] </span><span class="pln">utxo_hashes </span><span class="pun">= </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">keys</span><span class="pun">;
+
+</span><span class="com">// create an EnrollmentManager object
+</span><span class="kwd">auto </span><span class="pln">man </span><span class="pun">= </span><span class="kwd">new </span><span class="typ">EnrollmentManager</span><span class="pun">(</span><span class="pln">key_pair</span><span class="pun">,
+    </span><span class="kwd">new immutable</span><span class="pun">(</span><span class="typ">ConsensusParams</span><span class="pun">)());
+
+</span><span class="com">// check the return value of `getEnrollmentPublicKey`
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address </span><span class="pun">== </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">getEnrollmentPublicKey</span><span class="pun">());
+
+</span><span class="com">// first enrollment succeeds
+</span><span class="kwd">auto </span><span class="pln">enroll </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">createEnrollment</span><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">0</span><span class="pun">], </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">));
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">),
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+
+</span><span class="com">// adding first enrollment succeeds
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enroll</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">),
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">storage</span><span class="pun">) </span><span class="kwd">is null</span><span class="pun">);
+
+</span><span class="com">// second enrollment with the same public key fails
+</span><span class="kwd">auto </span><span class="pln">enroll2 </span><span class="pun">= </span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">createEnrollment</span><span class="pun">(</span><span class="pln">utxo_hashes</span><span class="pun">[</span><span class="lit">1</span><span class="pun">], </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">));
+</span><span class="kwd">assert</span><span class="pun">(!</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addEnrollment</span><span class="pun">(</span><span class="pln">enroll2</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">),
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">));
+
+</span><span class="com">// adding second enrollment with the same public key fails
+</span><span class="kwd">assert</span><span class="pun">(</span><span class="pln">man<wbr/></span><span class="pun">.</span><span class="pln">addValidator</span><span class="pun">(</span><span class="pln">enroll2</span><span class="pun">, </span><span class="pln">key_pair<wbr/></span><span class="pun">.</span><span class="pln">address</span><span class="pun">, </span><span class="typ">Height</span><span class="pun">(</span><span class="lit">1</span><span class="pun">),
+        &amp;</span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">peekUTXO</span><span class="pun">, </span><span class="pln">utxo_set<wbr/></span><span class="pun">.</span><span class="pln">storage</span><span class="pun">) !</span><span class="kwd">is null</span><span class="pun">);
+</span></code></pre>
+</section>
+
+			<footer>
+				<table class="license-info">
+					<tr>
+						<th>Authors</th>
+						<td>
+							
+						</td>
+					</tr>
+					<tr>
+						<th>Copyright</th>
+						<td>
+							<p>Copyright (c) 2019-2021 BOSAGORA Foundation
+        All rights reserved.
+</p>
+
+						</td>
+					</tr>
+					<tr>
+						<th>License</th>
+						<td>
+							<p>MIT License. See LICENSE for details.
+</p>
+
+						</td>
+					</tr>
+				</table>
+				<p class="faint">Generated using the DDOX documentation generator</p>
+			</footer>
+		</div>
+	</body>
+</html>
